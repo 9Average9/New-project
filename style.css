@@ -1,0 +1,137 @@
+body{ margin: 0;}
+header {
+  background-color: red;
+  color: black;
+  text-align: center;
+  padding: 1%;
+  font-family:  sans-serif; 
+}
+
+
+
+/* Dropdown styling */
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+}
+.custom-dropdown select option {
+  padding: 8px 12px;
+  border-radius: 10px; /* Rounded corners */
+  font-size: 16px;
+  /* Additional styles */
+}
+.custom-dropdown select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.selected-option {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+/* CSS for race and class sections */
+#race,
+#class {
+ 
+  display: inline-block;
+  vertical-align: top;
+  margin: 20px 2.5%; /* Adjust margin as needed */
+  text-align: center;
+}
+
+
+
+/* Styling individual options */
+#race option {
+  border-radius: 20px; /* Rounded corners */
+  padding: 8px 12px; /* Adjust padding as needed */
+  margin: 5px 0;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+#race option[value="selectRace"] {
+  background-color: #3498db; /* Blue color */
+  color: white;
+}
+
+#race option[value="selectRace"]:hover {
+  background-color: #0b0c0c; /* Slightly darker blue color on hover */
+}
+
+#race option[value="human"] {
+  background-color: #3ce775; /* Red color */
+  color: white;
+  border-radius: 20px;
+ 
+}
+
+/* Add styles for other race options similarly */
+
+#class option {
+  border-radius: 20px; /* Rounded corners */
+  padding: 8px 12px; /* Adjust padding as needed */
+  margin: 5px 0;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+#class option[value="selectClass"] {
+  background-color: #9b59b6; /* Purple color */
+  color: white;
+}
+
+#class option[value="selectClass"]:hover {
+  background-color: #8e44ad; /* Slightly darker purple color on hover */
+}
+
+#class option[value="fighter"] {
+  background-color: #f1c40f; /* Yellow color */
+  color: black;
+}
+
+/* Add styles for other class options similarly */
+
+
+
+
+
+
+/* CSS for character details section */
+#character-details {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  margin-top: 10px;
+}
+
+/* Additional styles for better appearance */
+h1, h2 {
+  font-family: 'Your Cool Font', sans-serif; /* Replace 'Your Cool Font' with your preferred font */
+}
+
+/* Flex container for race and class sections */
+.section-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Allows items to wrap if they exceed the container width */
+}
