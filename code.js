@@ -1,3 +1,5 @@
+
+
 const classAction = {
   fighter: ['Bash', 'Power Strike', 'Defensive Stance', 'slash', 'assess'],
   wizard: ['Fireball', 'Ice Spear', 'Teleport', 'Thunderbolt', 'melt'],
@@ -105,12 +107,5 @@ function displayCharacter(race, characterClass, attributes, actions) {
   
 }
 
-
-
-// Update selected option text based on user selection
-document.getElementById('race-selection').addEventListener('change', function() {
-  let selectedOption = this.options[this.selectedIndex].text;
-  document.querySelector('.selected-option').textContent = selectedOption;
-});
 
 
