@@ -9,6 +9,7 @@ header {
   background-color: #6e1d1d;
   padding: .5%;
   text-align: center;
+  color: rgb(255, 255, 255);
 }
 
 .custom-dropdown {
@@ -85,3 +86,124 @@ header {
   font-size: larger;
 }
 
+
+
+.container12 {
+  position: absolute;
+  top: 9%; 
+  right: 5%; 
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.container12 .bar1.change {
+  transform: translateY(10px) rotate(-45deg);
+}
+
+.container12 .bar2.change {
+  opacity: 0;
+}
+
+.container12 .bar3.change {
+  transform: translateY(-10px) rotate(45deg);
+}
+
+.menu {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #bababa;
+  padding: 20px;
+  border: 1px solid #ccc;
+  z-index: 2; 
+  border-radius: 10px;
+  width: 70%;
+  padding-bottom: 45%;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.menu ul li {
+  margin-bottom: 10px;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Show the menu when active */
+.menu.active {
+  display: block;
+}
+
+
+
+/* Style for rounded tabs */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f07c; 
+  border-radius: 10px ; 
+ 
+}
+
+.tab {
+  padding: 2.5%;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 10px;
+  font-size:medium;
+  font-weight: bold;
+}
+
+.tab.active {
+  background-color: #ccc; /* Background color for the active tab */
+}
+
+.content {
+  /* Style your content area */
+  padding: 5%;
+  margin-top: 5%;
+}
+
+#SEARCH{
+  background-color: #6e1d1d; 
+  color: white; 
+  padding: 10px 20px; 
+  border: none;
+  border-radius: 5px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease; 
+}
+
+.SEARCH:hover {
+  background-color: #FF3333; /* Darker red on hover */
+}
+#searchInput{
+  background-color: #444;
+  border: none;
+  padding: 5px 15px;
+  font-size: larger;
+}

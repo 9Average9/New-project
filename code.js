@@ -16,6 +16,8 @@ const classAction = {
 };
 
 function generateCharacter() {
+  
+
   const selectedRace = document.getElementById('race-selection').value;
   const selectedClass = document.getElementById('class-selection').value;
 
@@ -49,7 +51,7 @@ function generateAttributes(characterClass, race) {
   }
 
   // Add more conditional adjustments for other classes or races as needed...
-if (characterClass === 'cleric' && race === 'gnome'){
+if (characterClass === 'paladin' && race === 'half-orc'){
   attributes.AC = 20; 
   attributes.charisma =20;
   attributes.constitution =20;
@@ -97,7 +99,7 @@ function displayCharacter(race, characterClass, attributes, actions) {
   details += `<li>Constitution: ${attributes.constitution}</li>`;
   details += `<li>Wisdom: ${attributes.wisdom}</li>`;
   details += `<li>Charisma: ${attributes.charisma}</li>`;
-  if (characterClass === 'cleric' && race === 'gnome'){
+  if (characterClass === 'paladin' && race === 'half-orc'){
     details += `<li>Actions: Power of God</li>`;
   }else{details += `<li>Actions: ${actions.join(', ')}</li>`;}
 
@@ -109,3 +111,32 @@ function displayCharacter(race, characterClass, attributes, actions) {
 
 
 
+
+
+function toggleMenu() {
+  var menu = document.getElementById("menu");
+  var bars = document.querySelectorAll('.container12 div');
+  
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
+  
+  bars.forEach(function(bar) {
+    bar.classList.toggle('change');
+  });
+}
+
+function showContent(tabNumber) {
+  var tabs = document.querySelectorAll('.tab');
+  var contents = document.querySelectorAll('.content');
+
+  tabs.forEach(function(tab, index) {
+    tab.classList.remove('active');
+    contents[index].style.display = 'none';
+  });
+
+  tabs[tabNumber - 1].classList.add('active');
+  contents[tabNumber - 1].style.display = 'block';
+}
+
+function search() {
+  // Your search functionality
+}
