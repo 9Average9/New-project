@@ -165,6 +165,7 @@ header {
   width: 100%;
   background-color: #f0f0f07c; 
   border-radius: 10px ; 
+  
  
 }
 
@@ -176,6 +177,7 @@ header {
   border-radius: 10px;
   font-size:medium;
   font-weight: bold;
+  
 }
 
 .tab.active {
@@ -183,27 +185,41 @@ header {
 }
 
 .content {
-  /* Style your content area */
+  /* Existing styles */
   padding: 5%;
-  margin-top: 5%;
+  margin-top: 30%;
+  position: relative; 
 }
 
-#SEARCH{
-  background-color: #6e1d1d; 
-  color: white; 
-  padding: 10px 20px; 
-  border: none;
-  border-radius: 5px; 
-  cursor: pointer;
-  transition: background-color 0.3s ease; 
-}
 
-.SEARCH:hover {
-  background-color: #FF3333; /* Darker red on hover */
-}
-#searchInput{
+#searchInput {
+  position: fixed;
+  top: 13%;
+  left: 15%;
+
   background-color: #444;
   border: none;
-  padding: 5px 15px;
+  padding: 6px 15px;
   font-size: larger;
+  border-radius: 5px;
+  margin-right: 10px; 
+}
+
+#SEARCH {
+  position: fixed;
+  top: 13.11%;
+  left: 73%;
+
+  background-color: #6e1d1d;
+  color: white;
+  padding: 9px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#SEARCH:hover {
+  background-color: #b02222;
+  /* Darker red on hover */
 }
