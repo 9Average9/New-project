@@ -128,7 +128,7 @@ header {
   z-index: 2;
   border-radius: 10px;
   width: 70%;
-  max-height: 80%; /* Set a maximum height for the menu */
+  max-height: 50%; /* Set a maximum height for the menu */
   overflow-y: auto; /* Enable vertical scrolling when content overflows */
 }
 
