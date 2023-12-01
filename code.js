@@ -31,7 +31,7 @@ function generateCharacter() {
 
 function generateAttributes(characterClass, race) {
   let attributes = {
-    AC: Math.floor(Math.random()* 5 + 14),
+    AC: Math.floor(Math.random() * 5 + 14),
     strength: Math.floor(Math.random() * 8) + 10,
     dexterity: Math.floor(Math.random() * 8) + 10,
     intelligence: Math.floor(Math.random() * 8) + 10,
@@ -40,29 +40,35 @@ function generateAttributes(characterClass, race) {
     charisma: Math.floor(Math.random() * 8) + 10,
   };
 
-  // Make adjustments based on specific classes add specifications for races
+  const weapons = ['Sword', 'Bow', 'Staff', 'Dagger', 'Axe']; 
+  
   if (characterClass === 'fighter' || characterClass === 'ranger' || characterClass === 'barbarian' || characterClass === 'paladin') {
     attributes.strength = Math.floor(Math.random() * 10) + 10;
-  }/*add other specifications here  */
+    attributes.weapon = weapons[Math.floor(Math.random() * weapons.length)]; // Assign a random weapon
+  } else if(characterClass ==='rogue' || characterClass ==='bard'){
+    attributes.weapon = 'dagger';
+    attributes.weapon = 'Lute';
+  }
+  else {
+    attributes.weapon = 'None'; 
+  }
 
-  // Dragonborn warlock gets an extra charisma boost
+  
   if (characterClass === 'warlock' && race === 'dragonborn') {
     attributes.charisma = 18;
   }
 
   // Add more conditional adjustments for other classes or races as needed...
-if (characterClass === 'paladin' && race === 'half-orc'){
-  attributes.AC = 20; 
-  attributes.charisma =20;
-  attributes.constitution =20;
-  attributes.dexterity =20;
-  attributes.intelligence =20;
-  attributes.intelligence =20;
-  attributes.strength =20;
-  attributes.wisdom =20;
-  
-}
-
+  if (characterClass === 'paladin' && race === 'half-orc') {
+    attributes.AC = 20;
+    attributes.charisma = 20;
+    attributes.constitution = 20;
+    attributes.dexterity = 20;
+    attributes.intelligence = 20;
+    attributes.intelligence = 20;
+    attributes.strength = 20;
+    attributes.wisdom = 20;
+  }
 
   return attributes;
 }
@@ -99,6 +105,7 @@ function displayCharacter(race, characterClass, attributes, actions) {
   details += `<li>Constitution: ${attributes.constitution}</li>`;
   details += `<li>Wisdom: ${attributes.wisdom}</li>`;
   details += `<li>Charisma: ${attributes.charisma}</li>`;
+  details += `<li>Weapon: ${attributes.weapon}</li>`
   if (characterClass === 'paladin' && race === 'half-orc'){
     details += `<li>Actions: Power of God</li>`;
   }else{details += `<li>Actions: ${actions.join(', ')}</li>`;}

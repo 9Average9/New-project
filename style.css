@@ -128,7 +128,7 @@ header {
   z-index: 2; 
   border-radius: 10px;
   width: 70%;
-  padding-bottom: 45%;
+
 }
 
 .menu ul {
@@ -163,7 +163,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #f0f0f07c; 
+  
   border-radius: 10px ; 
   
  
@@ -177,49 +177,66 @@ header {
   border-radius: 10px;
   font-size:medium;
   font-weight: bold;
-  
+ 
+}
+
+.tab:hover{
+  color: #911414;
+  background-color: #1f1f1f;
 }
 
 .tab.active {
-  background-color: #ccc; /* Background color for the active tab */
+  background-color: #911414; /* Background color for the active tab */
+  color: white;
 }
 
 .content {
   /* Existing styles */
-  padding: 5%;
-  margin-top: 30%;
+
+  margin-top: 10%;
   position: relative; 
+  margin-bottom: 2%;
+  font-size: large;
 }
 
 
-#searchInput {
-  position: fixed;
-  top: 13%;
-  left: 15%;
 
-  background-color: #444;
+.search-container {
+  position: sticky;
+  bottom: 0;
+  background-color: #2c2c2c;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+#searchInput {
+  /* Your existing styles */
+  margin-right: 10px;
+  border-radius: 5px;
   border: none;
   padding: 6px 15px;
   font-size: larger;
-  border-radius: 5px;
-  margin-right: 10px; 
+  flex-grow: 1; /* Allow the input to grow within the flex container */
 }
 
 #SEARCH {
-  position: fixed;
-  top: 13.11%;
-  left: 73%;
-
+ 
   background-color: #6e1d1d;
   color: white;
-  padding: 9px 20px;
+  padding: 6px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: 2%;
+ 
 }
 
 #SEARCH:hover {
   background-color: #b02222;
-  /* Darker red on hover */
 }
