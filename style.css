@@ -321,3 +321,13 @@ button i {
   left: 0%;
   opacity: 0;
 }
+
+@media only screen and (max-width: 600px){
+#GG{
+  opacity: 0;
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+}
+
+}
