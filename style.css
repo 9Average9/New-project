@@ -2,17 +2,18 @@ body {
   background-color: #1f1f1f;
   color: #ffffff;
   font-family: 'Arial', sans-serif;
-  margin: 0%;
- 
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
   background-image: url('pexels-andy-atkins-2609226.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 100vh; 
-  margin: 0; 
-  padding: 0; 
- 
+  height: 100vh;
 }
 
 
