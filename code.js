@@ -1,7 +1,7 @@
 
 
 const classAction = {
-  fighter: ['Bash', 'Power Strike', 'Defensive Stance', 'slash', 'assess'],
+  fighter: ['Action Surge', 'Second Wind', 'Extra Attack', 'Precision Attack (Battle Master)', 'Rally (Battle Master)', 'Menacing Attack (Battle Master)', 'Indomitable'],
   wizard: ['Fireball', 'Ice Spear', 'Teleport', 'Thunderbolt', 'melt'],
   druid: ['beast speech', 'camo', 'elemental arrow', 'change', 'wings'],
   bard: ['stuff1','stuff2','stuff3','stuff4','stuff5'],
@@ -16,12 +16,11 @@ const classAction = {
 };
 
 function generateCharacter() {
-  
-
   const selectedRace = document.getElementById('race-selection').value;
   const selectedClass = document.getElementById('class-selection').value;
+  const selectedLevel = document.getElementById('level-selection').value;
 
-  const characterAttributes = generateAttributes(selectedClass, selectedRace);
+  const characterAttributes = generateAttributes(selectedClass, selectedRace, selectedLevel);
   const characterActions = generateActions(selectedClass);
 
   displayCharacter(selectedRace, selectedClass, characterAttributes, characterActions);
@@ -29,7 +28,7 @@ function generateCharacter() {
 
 
 
-function generateAttributes(characterClass, race) {
+function generateAttributes(characterClass, race,level) {
   let attributes = {
     AC: Math.floor(Math.random() * 5 + 14),
     strength: Math.floor(Math.random() * 8) + 10,
@@ -38,18 +37,20 @@ function generateAttributes(characterClass, race) {
     constitution: Math.floor(Math.random() * 8) + 10,
     wisdom: Math.floor(Math.random() * 8) + 10,
     charisma: Math.floor(Math.random() * 8) + 10,
+    weapon: ''
   };
+
+
+
 
   const weapons = ['Sword', 'Bow', 'Staff', 'Dagger', 'Axe']; 
   
   if (characterClass === 'fighter' || characterClass === 'ranger' || characterClass === 'barbarian' || characterClass === 'paladin') {
     attributes.strength = Math.floor(Math.random() * 10) + 10;
-    attributes.weapon = weapons[Math.floor(Math.random() * weapons.length)]; // Assign a random weapon
-  } else if(characterClass ==='rogue' || characterClass ==='bard'){
-    attributes.weapon = 'dagger';
-    attributes.weapon = 'Lute';
-  }
-  else {
+    attributes.weapon = weapons[Math.floor(Math.random() * weapons.length)];
+  } else if (characterClass === 'rogue') {
+    attributes.weapon = 'Dagger';
+  } else {
     attributes.weapon = 'None'; 
   }
 
@@ -69,6 +70,16 @@ function generateAttributes(characterClass, race) {
     attributes.strength = 20;
     attributes.wisdom = 20;
   }
+
+  const levelModifier = Math.floor((level - 10) * 0.5); // Round down the level modifier
+
+  for (const attribute in attributes) {
+    if (attributes.hasOwnProperty(attribute) && attribute !== 'weapon') {
+      attributes[attribute] += levelModifier;
+      attributes[attribute] = Math.floor(attributes[attribute]); // Round down each attribute
+    }
+  }
+
 
   return attributes;
 }

@@ -1,0 +1,126 @@
+Sorcerer:
+
+Fire Bolt: A cantrip that hurls a mote of fire at a target within range.
+Chaos Bolt: A spell that hurls a bolt of chaotic energy, potentially bouncing to a different target.
+Mage Armor: A spell that grants a protective magical force around you, increasing your base armor class.
+Shield: A spell that creates an invisible barrier, granting a bonus to AC and negating magic missile attacks.
+Scorching Ray: A spell that hurls rays of fire at targets, allowing multiple attack rolls.
+Quickened Spell: Metamagic that allows you to cast a spell as a bonus action.
+Twinned Spell: Metamagic that allows you to cast a spell targeting two creatures at once without affecting its level.
+
+
+Warlock:
+
+Eldritch Blast: A cantrip that fires blasts of magical energy at targets.
+Hex: A spell that curses a target, dealing extra damage and imposing disadvantage on ability checks.
+Armor of Agathys: A spell that surrounds you with icy armor, damaging attackers who hit you with melee attacks.
+Hellish Rebuke: A spell that retaliates against damage, engulfing the attacker in hellish flames.
+Pact of the Blade: A boon that allows you to create a pact weapon and summon it to your hand.
+Pact of the Tome: A boon that grants additional cantrips from any class's spell list.
+Pact of the Chain: A boon that grants a familiar spirit, offering unique abilities and forms.
+Wizard:
+
+Fireball: A spell that hurls a fireball, damaging creatures within a sphere.
+Mage Armor: A spell that grants a protective magical force around you, increasing your base armor class.
+Shield: A spell that creates an invisible barrier, granting a bonus to AC and negating magic missile attacks.
+Magic Missile: A spell that launches magical darts to strike multiple targets unerringly.
+Counterspell: A spell that disrupts other spellcasting within range, potentially negating a spell being cast.
+Arcane Recovery: A feature allowing you to recover a portion of your expended spell slots during a short rest.
+Arcane Tradition (varies): Specialized abilities tied to the chosen school of magic, such as Divination, Evocation, or Abjuration.
+
+Monk:
+
+Flurry of Blows: Expends a Ki point to make two unarmed strikes as a bonus action after taking the Attack action.
+Patient Defense: Spends a Ki point to take the Dodge action as a bonus action on their turn.
+Step of the Wind: Spends a Ki point to take the Dash or Disengage action as a bonus action on their turn, as well as jump farther.
+Stunning Strike: Spends a Ki point to attempt to stun a creature with a successful melee hit, forcing a Constitution saving throw.
+Deflect Missiles: Uses their reaction to reduce damage from a ranged weapon attack by an amount determined by a Monk's level plus Dexterity modifier.
+Shadow Step (Way of Shadow): Teleports between shadows up to 60 feet as a bonus action, gaining advantage on the first melee attack made before the end of the turn.
+Stillness of Mind: Uses an action to end one effect on themselves causing them to be charmed or frightened.
+
+
+Paladin:
+
+Divine Smite: Expends spell slots to deal extra damage on a successful melee attack, increasing with higher spell slot levels.
+Lay on Hands: Heals damage or cures diseases using a pool of healing power equal to the Paladin's level times five.
+Divine Sense: Detects the presence of celestial, fiend, or undead within 60 feet.
+Sacred Weapon (Oath of the Ancients): Empowers their weapon with radiant energy for one minute as a bonus action, gaining bonuses to attack and damage rolls.
+Blinding Smite: Deals radiant damage and potentially blinds a target on a successful melee hit.
+Cleansing Touch: Uses an action to end spells of 3rd level or lower on themselves or another creature.
+Aura of Protection: Adds the Paladin's Charisma modifier to saving throws for themselves and nearby allies.
+
+
+
+Ranger:
+
+Hunter's Mark: Marks a target for extra damage and tracking capabilities as a bonus action.
+Colossus Slayer (Hunter): Deals extra damage to wounded targets when they hit with a weapon attack.
+Horde Breaker (Hunter): Attacks a second creature within 5 feet after hitting the first as part of an Attack action.
+Ensnaring Strike: Adds restraining effects to a successful weapon attack, potentially restraining a creature.
+Escape the Horde (Horizon Walker): Teleports up to 10 feet before making a melee attack as a bonus action without provoking opportunity attacks.
+Planar Warrior (Horizon Walker): Deals extra force damage to a chosen target once on each of the Ranger's turns.
+Feral Senses: Heightens their senses to detect hidden or invisible creatures, gaining advantage on Wisdom (Perception) checks to detect them.
+Rogue:
+
+Sneak Attack: Deals extra damage when having advantage on the attack roll or when an enemy of the target is within 5 feet of it, once per turn.
+Cunning Action: Uses a bonus action to Dash, Disengage, or Hide.
+Uncanny Dodge: Halves damage from an attack using their reaction.
+Evasion: Takes no damage on a successful Dexterity saving throw against an effect that would halve damage on a failure.
+Reliable Talent: Treats any roll of 9 or lower on a proficient ability check as a 10.
+Blindsense: Detects nearby creatures without relying on sight within a specific range.
+Slippery Mind: Gains proficiency in saving throws against certain conditions, including charm and frighten effects.
+
+Cleric:
+
+Sacred Flame: A cantrip that targets a creature, dealing radiant damage if it fails a Dexterity saving throw.
+Guiding Bolt: A spell that shoots a bolt of light, dealing damage and granting advantage on the next attack against the target.
+Healing Word: A spell to instantly heal an ally within range using a bonus action.
+Spiritual Weapon: Summons a weapon that attacks enemies as a bonus action each turn.
+Inflict Wounds: A spell that deals necrotic damage to a creature touched.
+Divine Strike: Adds extra damage to weapon attacks using divine energy.
+Spirit Guardians: Summons spirits to protect you, dealing radiant damage to enemies within its range.
+
+
+Druid:
+
+Thorn Whip: A cantrip that deals piercing damage and pulls a target closer.
+Entangle: A spell that restrains creatures in an area with grasping vines.
+Shillelagh: Enhances a club or quarterstaff, allowing it to use your spellcasting ability for attack and damage rolls.
+Flame Blade: Summons a fiery blade dealing fire damage.
+Call Lightning: Summons lightning to strike multiple targets in an area.
+Moonbeam: Creates a column of radiant energy damaging creatures in its area.
+Wild Shape: Transform into combat-ready creatures to gain their abilities.
+
+
+
+Fighter:
+
+Action Surge: Take an additional action on your turn.
+Second Wind: Heal yourself by using a bonus action.
+Extra Attack: Make additional attacks during your Attack action.
+Precision Attack (Battle Master): Add superiority dice to your attack rolls.
+Rally (Battle Master): Use a bonus action to grant temporary hit points to an ally.
+Menacing Attack (Battle Master): Inflict fear on a target with a successful attack.
+Indomitable: Reroll a failed saving throw.
+
+Barbarian:
+
+Rage: Enhances combat abilities by granting advantage on Strength checks and saving throws, resistance to bludgeoning, piercing, and slashing damage, and bonus damage with melee attacks.
+Reckless Attack: Gain advantage on melee weapon attacks during your turn, but foes have advantage on attacks against you.
+Feral Instinct: Gain advantage on initiative rolls and avoid surprise attacks while raging.
+Relentless Rage: Stay conscious at 0 hit points with successful Constitution saving throws while raging.
+Retaliation: Counterattack when hit in melee while raging.
+Fast Movement: Increase movement speed while not wearing heavy armor.
+Primal Champion: At higher levels, gain substantial boosts to Strength and Constitution scores.
+
+
+
+Bard:
+
+Dissonant Whispers: A spell that deals psychic damage, forces a target to use its reaction to move away, and provokes opportunity attacks.
+Thunderwave: A spell that emits a wave of thunderous force in a 15-foot cube, damaging and pushing creatures away.
+Healing Word: A spell to instantly heal an ally within range using a bonus action.
+Vicious Mockery: A cantrip that deals psychic damage and imposes disadvantage on the target's next attack.
+Blade Flourish: A College of Swords Bard can use Blade Flourish to enhance attacks, damage, and movement.
+Countercharm: Grant advantage on saves against being frightened or charmed for you and nearby allies.
+Cutting Words: A College of Lore Bard can use Cutting Words to reduce an enemy's attack, damage, or ability check by rolling Bardic Inspiration.

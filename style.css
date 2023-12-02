@@ -90,7 +90,7 @@ header {
 
 .container12 {
   position: absolute;
-  top: 16%; 
+  top: 13%; 
   right: 5%; 
   display: inline-block;
   cursor: pointer;
@@ -246,7 +246,7 @@ header {
 }
 
 
-@media only screen and (max-width: 410px) {
+@media only screen and (max-width: 470px) {
   
 
   .menu {
@@ -262,8 +262,18 @@ header {
     z-index: 2;
     border-radius: 10px;
     width: 100%;
-    max-height: 50%; /* Set a maximum height for the menu */
+    max-height: 50%; 
     overflow-y: auto; 
+    
   }
 
+}
+
+#actionsInDepth{
+background-color: #911414;
+color: #fff;
+border: none;
+border-radius: 10px;
+padding: 2%;
+margin-top: 5px;
 }
