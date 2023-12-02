@@ -129,7 +129,7 @@ header {
   border: 1px solid #ccc;
   z-index: 2;
   border-radius: 10px;
-  width: 65%;
+  width: 80%;
   max-height: 50%; /* Set a maximum height for the menu */
   overflow-y: auto; 
 }
