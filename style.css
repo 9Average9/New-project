@@ -185,12 +185,14 @@ header {
 
 .tab:hover{
   color: #911414;
-  background-color: #1f1f1f;
+  background-color: #6b6b6b;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .tab.active {
   background-color: #911414; /* Background color for the active tab */
   color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .content {
@@ -304,4 +306,9 @@ background-color: rgb(176, 34, 34);
   font-weight: bolder;
   color: white;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+p{
+  color: rgb(0, 0, 0);
+  text-shadow: none;
 }
