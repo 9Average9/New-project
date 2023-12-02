@@ -1,8 +1,8 @@
 
 
 const classAction = {
-  fighter: ['Action Surge', 'Second Wind', 'Extra Attack', 'Precision Attack (Battle Master)', 'Rally (Battle Master)', 'Menacing Attack (Battle Master)', 'Indomitable'],
-  wizard: ['Fireball', 'Ice Spear', 'Teleport', 'Thunderbolt', 'melt'],
+  fighter: ['Action Surge', 'Second Wind', 'Extra Attack', 'Precision Attack ', 'Rally ', 'Menacing Attack ', 'Indomitable'],
+  wizard: ['Fireball', 'Mage Armor', 'Shield', 'Magic Missile', 'Counterspell', 'Blight', 'Vampiric Touch'],
   druid: ['beast speech', 'camo', 'elemental arrow', 'change', 'wings'],
   bard: ['stuff1','stuff2','stuff3','stuff4','stuff5'],
   monk: ['stuff1','stuff2','stuff3','stuff4','stuff5'],
@@ -28,7 +28,7 @@ function generateCharacter() {
 
 
 
-function generateAttributes(characterClass, race,level) {
+function generateAttributes(characterClass, race, level) {
   let attributes = {
     AC: Math.floor(Math.random() * 5 + 14),
     strength: Math.floor(Math.random() * 8) + 10,
@@ -37,40 +37,44 @@ function generateAttributes(characterClass, race,level) {
     constitution: Math.floor(Math.random() * 8) + 10,
     wisdom: Math.floor(Math.random() * 8) + 10,
     charisma: Math.floor(Math.random() * 8) + 10,
-    weapon: ''
+    weapon: '',
+    spellsaveDC: '',
+    spellhit: '',
   };
 
+  const weapons = ['Sword', 'Bow', 'Staff', 'Dagger', 'Axe'];
 
-
-
-  const weapons = ['Sword', 'Bow', 'Staff', 'Dagger', 'Axe']; 
-  
   if (characterClass === 'fighter' || characterClass === 'ranger' || characterClass === 'barbarian' || characterClass === 'paladin') {
     attributes.strength = Math.floor(Math.random() * 10) + 10;
     attributes.weapon = weapons[Math.floor(Math.random() * weapons.length)];
   } else if (characterClass === 'rogue') {
     attributes.weapon = 'Dagger';
   } else {
-    attributes.weapon = 'None'; 
+    attributes.weapon = 'None';
   }
 
-  
   if (characterClass === 'warlock' && race === 'dragonborn') {
     attributes.charisma = 18;
   }
 
-  // Add more conditional adjustments for other classes or races as needed...
-  
-
-  const levelModifier = Math.floor((level - 10) * 0.5); // Round down the level modifier
-
-  for (const attribute in attributes) {
-    if (attributes.hasOwnProperty(attribute) && attribute !== 'weapon') {
-      attributes[attribute] += levelModifier;
-      attributes[attribute] = Math.floor(attributes[attribute]); // Round down each attribute
-    }
+  if (characterClass === 'warlock' || characterClass === 'wizard' || characterClass === 'sorcerer') {
+    attributes.spellhit = 7 + Math.floor((level - 10) * 0.5); // Increment spellhit by 0.5 for each level above 10
+    attributes.spellsaveDC = 13 + Math.floor((level - 10) * 0.25);
+  } else {
+    attributes.spellhit = '';
+    attributes.spellsaveDC = '';
   }
 
+
+
+  const levelModifier = Math.floor((level - 10) * 0.5); // 
+
+  for (const attribute in attributes) {
+    if (attributes.hasOwnProperty(attribute) && attribute !== 'weapon' && attribute !== 'spellhit') {
+      attributes[attribute] += levelModifier;
+      attributes[attribute] = Math.floor(attributes[attribute]);
+    }
+  }
 
   return attributes;
 }
@@ -109,6 +113,9 @@ function displayCharacter(race, characterClass, attributes, actions) {
   details += `<li>Charisma: ${attributes.charisma}</li>`;
   details += `<li>Weapon: ${attributes.weapon}</li>`
   details += `<li>Actions: ${actions.join(', ')}</li>`;
+  details += `<li>Spell hit bonus: ${attributes.spellhit}</li>`
+  details += `<li>Spell save DC: ${attributes.spellsaveDC}</li>`
+
 
 
   characterDetails.innerHTML = details;

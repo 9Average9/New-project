@@ -89,7 +89,7 @@ header {
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: larger;
-  margin-bottom: 5%;
+  margin-bottom: -5%;
 }
 
 #character-details button:hover {

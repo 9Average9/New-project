@@ -18,6 +18,7 @@ Hellish Rebuke: A spell that retaliates against damage, engulfing the attacker i
 Pact of the Blade: A boon that allows you to create a pact weapon and summon it to your hand.
 Pact of the Tome: A boon that grants additional cantrips from any class's spell list.
 Pact of the Chain: A boon that grants a familiar spirit, offering unique abilities and forms.
+
 Wizard:
 
 Fireball: A spell that hurls a fireball, damaging creatures within a sphere.
@@ -126,5 +127,5 @@ Countercharm: Grant advantage on saves against being frightened or charmed for y
 Cutting Words: A College of Lore Bard can use Cutting Words to reduce an enemy's attack, damage, or ability check by rolling Bardic Inspiration.
 
 
---------------------------------------------------------------
+
 
