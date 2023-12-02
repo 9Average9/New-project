@@ -3,7 +3,22 @@ body {
   color: #ffffff;
   font-family: 'Arial', sans-serif;
   margin: 0%;
+ 
+  background-image: url('pexels-andy-atkins-2609226.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh; 
+  margin: 0; 
+  padding: 0; 
+ 
 }
+
+
+
+
+
 
 header {
   background-color: #6e1d1d;
@@ -19,14 +34,16 @@ header {
   max-width: 600px;
   padding: 20px;
   background-color: #2c2c2c;
-  border-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-top: 0%;
 }
 
 .section-container {
   display: flex;
-  justify-content: center; /* Horizontally center the items */
-  gap: 15px; /* Adjust the gap between elements */
+  justify-content: center; 
+  gap: 15px; 
 }
 
 .section-container h2 {
@@ -70,6 +87,7 @@ header {
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: larger;
+  margin-bottom: 5%;
 }
 
 #character-details button:hover {
@@ -131,7 +149,7 @@ header {
   z-index: 2;
   border-radius: 10px;
   width: 80%;
-  max-height: 50%; /* Set a maximum height for the menu */
+  max-height: 55%; 
   overflow-y: auto; 
 }
 .menu::-webkit-scrollbar{
@@ -207,48 +225,6 @@ header {
 
 
 
-.search-container {
-  position: sticky;
-  bottom: 0;
-  background-color: #2c2c2c;
-  padding: 10px;
-  border-radius: 10px;
-  z-index: 2; 
-}
-
-.search-bar {
-  display: flex;
-  align-items: center;
-}
-
-#searchInput {
-  /* Your existing styles */
-  margin-right: 10px;
-  border-radius: 5px;
-  border: none;
-  width: 60%;
-  font-size: larger;
-  flex-grow: 1; 
-}
-
-#SEARCH {
- 
-  background-color: #6e1d1d;
-  color: white;
-  padding: 6px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 2%;
- 
-}
-
-#SEARCH:hover {
-  background-color: #b02222;
-}
-
-
 @media only screen and (max-width: 410px) {
   
 
@@ -313,4 +289,26 @@ background-color: rgb(176, 34, 34);
 p{
   color: rgb(0, 0, 0);
   text-shadow: none;
+}
+
+
+
+.character-actions {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  background-color: #911414;
+  color: white;
+}
+
+button i {
+  margin-right: 5px;
 }

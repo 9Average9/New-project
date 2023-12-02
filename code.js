@@ -155,9 +155,7 @@ function showContent(tabNumber) {
   contents[tabNumber - 1].style.display = 'block';
 }
 
-function search() {
-  // Your search functionality
-}
+
 
 
 var coll = document.getElementsByClassName("collapsible");
@@ -174,3 +172,4 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+

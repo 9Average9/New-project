@@ -124,3 +124,7 @@ Vicious Mockery: A cantrip that deals psychic damage and imposes disadvantage on
 Blade Flourish: A College of Swords Bard can use Blade Flourish to enhance attacks, damage, and movement.
 Countercharm: Grant advantage on saves against being frightened or charmed for you and nearby allies.
 Cutting Words: A College of Lore Bard can use Cutting Words to reduce an enemy's attack, damage, or ability check by rolling Bardic Inspiration.
+
+
+--------------------------------------------------------------
+
