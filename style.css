@@ -90,7 +90,7 @@ header {
 
 .container12 {
   position: absolute;
-  top: 13%; 
+  top: 16%; 
   right: 5%; 
   display: inline-block;
   cursor: pointer;
@@ -246,7 +246,7 @@ header {
 }
 
 
-@media only screen and (max-width: 470px) {
+@media only screen and (max-width: 410px) {
   
 
   .menu {
