@@ -60,16 +60,7 @@ function generateAttributes(characterClass, race,level) {
   }
 
   // Add more conditional adjustments for other classes or races as needed...
-  if (characterClass === 'paladin' && race === 'half-orc') {
-    attributes.AC = 20;
-    attributes.charisma = 20;
-    attributes.constitution = 20;
-    attributes.dexterity = 20;
-    attributes.intelligence = 20;
-    attributes.intelligence = 20;
-    attributes.strength = 20;
-    attributes.wisdom = 20;
-  }
+  
 
   const levelModifier = Math.floor((level - 10) * 0.5); // Round down the level modifier
 
