@@ -117,9 +117,7 @@ function displayCharacter(race, characterClass, attributes, actions) {
   details += `<li>Wisdom: ${attributes.wisdom}</li>`;
   details += `<li>Charisma: ${attributes.charisma}</li>`;
   details += `<li>Weapon: ${attributes.weapon}</li>`
-  if (characterClass === 'paladin' && race === 'half-orc'){
-    details += `<li>Actions: Power of God</li>`;
-  }else{details += `<li>Actions: ${actions.join(', ')}</li>`;}
+  details += `<li>Actions: ${actions.join(', ')}</li>`;
 
 
   characterDetails.innerHTML = details;
@@ -173,3 +171,27 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 
+function godStats(){
+  const characterDetails = document.getElementById('character-info');
+  let details = '';
+  
+
+  details += `<li>Race: Angel </li>`;
+  details += `<li>Class: Warrior </li>`;
+  details += `<li>Armor Class: 30 </li>`;
+  details += `<li>Strength: 25 </li>`;
+  details += `<li>Dexterity: 25 </li>`;
+  details += `<li>Intelligence: 25 </li>`;
+  details += `<li>Constitution: 25 </li>`;
+  details += `<li>Wisdom: 25 </li>`;
+  details += `<li>Charisma: 25 </li>`;
+  details += `<li>Weapon: 25 </li>`
+  details += `<li>Actions: Divine Action</li>`;
+
+  characterDetails.innerHTML = details;
+
+
+
+
+
+}
