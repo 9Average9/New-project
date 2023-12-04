@@ -7,19 +7,6 @@ body {
   overflow: hidden;
 }
 
-body {
-  background-image: url('pexels-andy-atkins-2609226.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100vh;
-  
-}
-
-
-
-
 
 
 header {
@@ -322,3 +309,19 @@ button i {
   opacity: 0;
 }
 
+.columns {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.column {
+  width: 100%; /* Occupy full width on mobile */
+  margin-bottom: 20px; /* Add space between columns */
+}
+
+/* Adjust font size for better readability on mobile */
+ul li {
+  font-size: 16px;
+  line-height: 1.6;
+}

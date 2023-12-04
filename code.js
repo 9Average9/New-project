@@ -18,13 +18,35 @@ const classAction = {
 function generateCharacter() {
   const selectedRace = document.getElementById('race-selection').value;
   const selectedClass = document.getElementById('class-selection').value;
-  const selectedLevel = document.getElementById('level-selection').value;
+  const selectedLevel = parseInt(document.getElementById('level-selection').value);
 
   const characterAttributes = generateAttributes(selectedClass, selectedRace, selectedLevel);
   const characterActions = generateActions(selectedClass);
+  const spellSlots = calculateSpellSlots(selectedClass, selectedLevel);
 
-  displayCharacter(selectedRace, selectedClass, characterAttributes, characterActions);
+  displayCharacter(selectedRace, selectedClass, characterAttributes, characterActions, spellSlots);
 }
+
+function calculateSpellSlots(characterClass, level) {
+
+  if (characterClass === 'wizard') {
+    if (level === 10) {
+      return 2; // Level 1: 2 first-level spell slots
+    } else if (level === 11) {
+      return 3; // Level 2: 3 first-level spell slots
+    } else if (level === 12) {
+      return 40; // Level 3: 4 second-level spell slots
+    }
+    // Add other level calculations as needed
+  }
+  // Implement calculations for other classes
+
+  return 'None'; 
+}
+
+
+
+
 
 
 
@@ -96,32 +118,45 @@ function generateActions(characterClass) {
   return selectedActions;
 }
 
-function displayCharacter(race, characterClass, attributes, actions) {
+function displayCharacter(race, characterClass, attributes, actions, spellSlots) {
   const characterDetails = document.getElementById('character-info');
   let details = '';
   
 
 
+  details += `<div class="columns">`;
+  details += `<div class="column">`;
+  details += `<ul>`;
   details += `<li>Race: ${race}</li>`;
   details += `<li>Class: ${characterClass}</li>`;
   details += `<li>Armor Class: ${attributes.AC}</li>`;
+  details += `<li>Weapon: ${attributes.weapon}</li>`;
+  details += `<li>Actions: ${actions.join(', ')}</li>`;
+  details += `<li>Spell hit bonus: ${attributes.spellhit}</li>`;
+  details += `<li>Spell save DC: ${attributes.spellsaveDC}</li>`;
+  details += `<li>Spell Slots: ${spellSlots}</li>`;
+  details += `</ul>`;
+  details += `</div>`;
+  
+  details += `<div class="column">`;
+  details += `<ul>`;
   details += `<li>Strength: ${attributes.strength}</li>`;
   details += `<li>Dexterity: ${attributes.dexterity}</li>`;
   details += `<li>Intelligence: ${attributes.intelligence}</li>`;
   details += `<li>Constitution: ${attributes.constitution}</li>`;
   details += `<li>Wisdom: ${attributes.wisdom}</li>`;
   details += `<li>Charisma: ${attributes.charisma}</li>`;
-  details += `<li>Weapon: ${attributes.weapon}</li>`
-  details += `<li>Actions: ${actions.join(', ')}</li>`;
-  details += `<li>Spell hit bonus: ${attributes.spellhit}</li>`
-  details += `<li>Spell save DC: ${attributes.spellsaveDC}</li>`
-
-
+  details += `<li>Spell hit bonus: ${attributes.spellhit}</li>`;
+  details += `<li>Spell save DC: ${attributes.spellsaveDC}</li>`;
+ 
+  details += `</ul>`;
+  details += `</div>`;
+  details += `</div>`;
 
   characterDetails.innerHTML = details;
-
-  
 }
+
+
 
 
 
