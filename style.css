@@ -352,18 +352,16 @@ font-size: large;
 }
 #addedActions {
   position: fixed;
-  bottom: 20px; 
+  bottom:3%; 
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   width: 80%; 
   max-width: 600px; 
-  padding: 10px;
-  
-  height: 180px; 
   overflow-y: auto; 
+  max-height: 150px;
 }
 #addedActions::-webkit-scrollbar {
-  width: 0; /* Hide scrollbar width */
-  height: 0; /* Hide scrollbar height */
+  width: 0; 
+  height: 0; 
 }
