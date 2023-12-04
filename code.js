@@ -1,7 +1,7 @@
 
 
 const classAction = {
-  fighter: ['Action Surge', 'Second Wind', 'Extra Attack', 'Precision Attack ', 'Rally ', 'Menacing Attack ', 'Indomitable'],
+  fighter: ['Action Surge', 'Second Wind', 'Extra Attack', 'Precision Attack', 'Rally ', 'Menacing Attack ', 'Indomitable'],
   wizard: ['Fireball', 'Mage Armor', 'Shield', 'Magic Missile', 'Counterspell', 'Blight', 'Vampiric Touch'],
   druid: ['beast speech', 'camo', 'elemental arrow', 'change', 'wings'],
   bard: ['stuff1','stuff2','stuff3','stuff4','stuff5'],
@@ -25,21 +25,297 @@ function generateCharacter() {
   const spellSlots = calculateSpellSlots(selectedClass, selectedLevel);
 
   displayCharacter(selectedRace, selectedClass, characterAttributes, characterActions, spellSlots);
+
+  const addedActionsContainer = document.getElementById('addedActions');
+  if (addedActionsContainer) {
+    const addedDivs = addedActionsContainer.querySelectorAll('.added-div');
+    addedDivs.forEach(div => {
+      addedActionsContainer.removeChild(div); 
+    });
+  } else {
+    console.error('Container not found');
+  }
 }
 
 function calculateSpellSlots(characterClass, level) {
 
-  if (characterClass === 'wizard') {
+  if (characterClass === 'wizard' || characterClass === 'sorcerer' || characterClass === 'warlock' ||  characterClass === 'bard' || characterClass === 'cleric' || characterClass === 'druid') {
     if (level === 10) {
-      return 2; // Level 1: 2 first-level spell slots
+      return ` <select id="spellSLOTS">
+      <option >4: level 1</option>
+      <option >3: level 2</option>
+      <option >3: level 3</option>
+      <option >3: level 4</option>
+      <option >2: level 5</option>
+    </select>`; 
     } else if (level === 11) {
-      return 3; // Level 2: 3 first-level spell slots
+      return ` <select id="spellSLOTS">
+      <option >4: level 1</option>
+      <option >3: level 2</option>
+      <option >3: level 3</option>
+      <option >3: level 4</option>
+      <option >2: level 5</option>
+      <option >1: level 6</option>
+    </select>`; 
     } else if (level === 12) {
-      return 40; // Level 3: 4 second-level spell slots
-    }
+      return ` <select id="spellSLOTS">
+      <option >4: level 1</option>
+      <option >3: level 2</option>
+      <option >3: level 3</option>
+      <option >3: level 4</option>
+      <option >2: level 5</option>
+      <option >1: level 6</option>
+    </select>`; 
+    } else if (level === 13) {
+      return ` <select id="spellSLOTS">
+      <option >4: level 1</option>
+      <option >3: level 2</option>
+      <option >3: level 3</option>
+      <option >3: level 4</option>
+      <option >2: level 5</option>
+      <option >1: level 6</option>
+      <option >1: level 7</option>
+    </select>`; 
+    } else if (level === 14) {
+      return ` <select id="spellSLOTS">
+      <option >4: level 1</option>
+      <option >3: level 2</option>
+      <option >3: level 3</option>
+      <option >3: level 4</option>
+      <option >2: level 5</option>
+      <option >1: level 6</option>
+      <option >1: level 7</option>
+    </select>`; 
+    } else if (level === 15) {
+      return ` <select id="spellSLOTS">
+      <option >4: level 1</option>
+      <option >3: level 2</option>
+      <option >3: level 3</option>
+      <option >3: level 4</option>
+      <option >2: level 5</option>
+      <option >1: level 6</option>
+      <option >1: level 7</option>
+      <option >1: level 8</option>
+    </select>`; 
+    } else if (level === 16) {
+      return ` <select id="spellSLOTS">
+      <option >4: level 1</option>
+      <option >3: level 2</option>
+      <option >3: level 3</option>
+      <option >3: level 4</option>
+      <option >2: level 5</option>
+      <option >1: level 6</option>
+      <option >1: level 7</option>
+      <option >1: level 8</option>
+    </select>`; 
+    } else if (level === 17) {
+      return ` <select id="spellSLOTS">
+      <option >4: level 1</option>
+      <option >3: level 2</option>
+      <option >3: level 3</option>
+      <option >3: level 4</option>
+      <option >2: level 5</option>
+      <option >1: level 6</option>
+      <option >1: level 7</option>
+      <option >1: level 8</option>
+      <option >1: level 9</option>
+    </select>`; 
+    } else if (level === 18) {
+      return ` <select id="spellSLOTS">
+      <option >4: level 1</option>
+      <option >3: level 2</option>
+      <option >3: level 3</option>
+      <option >3: level 4</option>
+      <option >3: level 5</option>
+      <option >1: level 6</option>
+      <option >1: level 7</option>
+      <option >1: level 8</option>
+      <option >1: level 9</option>
+    </select>`; 
+    } else if (level === 19) {
+      return ` <select id="spellSLOTS">
+      <option >4: level 1</option>
+      <option >3: level 2</option>
+      <option >3: level 3</option>
+      <option >3: level 4</option>
+      <option >3: level 5</option>
+      <option >2: level 6</option>
+      <option >1: level 7</option>
+      <option >1: level 8</option>
+      <option >1: level 9</option>
+    </select>`; 
+    } else if (level === 20) {
+      return ` <select id="spellSLOTS">
+      <option >4: level 1</option>
+      <option >3: level 2</option>
+      <option >3: level 3</option>
+      <option >3: level 4</option>
+      <option >3: level 5</option>
+      <option >2: level 6</option>
+      <option >2: level 7</option>
+      <option >1: level 8</option>
+      <option >1: level 9</option>
+    </select>`; 
+    } 
     // Add other level calculations as needed
+  }else if(characterClass === 'barbarian'){
+    
+    if (level === 10) {
+      return `4 Damage:+3`; 
+    } else if (level === 11) {
+      return ` 4 Damage:+3`; 
+    } else if (level === 12) {
+      return ` 5 Damage:+3`; 
+    } else if (level === 13) {
+      return ` 5 Damage:+3`; 
+    } else if (level === 14) {
+      return ` 5 Damage:+3`; 
+    } else if (level === 15) {
+      return `5 Damage:+3`; 
+    } else if (level === 16) {
+      return `5 Damage:+4`; 
+    } else if (level === 17) {
+      return ` 6 Damage:+4`; 
+    } else if (level === 18) {
+      return `6 Damage:+4`; 
+    } else if (level === 19) {
+      return `6 Damage:+4`; 
+    } else if (level === 20) {
+      return `Unlimited Damage:+4`; 
+    } 
+
+
+  }else if(characterClass === 'paladin' || characterClass === 'ranger'){if (level === 10) {
+    return ` <select id="spellSLOTS">
+    <option >4: level 1</option>
+    <option >3: level 2</option>
+    <option >2: level 3</option>
+  </select>`; 
+  } else if (level === 11) {
+    return ` <select id="spellSLOTS">
+    <option >4: level 1</option>
+    <option >3: level 2</option>
+    <option >3: level 3</option>
+  </select>`; 
+  } else if (level === 12) {
+    return ` <select id="spellSLOTS">
+    <option >4: level 1</option>
+    <option >3: level 2</option>
+    <option >3: level 3</option>
+  </select>`; 
+  } else if (level === 13) {
+    return ` <select id="spellSLOTS">
+    <option >4: level 1</option>
+    <option >3: level 2</option>
+    <option >3: level 3</option>
+    <option >1: level 4</option>
+   
+  </select>`; 
+  } else if (level === 14) {
+    return ` <select id="spellSLOTS">
+    <option >4: level 1</option>
+    <option >3: level 2</option>
+    <option >3: level 3</option>
+    <option >1: level 4</option>
+  </select>`; 
+  } else if (level === 15) {
+    return ` <select id="spellSLOTS">
+    <option >4: level 1</option>
+    <option >3: level 2</option>
+    <option >3: level 3</option>
+    <option >2: level 4</option>
+   
+  </select>`; 
+  } else if (level === 16) {
+    return ` <select id="spellSLOTS">
+    <option >4: level 1</option>
+    <option >3: level 2</option>
+    <option >3: level 3</option>
+    <option >2: level 4</option>
+   
+  </select>`; 
+  } else if (level === 17) {
+    return ` <select id="spellSLOTS">
+    <option >4: level 1</option>
+    <option >3: level 2</option>
+    <option >3: level 3</option>
+    <option >3: level 4</option>
+    <option >1: level 5</option>
+  </select>`; 
+  } else if (level === 18) {
+    return ` <select id="spellSLOTS">
+    <option >4: level 1</option>
+    <option >3: level 2</option>
+    <option >3: level 3</option>
+    <option >3: level 4</option>
+    <option >1: level 5</option>
+  </select>`; 
+  } else if (level === 19) {
+    return ` <select id="spellSLOTS">
+    <option >4: level 1</option>
+    <option >3: level 2</option>
+    <option >3: level 3</option>
+    <option >3: level 4</option>
+    <option >2: level 5</option>
+  </select>`; 
+  } else if (level === 20) {
+    return ` <select id="spellSLOTS">
+    <option >4: level 1</option>
+    <option >3: level 2</option>
+    <option >3: level 3</option>
+    <option >3: level 4</option>
+    <option >2: level 5</option>
+  </select>`; 
+  } 
+
+  } else if(characterClass === 'monk'){if (level === 10) {
+    return `10, Martial arts 1d6`; 
+  } else if (level === 11) {
+    return `11, Martial arts 1d8`; ; 
+  } else if (level === 12) {
+    return `12, Martial arts 1d8`; ; 
+  } else if (level === 13) {
+    return `13, Martial arts 1d8`; ; 
+  } else if (level === 14) {
+    return `14, Martial arts 1d8`; ; 
+  } else if (level === 15) {
+    return `15, Martial arts 1d8`; ; 
+  } else if (level === 16) {
+    return `16, Martial arts 1d8`; ; 
+  } else if (level === 17) {
+    return `17, Martial arts 1d10`; ; 
+  } else if (level === 18) {
+    return `18, Martial arts 1d10`; ; 
+  } else if (level === 19) {
+    return `19, Martial arts 1d10`; ; 
+  } else if (level === 20) {
+    return `20, Martial arts 1d10`; ; 
+  } 
+  }else if(characterClass === 'rogue'){if (level === 10) {
+    return `5d6`; 
+  } else if (level === 11) {
+    return `6d6`; 
+  } else if (level === 12) {
+    return `6d6`; 
+  } else if (level === 13) {
+    return `7d6`; 
+  } else if (level === 14) {
+    return `7d6`; 
+  } else if (level === 15) {
+    return `8d6`; 
+  } else if (level === 16) {
+    return `8d6`;  
+  } else if (level === 17) {
+    return `9d6`; 
+  } else if (level === 18) {
+    return `9d6`; 
+  } else if (level === 19) {
+    return `10d6`; 
+  } else if (level === 20) {
+    return `10d6`;  
+  } 
   }
-  // Implement calculations for other classes
+
 
   return 'None'; 
 }
@@ -80,11 +356,11 @@ function generateAttributes(characterClass, race, level) {
   }
 
   if (characterClass === 'warlock' || characterClass === 'wizard' || characterClass === 'sorcerer') {
-    attributes.spellhit = 7 + Math.floor((level - 10) * 0.5); // Increment spellhit by 0.5 for each level above 10
+    attributes.spellhit = 7 + Math.floor((level - 10) * 0.5); 
     attributes.spellsaveDC = 13 + Math.floor((level - 10) * 0.25);
   } else {
-    attributes.spellhit = '';
-    attributes.spellsaveDC = '';
+    attributes.spellhit = 0;
+    attributes.spellsaveDC = 0;
   }
 
 
@@ -121,34 +397,54 @@ function generateActions(characterClass) {
 function displayCharacter(race, characterClass, attributes, actions, spellSlots) {
   const characterDetails = document.getElementById('character-info');
   let details = '';
-  
 
+  // Create a variable to hold the label for the spell slots or rages
+  let spellSlotsLabel = 'Spell Slots';
+
+  // Check if the character class is Barbarian and change the label accordingly
+  if (characterClass.toLowerCase() === 'barbarian') {
+    spellSlotsLabel = 'Rages';
+    attributes.spellsaveDC = 0;
+  }
+
+  if (characterClass.toLowerCase() === 'monk') {
+    spellSlotsLabel = 'Ki points';
+    attributes.spellsaveDC = 0;
+  }
+
+  if (characterClass.toLowerCase() === 'rogue') {
+    spellSlotsLabel = 'Sneak attack';
+    attributes.spellsaveDC = 0;
+  }
+
+  if (characterClass.toLowerCase() === 'fighter') {
+   attributes.spellsaveDC = 0;
+  }
 
   details += `<div class="columns">`;
   details += `<div class="column">`;
   details += `<ul>`;
   details += `<li>Race: ${race}</li>`;
   details += `<li>Class: ${characterClass}</li>`;
-  details += `<li>Armor Class: ${attributes.AC}</li>`;
+ 
   details += `<li>Weapon: ${attributes.weapon}</li>`;
   details += `<li>Actions: ${actions.join(', ')}</li>`;
   details += `<li>Spell hit bonus: ${attributes.spellhit}</li>`;
   details += `<li>Spell save DC: ${attributes.spellsaveDC}</li>`;
-  details += `<li>Spell Slots: ${spellSlots}</li>`;
+  details += `<li>${spellSlotsLabel}: ${spellSlots}</li>`; 
   details += `</ul>`;
   details += `</div>`;
   
   details += `<div class="column">`;
   details += `<ul>`;
+  details += `<li>Armor Class: ${attributes.AC}</li>`;
   details += `<li>Strength: ${attributes.strength}</li>`;
   details += `<li>Dexterity: ${attributes.dexterity}</li>`;
   details += `<li>Intelligence: ${attributes.intelligence}</li>`;
   details += `<li>Constitution: ${attributes.constitution}</li>`;
   details += `<li>Wisdom: ${attributes.wisdom}</li>`;
   details += `<li>Charisma: ${attributes.charisma}</li>`;
-  details += `<li>Spell hit bonus: ${attributes.spellhit}</li>`;
-  details += `<li>Spell save DC: ${attributes.spellsaveDC}</li>`;
- 
+  
   details += `</ul>`;
   details += `</div>`;
   details += `</div>`;
@@ -157,8 +453,23 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
 }
 
 
+let counter = 1;
 
+function addAction(textToAdd) {
+  const newDiv = document.createElement('div');
+  newDiv.textContent = textToAdd;
+  newDiv.id = `newAction_${counter++}`; 
+  newDiv.classList.add('added-div'); 
+  document.body.appendChild(newDiv);
 
+  const addedActionsContainer = document.getElementById('addedActions');
+  if (addedActionsContainer) {
+    addedActionsContainer.appendChild(newDiv);
+  } else {
+    console.error('Container not found');
+  }
+
+}
 
 
 
@@ -189,20 +500,6 @@ function showContent(tabNumber) {
 
 
 
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
 
 function godStats(){
   const characterDetails = document.getElementById('character-info');
@@ -223,8 +520,19 @@ function godStats(){
 
   characterDetails.innerHTML = details;
 
+}
 
+var coll = document.getElementsByClassName("collapsible");
+var i;
 
-
-
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
 }

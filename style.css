@@ -313,15 +313,57 @@ button i {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  
 }
 
 .column {
   width: 100%; /* Occupy full width on mobile */
   margin-bottom: 20px; /* Add space between columns */
+  
 }
 
 /* Adjust font size for better readability on mobile */
 ul li {
   font-size: 16px;
   line-height: 1.6;
+  
+}
+
+#spellSLOTS{
+background-color: #1f1f1f;
+ border: none;
+ color: white;
+font-size: large;
+}
+
+
+
+#newAction{
+  font-size: large;
+ bottom: 15%;
+  position: fixed;
+  
+}
+
+#addedAction{
+ position: absolute;
+ bottom: 20%;
+ left: 36%;
+}
+#addedActions {
+  position: fixed;
+  bottom: 20px; 
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 80%; 
+  max-width: 600px; 
+  padding: 10px;
+  
+  height: 180px; 
+  overflow-y: auto; 
+}
+#addedActions::-webkit-scrollbar {
+  width: 0; /* Hide scrollbar width */
+  height: 0; /* Hide scrollbar height */
 }
