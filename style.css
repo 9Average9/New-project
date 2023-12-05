@@ -1,38 +1,31 @@
 body {
-  background-color: #1f1f1f;
+  background-color: #e8e8e8;
   color: #ffffff;
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
   overflow: hidden;
-}
-
-
-
-header {
-  background-color: #6e1d1d;
-  padding: .5%;
-  text-align: center;
-  color: rgb(255, 255, 255);
+  color: black;
+  font-weight: 500;
 }
 
 .custom-dropdown {
-  
   position: relative;
-  margin: 20px auto;
-  max-width: 600px;
+  margin-bottom: 20px auto;
+  max-width: 100%;
   padding: 20px;
   background-color: #2c2c2c;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  margin-top: 0%;
+  top: 0%;
+  color: white;
 }
 
 .section-container {
   display: flex;
-  justify-content: center; 
-  gap: 15px; 
+  justify-content: center;
+  gap: 15px;
 }
 
 .section-container h2 {
@@ -52,6 +45,7 @@ header {
   border: none;
   appearance: none;
 }
+
 .section-container select:focus,
 .section-container button:focus {
   outline: none;
@@ -71,16 +65,16 @@ header {
   padding: 12px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #6e1d1d;
+  background-color: #f00000;
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-size: larger;
+  font-size: large;
   margin-bottom: -5%;
 }
 
 #character-details button:hover {
-  background-color: #8a2626;
+  background-color: #650000;
 }
 
 #character-details ul {
@@ -95,25 +89,23 @@ header {
   font-size: larger;
 }
 
-
-
 .container12 {
   position: absolute;
   top: 5%;
-  right: 2%; 
+  right: 2%;
   cursor: pointer;
 }
 
 .bar1, .bar2, .bar3 {
   width: 35px;
   height: 5px;
-  background-color: #6d6d6d;
+  background-color: #4c4c4c;
   margin: 6px 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .container12 .bar1.change {
-  transform: translateY(8px) rotate(-45deg); /* Adjusted translateY value */
+  transform: translateY(8px) rotate(-45deg);
 }
 
 .container12 .bar2.change {
@@ -121,9 +113,8 @@ header {
 }
 
 .container12 .bar3.change {
-  transform: translateY(-13px) rotate(45deg); /* Adjusted translateY value */
+  transform: translateY(-13px) rotate(45deg);
 }
-
 
 .menu {
   display: none;
@@ -131,18 +122,19 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #bababa;
-  padding-left: 25px;
-  padding-right: 25px;
-  border: 1px solid #ccc;
+  background-color: #cdcdcd; 
+  padding: 20px;
+  border: 1px solid #ffffff;
   z-index: 2;
-  border-radius: 10px;
-  width: 80%;
-  max-height: 55%; 
-  overflow-y: auto; 
+  border-radius: 15px;
+  width: 90%;
+  max-height: 50%;
+  overflow-y: auto;
+
 }
-.menu::-webkit-scrollbar{
-  display: none;
+
+.menu::-webkit-scrollbar {
+  display: none; 
 }
 
 
@@ -150,159 +142,195 @@ header {
   list-style: none;
   padding: 0;
   text-align: center;
+  
 }
 
 .menu ul li {
   margin-bottom: 10px;
+  
 }
 
 .menu ul li a {
   text-decoration: none;
-  color: #333;
+  color: #ddd;
   font-weight: bold;
   font-size: 18px;
+  transition: color 0.3s ease;
 }
 
-/* Show the menu when active */
+.menu ul li a:hover {
+  color: #ffffff;
+}
+
 .menu.active {
   display: block;
 }
 
-
-
-/* Style for rounded tabs */
 .tabs {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
+  display: flex;
+  justify-content: center;
   z-index: 1;
 }
 
 .tab {
-  padding: 2.5%;
-  border: none;
+  background: #000000;
+  border-radius: 999px;
+  box-shadow: #000000 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
   cursor: pointer;
-  background-color: transparent;
-  border-radius: 10px;
-  font-size:medium;
-  font-weight: bold;
-  color: black;
+  font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  margin-bottom: 2%;
+  break-inside: avoid; 
+  margin-right: 1%;
 }
 
-.tab:hover{
-  color: #911414;
-  background-color: #6b6b6b;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+.tab:hover {
+  background: linear-gradient(to bottom, #222, #111);
+  color: #ffffff;
 }
 
 .tab.active {
-  background-color: #911414; /* Background color for the active tab */
-  color: white;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  background: #ff1010;
+  border-radius: 999px;
+  box-shadow: #f81818 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  margin-bottom: 2%;
+  break-inside: avoid; 
 }
 
 .content {
-
-
-  margin-top: 15%;
-  font-size: large;
-  margin-bottom: 1%;
-  overflow-y: auto; 
- 
+  margin-top: 20%;
+  font-size: 18px;
+  margin-bottom: 5%;
+  overflow-y: auto;
+  color: #ddd;
 }
-
-
 
 @media only screen and (max-width: 410px) {
-  
-
   .menu {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #bababa;
-    padding-left: 25px;
-    padding-right: 25px;
-    border: 1px solid #ccc;
-    z-index: 2;
-    border-radius: 10px;
+    padding: 20px;
     width: 100%;
-    max-height: 50%; 
-    overflow-y: auto; 
-    
+    max-height: 50%;
   }
-
 }
 
-#actionsInDepth{
-background-color: #911414;
-color: #fff;
-border: none;
-border-radius: 10px;
-padding: 1.5%;
-margin-top: 5px;
-cursor: pointer;
-text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-letter-spacing: .5px;
-font-weight: bold;
+#actionsInDepth {
+  background: #ff1010;
+  border-radius: 999px;
+  box-shadow: #f81818 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  margin-bottom: 2%;
+  break-inside: avoid; 
 }
 
-#actionsInDepth:hover{
-background-color: #4a1414;
 
+#actionsInDepth:hover {
+  background-color: #8d0606;
 }
 
-#actionsInDepth:active{
-background-color: rgb(176, 34, 34);
-}
 
 .info {
-  padding: 0 18px;
+  padding: 0 20px;
   display: none;
   overflow: hidden;
-  background-color: #f1f1f1;
-  border-radius: 10px;
-  color: black;
+  background-color: #444;
+  border-radius: 15px;
+  color: #ffffff;
 }
 
-#content1{
-  font-size: large;
-  font-weight: bolder;
-  color: white;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+#content1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
-p{
-  color: rgb(0, 0, 0);
-  text-shadow: none;
+p {
+  color: #ddd;
 }
-
-
 
 .character-actions {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 30px;
+  right: 30px;
 }
 
-button {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  margin-left: 10px;
+button  {
+  background: #ce5df0;
+  border-radius: 999px;
+  box-shadow: #ce5df0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
   cursor: pointer;
-  background-color: #911414;
-  color: white;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 6px 14px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
 }
+
 
 button i {
-  margin-right: 5px;
+  margin-right: 8px;
 }
 
-#GG{
+#GG {
   position: absolute;
   top: 0%;
   left: 0%;
@@ -313,55 +341,50 @@ button i {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  
 }
 
 .column {
-  width: 100%; /* Occupy full width on mobile */
-  margin-bottom: 20px; /* Add space between columns */
-  
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-/* Adjust font size for better readability on mobile */
 ul li {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
-  
 }
 
-#spellSLOTS{
-background-color: #1f1f1f;
- border: none;
- color: white;
-font-size: large;
+#spellSLOTS {
+  background-color: #dddddd00;
+  border: none;
+  color: rgb(0, 0, 0);
+  font-size: larger;
 }
 
-
-
-#newAction{
-  font-size: large;
- bottom: 15%;
+#newAction {
+  font-size: larger;
+  bottom: 15%;
   position: fixed;
-  
 }
 
-#addedAction{
- position: absolute;
- bottom: 20%;
- left: 36%;
+#addedAction {
+  position: absolute;
+  bottom: 20%;
+  left: 36%;
 }
+
 #addedActions {
   position: fixed;
-  bottom:3%; 
+  bottom: 3%;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  width: 80%; 
-  max-width: 600px; 
-  overflow-y: auto; 
+  width: 90%;
+  max-width: 600px;
+  overflow-y: auto;
   max-height: 150px;
 }
+
 #addedActions::-webkit-scrollbar {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
 }
