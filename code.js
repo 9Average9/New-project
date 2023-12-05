@@ -340,7 +340,47 @@ function generateAttributes(characterClass, race, level) {
     spellhit: '',
   };
 
-  const weapons = ['Sword', 'Bow', 'Staff', 'Dagger', 'Axe'];
+  if(race === 'dragonborn'){
+    attributes.strength += 2;
+    attributes.charisma += 1;
+  };
+  if(race === 'dwarf'){
+    attributes.constitution += 2;
+  };if(race === 'elf'){
+    attributes.dexterity += 2;
+  };if(race === 'gnome'){
+    attributes.intelligence += 2;
+  };if (race === 'half-elf') {
+    attributes.charisma += 2;
+    const attributesToIncrease = ['strength', 'dexterity', 'intelligence', 'constitution', 'wisdom', 'charisma']; 
+    for (let i = attributesToIncrease.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [attributesToIncrease[i], attributesToIncrease[j]] = [attributesToIncrease[j], attributesToIncrease[i]];
+    }
+    attributes[attributesToIncrease[0]] += 1;
+    attributes[attributesToIncrease[1]] += 1;
+}
+  if(race === 'halfling'){
+    attributes.dexterity += 2;
+  };if(race === 'half-orc'){
+    attributes.strength += 2;
+    attributes.constitution += 1;
+  };if(race === 'human'){
+    attributes.strength += 1;
+    attributes.charisma += 1;
+    attributes.dexterity += 1;
+    attributes.intelligence += 1;
+    attributes.constitution += 1;
+    attributes.wisdom += 1;
+  };if(race === 'tiefling'){
+    attributes.intelligence += 1;
+    attributes.charisma += 2;
+  };
+
+
+
+
+  const weapons = ['Sword', 'Staff', 'Dagger', 'Axe'];
 
   if (characterClass === 'fighter' || characterClass === 'ranger' || characterClass === 'barbarian' || characterClass === 'paladin') {
     attributes.strength = Math.floor(Math.random() * 10) + 10;
@@ -351,10 +391,7 @@ function generateAttributes(characterClass, race, level) {
     attributes.weapon = 'None';
   }
 
-  if (characterClass === 'warlock' && race === 'dragonborn') {
-    attributes.charisma = 18;
-  }
-
+//spell hit and DC code
   if (characterClass === 'warlock' || characterClass === 'wizard' || characterClass === 'sorcerer' ||characterClass === 'druid' || characterClass === 'cleric' || characterClass === 'bard') {
     attributes.spellhit = 7 + Math.floor((level - 10) * 0.5); 
     attributes.spellsaveDC = 13 + Math.floor((level - 10) * 0.25);
