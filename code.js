@@ -355,7 +355,7 @@ function generateAttributes(characterClass, race, level) {
     attributes.charisma = 18;
   }
 
-  if (characterClass === 'warlock' || characterClass === 'wizard' || characterClass === 'sorcerer') {
+  if (characterClass === 'warlock' || characterClass === 'wizard' || characterClass === 'sorcerer' ||characterClass === 'druid' || characterClass === 'cleric' || characterClass === 'bard') {
     attributes.spellhit = 7 + Math.floor((level - 10) * 0.5); 
     attributes.spellsaveDC = 13 + Math.floor((level - 10) * 0.25);
   } else {
@@ -365,7 +365,7 @@ function generateAttributes(characterClass, race, level) {
 
 
 
-  const levelModifier = Math.floor((level - 10) * 0.5); // 
+  const levelModifier = Math.floor((level - 10) * 0.5);  
 
   for (const attribute in attributes) {
     if (attributes.hasOwnProperty(attribute) && attribute !== 'weapon' && attribute !== 'spellhit') {
@@ -398,10 +398,10 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
   const characterDetails = document.getElementById('character-info');
   let details = '';
 
-  // Create a variable to hold the label for the spell slots or rages
+
   let spellSlotsLabel = 'Spell Slots';
 
-  // Check if the character class is Barbarian and change the label accordingly
+
   if (characterClass.toLowerCase() === 'barbarian') {
     spellSlotsLabel = 'Rages';
     attributes.spellsaveDC = 0;
