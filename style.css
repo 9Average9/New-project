@@ -62,9 +62,7 @@ body {
 }
 
 #character-details button {
-
   border: none;
-  border-radius: 5px;
   background-color: #f00000;
   color: #fff;
   cursor: pointer;
