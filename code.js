@@ -357,7 +357,7 @@ function calculateSpellSlots(characterClass, level, ) {
 
 function generateAttributes(characterClass, race, level) {
   let attributes = {
-    AC: Math.floor(Math.random() * 5 + 14),
+    AC: Math.floor(Math.random() * 5 + 13),
     strength: Math.floor(Math.random() * 8) + 10,
     dexterity: Math.floor(Math.random() * 8) + 10,
     intelligence: Math.floor(Math.random() * 8) + 10,
@@ -410,23 +410,36 @@ function generateAttributes(characterClass, race, level) {
 
 
 
-  const weapons = ['Sword', 'Staff', 'Dagger', 'Axe'];
+  const weapons = [`Greatsword +3`, 'Glaive', 'Halberd','Greatsword +1','Greatsword +2','Greataxe +1','Greataxe +2','Greataxe +3','Heavy Crossbow','Lance','Stormcaller Bow','Astral Lance','Echoing Hammer'];
 
-  if (characterClass === 'fighter' || characterClass === 'ranger' || characterClass === 'barbarian' || characterClass === 'paladin') {
+  if (characterClass === 'fighter' || characterClass === 'ranger' || characterClass === 'barbarian' || characterClass === 'paladin' || characterClass === 'rogue') {
     attributes.strength = Math.floor(Math.random() * 10) + 10;
     attributes.weapon = weapons[Math.floor(Math.random() * weapons.length)];
-  } else if (characterClass === 'rogue') {
+  }  else {
     attributes.weapon = 'Dagger';
-  } else {
-    attributes.weapon = 'None';
   }
+
+//AC
+if (characterClass === 'fighter' || characterClass === 'ranger' || characterClass === 'barbarian' || characterClass === 'paladin') {
+  attributes.strength = Math.floor(Math.random() * 10) + 10;
+  attributes.AC = Math.floor(Math.random() * 5 + 16)
+}
+
+
+
+
 
 //spell hit and DC code
   if (characterClass === 'warlock' || characterClass === 'wizard' || characterClass === 'sorcerer' ||characterClass === 'druid' || characterClass === 'cleric' || characterClass === 'bard') {
     attributes.spellhit = 7 + Math.floor((level - 10) * 0.5); 
     attributes.spellsaveDC = 13 + Math.floor((level - 10) * 0.25);
     
-  } else {
+  }else if(characterClass === 'ranger' || characterClass === 'paladin'){
+    attributes.spellhit = 3 + Math.floor((level - 10) * 0.5); 
+    attributes.spellsaveDC = 7 + Math.floor((level - 10) * 0.25);
+  } 
+  
+  else {
     attributes.spellhit = 0;
     attributes.spellsaveDC = 0;
   }
@@ -586,22 +599,22 @@ function allowEdit(race, characterClass, attributes, actions, spellSlots) {
  
   details += `<li>Weapon: <input id="WEAPONS" placeholder="${attributes.weapon}"></li>`;
   details += `<li>Actions: ${actions.join(', ')}</li>`;
-  details += `<li>Spell hit bonus: <input id="HEALTH" placeholder="${attributes.spellhit}"></li>`;
-  details += `<li>Spell save DC: <input id="HEALTH" placeholder="${attributes.spellsaveDC}"></li>`;
+  details += `<li>Spell hit bonus: <input id="HEALTH" placeholder="0"></li>`;
+  details += `<li>Spell save DC: <input id="HEALTH" placeholder="0"></li>`;
   details += `<li>${spellSlotsLabel}: ${spellSlots}</li>`; 
   details += `</ul>`;
   details += `</div>`;
   
   details += `<div class="column">`;
   details += `<ul>`;
-  details += `<li>Armor Class: <input id="HEALTH" placeholder="${attributes.AC}"></li>`;
-  details += `<li>Strength: <input id="HEALTH" placeholder="${attributes.strength}"></li>`;
-  details += `<li>Dexterity: <input id="HEALTH" placeholder="${attributes.dexterity}"></li>`;
-  details += `<li>Intelligence: <input id="HEALTH" placeholder="${attributes.intelligence}"></li>`;
-  details += `<li>Constitution: <input id="HEALTH" placeholder="${attributes.constitution}"></li>`;
-  details += `<li>Wisdom: <input id="HEALTH" placeholder="${attributes.wisdom}"></li>`;
-  details += `<li>Charisma: <input id="HEALTH" placeholder="${attributes.charisma}"></li>`;
-  details += `<li>Health: <input id="HEALTH" placeholder="${attributes.health}"></li>`
+  details += `<li>Armor Class: <input id="HEALTH" placeholder="0"></li>`;
+  details += `<li>Strength: <input id="HEALTH" placeholder="0"></li>`;
+  details += `<li>Dexterity: <input id="HEALTH" placeholder="0"></li>`;
+  details += `<li>Intelligence: <input id="HEALTH" placeholder="0"></li>`;
+  details += `<li>Constitution: <input id="HEALTH" placeholder="0"></li>`;
+  details += `<li>Wisdom: <input id="HEALTH" placeholder="0"></li>`;
+  details += `<li>Charisma: <input id="HEALTH" placeholder="0"></li>`;
+  details += `<li>Health: <input id="HEALTH" placeholder="0"></li>`
   
   details += `</ul>`;
   details += `</div>`;
