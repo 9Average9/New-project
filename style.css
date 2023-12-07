@@ -6,7 +6,7 @@ body {
   padding: 0;
   overflow: hidden;
   color: black;
-  font-weight: 500;
+  font-weight: 550;
 }
 
 .custom-dropdown {
@@ -358,6 +358,7 @@ ul li {
   border: none;
   color: rgb(0, 0, 0);
   font-size: larger;
+  font-weight: 550;
 }
 
 #newAction {
@@ -387,4 +388,42 @@ ul li {
 #addedActions::-webkit-scrollbar {
   width: 0;
   height: 0;
+}
+
+#HEALTH{
+  background-color: #dddddd00;
+  border: none;
+  width: 30px;
+  font-weight: 550;
+  font-size: large;
+}
+#HEALTH::placeholder{
+  color: #000000;
+  font-size: large;
+  font-weight: 550;
+  
+}
+
+#WEAPONS::placeholder{
+  color: #000000;
+  font-size: large;
+  font-weight: 550;
+  width: 75px;
+}
+#WEAPONS{
+  background-color: #dddddd00;
+  border: none;
+  width: 100px;
+  font-weight: 550;
+  font-size: large;
+}
+
+#toggle{
+  background-color: rgba(255, 0, 0, 0);
+  box-shadow: none;
+  right: 1%;
+  position: fixed;
+  border-radius: 100px;
+  padding: 0%;
+  top: 9%;
 }

@@ -26,6 +26,31 @@ function generateCharacter() {
 
   displayCharacter(selectedRace, selectedClass, characterAttributes, characterActions, spellSlots);
 
+
+  const addedActionsContainer = document.getElementById('addedActions');
+  if (addedActionsContainer) {
+    const addedDivs = addedActionsContainer.querySelectorAll('.added-div');
+    addedDivs.forEach(div => {
+      addedActionsContainer.removeChild(div); 
+    });
+  } else {
+    console.error('Container not found');
+  }
+}
+ 
+//Toggle Editing
+function toggleEdit() {
+  const selectedRace = document.getElementById('race-selection').value;
+  const selectedClass = document.getElementById('class-selection').value;
+  const selectedLevel = parseInt(document.getElementById('level-selection').value);
+
+  const characterAttributes = generateAttributes(selectedClass, selectedRace, selectedLevel);
+  const characterActions = generateActions(selectedClass);
+  const spellSlots = calculateSpellSlots(selectedClass, selectedLevel);
+
+  allowEdit(selectedRace, selectedClass, characterAttributes, characterActions, spellSlots);
+
+
   const addedActionsContainer = document.getElementById('addedActions');
   if (addedActionsContainer) {
     const addedDivs = addedActionsContainer.querySelectorAll('.added-div');
@@ -37,10 +62,14 @@ function generateCharacter() {
   }
 }
 
-function calculateSpellSlots(characterClass, level) {
+
+
+
+function calculateSpellSlots(characterClass, level, ) {
 
   if (characterClass === 'wizard' || characterClass === 'sorcerer' || characterClass === 'warlock' ||  characterClass === 'bard' || characterClass === 'cleric' || characterClass === 'druid') {
     if (level === 10) {
+    
       return ` <select id="spellSLOTS">
       <option >4: level 1</option>
       <option >3: level 2</option>
@@ -338,6 +367,7 @@ function generateAttributes(characterClass, race, level) {
     weapon: '',
     spellsaveDC: '',
     spellhit: '',
+    health: '',
   };
 
   if(race === 'dragonborn'){
@@ -395,6 +425,7 @@ function generateAttributes(characterClass, race, level) {
   if (characterClass === 'warlock' || characterClass === 'wizard' || characterClass === 'sorcerer' ||characterClass === 'druid' || characterClass === 'cleric' || characterClass === 'bard') {
     attributes.spellhit = 7 + Math.floor((level - 10) * 0.5); 
     attributes.spellsaveDC = 13 + Math.floor((level - 10) * 0.25);
+    
   } else {
     attributes.spellhit = 0;
     attributes.spellsaveDC = 0;
@@ -411,6 +442,38 @@ function generateAttributes(characterClass, race, level) {
     }
   }
 
+  if(characterClass === 'wizard' || characterClass === 'sorcerer'){ 
+    if (level >= 10) {
+      attributes.health = 50 +(level - 10)*3;
+   }
+   }
+   else if(characterClass === 'rogue' || characterClass === 'cleric' || characterClass === 'warlock' || characterClass === 'druid'){ 
+    if (level >= 10) {
+      attributes.health = 70 +(level - 10)*4;
+   }
+   }else if(characterClass === 'ranger' || characterClass === 'fighter' || characterClass === 'paladin'){ 
+    if (level >= 10) {
+      attributes.health = 89 +(level - 10)*5;
+   }
+   }else if(characterClass === 'monk'){ 
+    if (level >= 10) {
+      attributes.health = 70 +(level - 10)*4;
+   }
+   }else if(characterClass === 'bard'){ 
+    if (level >= 10) {
+      attributes.health = 58 +(level - 10)*4;
+   }
+   }else if(characterClass === 'barbarian'){ 
+    if (level >= 10) {
+      attributes.health = 120 +(level - 10)*6;
+   }
+   }
+
+
+
+
+
+  
   return attributes;
 }
 
@@ -435,9 +498,7 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
   const characterDetails = document.getElementById('character-info');
   let details = '';
 
-
   let spellSlotsLabel = 'Spell Slots';
-
 
   if (characterClass.toLowerCase() === 'barbarian') {
     spellSlotsLabel = 'Rages';
@@ -481,6 +542,7 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
   details += `<li>Constitution: ${attributes.constitution}</li>`;
   details += `<li>Wisdom: ${attributes.wisdom}</li>`;
   details += `<li>Charisma: ${attributes.charisma}</li>`;
+  details += `<li>Health: <input id="HEALTH" placeholder="${attributes.health}"></li>`
   
   details += `</ul>`;
   details += `</div>`;
@@ -488,6 +550,69 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
 
   characterDetails.innerHTML = details;
 }
+
+
+//editable attributes
+function allowEdit(race, characterClass, attributes, actions, spellSlots) {
+  const characterDetails = document.getElementById('character-info');
+  let details = '';
+
+  let spellSlotsLabel = 'Spell Slots';
+
+  if (characterClass.toLowerCase() === 'barbarian') {
+    spellSlotsLabel = 'Rages';
+    attributes.spellsaveDC = 0;
+  }
+
+  if (characterClass.toLowerCase() === 'monk') {
+    spellSlotsLabel = 'Ki points';
+    attributes.spellsaveDC = 0;
+  }
+
+  if (characterClass.toLowerCase() === 'rogue') {
+    spellSlotsLabel = 'Sneak attack';
+    attributes.spellsaveDC = 0;
+  }
+
+  if (characterClass.toLowerCase() === 'fighter') {
+   attributes.spellsaveDC = 0;
+  }
+
+  details += `<div class="columns">`;
+  details += `<div class="column">`;
+  details += `<ul>`;
+  details += `<li>Race: ${race}</li>`;
+  details += `<li>Class: ${characterClass}</li>`;
+ 
+  details += `<li>Weapon: <input id="WEAPONS" placeholder="${attributes.weapon}"></li>`;
+  details += `<li>Actions: ${actions.join(', ')}</li>`;
+  details += `<li>Spell hit bonus: <input id="HEALTH" placeholder="${attributes.spellhit}"></li>`;
+  details += `<li>Spell save DC: <input id="HEALTH" placeholder="${attributes.spellsaveDC}"></li>`;
+  details += `<li>${spellSlotsLabel}: ${spellSlots}</li>`; 
+  details += `</ul>`;
+  details += `</div>`;
+  
+  details += `<div class="column">`;
+  details += `<ul>`;
+  details += `<li>Armor Class: <input id="HEALTH" placeholder="${attributes.AC}"></li>`;
+  details += `<li>Strength: <input id="HEALTH" placeholder="${attributes.strength}"></li>`;
+  details += `<li>Dexterity: <input id="HEALTH" placeholder="${attributes.dexterity}"></li>`;
+  details += `<li>Intelligence: <input id="HEALTH" placeholder="${attributes.intelligence}"></li>`;
+  details += `<li>Constitution: <input id="HEALTH" placeholder="${attributes.constitution}"></li>`;
+  details += `<li>Wisdom: <input id="HEALTH" placeholder="${attributes.wisdom}"></li>`;
+  details += `<li>Charisma: <input id="HEALTH" placeholder="${attributes.charisma}"></li>`;
+  details += `<li>Health: <input id="HEALTH" placeholder="${attributes.health}"></li>`
+  
+  details += `</ul>`;
+  details += `</div>`;
+  details += `</div>`;
+
+  characterDetails.innerHTML = details;
+}
+
+
+
+
 
 
 let counter = 1;
