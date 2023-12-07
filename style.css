@@ -62,7 +62,7 @@ body {
 }
 
 #character-details button {
-  padding: 12px 20px;
+
   border: none;
   border-radius: 5px;
   background-color: #f00000;
@@ -70,7 +70,8 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: large;
-  margin-bottom: -5%;
+  margin: -5%;
+  
 }
 
 #character-details button:hover {
@@ -426,4 +427,5 @@ ul li {
   border-radius: 100px;
   padding: 0%;
   top: 9%;
+  margin: 0%;
 }
