@@ -69,7 +69,7 @@ body {
   transition: background-color 0.3s ease;
   font-size: small;
   margin: -5%;
-  
+  margin-top: 10%;
 }
 
 #character-details button:hover {
