@@ -598,7 +598,69 @@ function allowEdit(race, characterClass, attributes, actions, spellSlots) {
   details += `<li>Class: ${characterClass}</li>`;
  
   details += `<li>Weapon: <input id="WEAPONS" placeholder="${attributes.weapon}"></li>`;
-  details += `<li>Actions: ${actions.join(', ')}</li>`;
+  details += `<li>Actions:<select id="selectAction">
+  <option >Action Surge</option>
+  <option >Second Wind</option>
+  <option >Extra Attack</option>
+  <option >Precision Attack</option>
+  <option >Menacing Attack</option>
+  <option >Indomitable</option>
+  <option >Rally </option>
+  <option >Fireball</option>
+  <option >Blight</option>
+  <option >Vampiric Touch</option>
+  <option >Mage Armor</option>
+  <option >Shield</option>
+  <option >Magic Missile</option>
+  <option >Counterspell</option>
+  <option >camo</option>
+  <option >elemental arrow</option>
+  <option >change</option>
+  <option >wings</option>
+  <option>beast speech</option>
+</select>
+<select id="selectAction">
+  <option >Action Surge</option>
+  <option >Second Wind</option>
+  <option >Extra Attack</option>
+  <option >Precision Attack</option>
+  <option >Menacing Attack</option>
+  <option >Indomitable</option>
+  <option >Rally </option>
+  <option >Fireball</option>
+  <option >Blight</option>
+  <option >Vampiric Touch</option>
+  <option >Mage Armor</option>
+  <option >Shield</option>
+  <option >Magic Missile</option>
+  <option >Counterspell</option>
+  <option >camo</option>
+  <option >elemental arrow</option>
+  <option >change</option>
+  <option >wings</option>
+  <option>beast speech</option>
+</select><select id="selectAction">
+<option >Action Surge</option>
+<option >Second Wind</option>
+<option >Extra Attack</option>
+<option >Precision Attack</option>
+<option >Menacing Attack</option>
+<option >Indomitable</option>
+<option >Rally </option>
+<option >Fireball</option>
+<option >Blight</option>
+<option >Vampiric Touch</option>
+<option >Mage Armor</option>
+<option >Shield</option>
+<option >Magic Missile</option>
+<option >Counterspell</option>
+<option >camo</option>
+<option >elemental arrow</option>
+<option >change</option>
+<option >wings</option>
+<option>beast speech</option>
+</select>
+</li>`;
   details += `<li>Spell hit bonus: <input id="HEALTH" placeholder="0"></li>`;
   details += `<li>Spell save DC: <input id="HEALTH" placeholder="0"></li>`;
   details += `<li>${spellSlotsLabel}: ${spellSlots}</li>`; 
