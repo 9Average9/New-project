@@ -431,6 +431,7 @@ if (characterClass === 'fighter' || characterClass === 'ranger' || characterClas
 
 //spell hit and DC code
   if (characterClass === 'warlock' || characterClass === 'wizard' || characterClass === 'sorcerer' ||characterClass === 'druid' || characterClass === 'cleric' || characterClass === 'bard') {
+    attributes.charisma =  Math.floor(Math.random() * 10) + 10;
     attributes.spellhit = 7 + Math.floor((level - 10) * 0.5); 
     attributes.spellsaveDC = 13 + Math.floor((level - 10) * 0.25);
     
@@ -486,7 +487,6 @@ if (characterClass === 'fighter' || characterClass === 'ranger' || characterClas
 
 
 
-  
   return attributes;
 }
 
@@ -685,11 +685,6 @@ function allowEdit(race, characterClass, attributes, actions, spellSlots) {
   characterDetails.innerHTML = details;
 }
 
-
-
-
-
-
 let counter = 1;
 
 function addAction(textToAdd) {
@@ -707,8 +702,6 @@ function addAction(textToAdd) {
   }
 
 }
-
-
 
 function toggleMenu() {
   var menu = document.getElementById("menu");
@@ -732,31 +725,6 @@ function showContent(tabNumber) {
 
   tabs[tabNumber - 1].classList.add('active');
   contents[tabNumber - 1].style.display = 'block';
-}
-
-
-
-
-
-function godStats(){
-  const characterDetails = document.getElementById('character-info');
-  let details = '';
-  
-
-  details += `<li>Race: Angel </li>`;
-  details += `<li>Class: Warrior </li>`;
-  details += `<li>Armor Class: 30 </li>`;
-  details += `<li>Strength: 25 </li>`;
-  details += `<li>Dexterity: 25 </li>`;
-  details += `<li>Intelligence: 25 </li>`;
-  details += `<li>Constitution: 25 </li>`;
-  details += `<li>Wisdom: 25 </li>`;
-  details += `<li>Charisma: 25 </li>`;
-  details += `<li>Weapon: 25 </li>`
-  details += `<li>Actions: Divine Action</li>`;
-
-  characterDetails.innerHTML = details;
-
 }
 
 var coll = document.getElementsByClassName("collapsible");

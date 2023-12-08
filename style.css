@@ -395,7 +395,7 @@ ul li {
 
 #addedActions {
   position: fixed;
-  bottom: 3%;
+ 
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -486,37 +486,4 @@ color: #000000;
 }
 
 
-@media only screen and (max-height: 764px){
-  #newAction {
-    font-size: larger;
-    bottom: 15%;
-    position: fixed;
-    display: none;
-  }
-  
-  #addedAction {
-    position: absolute;
-    bottom: 20%;
-    left: 36%;
-    display: none;
-  }
-  
-  #addedActions {
-    position: fixed;
-    bottom: 3%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    width: 90%;
-    max-width: 600px;
-    overflow-y: auto;
-    max-height: 150px;
-    display: none;
-  }
-  
-  #addedActions::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    display: none;
-  }
-}
+
