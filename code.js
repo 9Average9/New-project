@@ -597,7 +597,21 @@ function allowEdit(race, characterClass, attributes, actions, spellSlots) {
   details += `<li>Race: ${race}</li>`;
   details += `<li>Class: ${characterClass}</li>`;
  
-  details += `<li>Weapon: <input id="WEAPONS" placeholder="${attributes.weapon}"></li>`;
+  details += `<li>Weapon: <select id="selectAction">
+  <option >Greatsword +1</option>
+  <option >Greatsword +2</option>
+  <option >Greatsword +3</option>
+  <option >Glaive</option>
+  <option >Halberd</option>
+  <option >Greataxe +1</option>
+  <option >Greataxe +2</option>
+  <option >Greataxe +3</option>
+  <option >Heavy Crossbow</option>
+  <option >Lance</option>
+  <option >Stormcaller Bow</option>
+  <option >Astral Lance</option>
+  <option >Echoing Hammer</option>
+</select></li>`;
   details += `<li>Actions:<select id="selectAction">
   <option >Action Surge</option>
   <option >Second Wind</option>
@@ -741,3 +755,5 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+
+
