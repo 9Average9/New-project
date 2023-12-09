@@ -128,10 +128,10 @@ body {
   border: 1px solid #ffffff;
   z-index: 2;
   border-radius: 15px;
-  width: 90%;
+  width: 100%;
   max-height: 50%;
   overflow-y: auto;
-
+  padding-top: 0;
 }
 
 .menu::-webkit-scrollbar {
@@ -168,14 +168,17 @@ body {
 }
 
 .tabs {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  position: sticky;
+  top: -1%;
   width: 100%;
   display: flex;
   justify-content: center;
-  z-index: 1;
+  z-index: 1000; 
+  background-color: #2c2c2c;
+  border-bottom-left-radius: 10px ;
+  border-bottom-right-radius: 10px;
+ padding-top: 1%;
+ padding-bottom: 2%;
 }
 
 .tab {
@@ -478,11 +481,6 @@ color: #000000;
 .menuButtons{
   
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust the minimum and maximum width for the buttons */
-  gap: 10px; /* Adjust the spacing between buttons */
-  justify-content: center; /* Center align buttons */
-  
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+  justify-content: center; 
 }
-
-
-

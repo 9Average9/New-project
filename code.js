@@ -532,6 +532,7 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
    attributes.spellsaveDC = 0;
   }
 
+  details += `<h2 style="text-align: center;">Your Character</h2>`
   details += `<div class="columns">`;
   details += `<div class="column">`;
   details += `<ul>`;
