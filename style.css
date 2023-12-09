@@ -263,11 +263,13 @@ body {
    right: 6.75%;
   }
   
-
-
-
 }
 
+#actionsInDepth.active {
+  background-color: white;
+  border: 2px solid #ff1010;
+  color: #ff1010;
+}
 
 #actionsInDepth {
   background: #ff1010;
@@ -290,14 +292,12 @@ body {
   height: 40px;
   word-break: break-word;
   border: 0;
-  margin-bottom: 2%;
+  margin-bottom: 5%;
   break-inside: avoid; 
 }
 
 
-#actionsInDepth:hover {
-  background-color: #8d0606;
-}
+
 
 
 .info {

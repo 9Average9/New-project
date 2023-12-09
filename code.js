@@ -721,13 +721,22 @@ function addAction(textToAdd) {
 function toggleMenu() {
   var menu = document.getElementById("menu");
   var bars = document.querySelectorAll('.container12 div');
-  
+  var menuBar = document.getElementById("menuBar");
+
   menu.style.display = (menu.style.display === "block") ? "none" : "block";
-  
   bars.forEach(function(bar) {
     bar.classList.toggle('change');
   });
+
+  menuBar.style.display = (menu.style.display === "block") ? "block" : "none";
 }
+
+
+
+
+
+
+
 
 function showContent(tabNumber) {
   var tabs = document.querySelectorAll('.tab');
@@ -747,11 +756,18 @@ var i;
 
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
+    var isActive = this.classList.contains("active");
+
+ 
+    for (var j = 0; j < coll.length; j++) {
+      coll[j].classList.remove("active");
+      coll[j].nextElementSibling.style.display = "none";
+    }
+
+  
+    if (!isActive) {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
       content.style.display = "block";
     }
   });
