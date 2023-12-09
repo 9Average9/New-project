@@ -720,28 +720,35 @@ function addAction(textToAdd) {
 
 function toggleMenu() {
   var menu = document.getElementById("menu");
+  var containers = document.querySelectorAll('.container12');
   var bars = document.querySelectorAll('.container12 div');
   var menuBar = document.getElementById("menuBar");
 
+  
   menu.style.display = (menu.style.display === "block") ? "none" : "block";
+
+  
   bars.forEach(function(bar) {
     bar.classList.toggle('change');
   });
 
+ 
+  if (menu.style.display === "block") {
+    containers.forEach(function(container) {
+      container.style.backgroundColor = 'white';
+      container.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)'; 
+    });
+  } else {
+    containers.forEach(function(container) {
+      container.style.backgroundColor = '';
+      container.style.boxShadow = 'none'; 
+    });
+  }
+  
+
+  
   menuBar.style.display = (menu.style.display === "block") ? "block" : "none";
-
-
-   
-  
-  
-  
 }
-
-
-
-
-
-
 
 
 function showContent(tabNumber) {
@@ -778,6 +785,7 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+
 
 
 
