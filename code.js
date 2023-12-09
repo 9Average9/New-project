@@ -729,6 +729,12 @@ function toggleMenu() {
   });
 
   menuBar.style.display = (menu.style.display === "block") ? "block" : "none";
+
+
+   
+  
+  
+  
 }
 
 
@@ -772,5 +778,6 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+
 
 
