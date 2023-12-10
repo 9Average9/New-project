@@ -285,7 +285,8 @@ body {
    position: absolute;
    top: 18%;
     padding: 1%;
-   right: 6.75%;
+   right: 5%;
+   
   }
   
   .tabs{
@@ -420,7 +421,7 @@ ul li {
 
 #addedAction {
   position: absolute;
-  bottom: 20%;
+  bottom: 10%;
   left: 36%;
 }
 
@@ -433,6 +434,7 @@ ul li {
   max-width: 600px;
   overflow-y: auto;
   max-height: 150px;
+  opacity: 0;
 }
 
 #addedActions::-webkit-scrollbar {
@@ -516,3 +518,32 @@ color: #000000;
 
 
 
+.larger-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.larger-image {
+  max-width: 300px; 
+  max-height: 300px;
+  width: auto; 
+  height: auto; 
+}
+
+.larger-image-container img[src="img/select_character.png"] {
+  max-width: 150px;
+  max-height: 150px;
+  width: auto;
+  height: auto;
+}
+
+@media only screen and (max-width: 390px){
+  .larger-image {
+    max-width: 200px; 
+    max-height: 200px; 
+    width: auto; 
+    height: auto; 
+  }
+  
+}
