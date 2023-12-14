@@ -548,7 +548,7 @@ color: #ffffff;
 }
 
 .larger-image-container:hover {
-  transform: scale(2); /* Scale up to 1.2 times on hover */
+  transform: scale(2); 
 }
 @media only screen and (max-width: 390px){
   .larger-image {
