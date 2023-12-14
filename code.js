@@ -492,7 +492,7 @@ if (characterClass === 'fighter' || characterClass === 'ranger' || characterClas
 
 function generateActions(characterClass) {
   const actionsPool = classAction[characterClass];
-  const numActionsToSelect = 3; // Number of actions to randomly select for each character
+  const numActionsToSelect = 4; // Number of actions to randomly select for each character
   const selectedActions = [];
 
   while (selectedActions.length < numActionsToSelect) {
@@ -507,11 +507,16 @@ function generateActions(characterClass) {
   return selectedActions;
 }
 
+
+
+
 function displayCharacter(race, characterClass, attributes, actions, spellSlots) {
   const characterDetails = document.getElementById('character-info');
   let details = '';
 
   let spellSlotsLabel = 'Spell Slots';
+
+
 
   if (characterClass.toLowerCase() === 'barbarian') {
     spellSlotsLabel = 'Rages';
@@ -679,11 +684,14 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
   details += `<div class="columns">`;
   details += `<div class="column">`;
   details += `<ul>`;
-  details += `<li>Race: ${race}</li>`;
-  details += `<li>Class: ${characterClass}</li>`;
- 
+  details += `<li>Armor Class: ${attributes.AC}</li>`;
   details += `<li>Weapon: ${attributes.weapon}</li>`;
-  details += `<li>Actions: ${actions.join(', ')}</li>`;
+  details += `<li>Actions: `;
+  details += `<select id="actionsSelect">`;
+  actions.forEach((action) => {
+    details += `<option value="${action}">${action}</option>`;
+  });
+  details += `</select></li>`;
   details += `<li>Spell hit bonus: ${attributes.spellhit}</li>`;
   details += `<li>Spell save DC: ${attributes.spellsaveDC}</li>`;
   details += `<li>${spellSlotsLabel}: ${spellSlots}</li>`; 
@@ -692,7 +700,6 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
   
   details += `<div class="column">`;
   details += `<ul>`;
-  details += `<li>Armor Class: ${attributes.AC}</li>`;
   details += `<li>Strength: ${attributes.strength}</li>`;
   details += `<li>Dexterity: ${attributes.dexterity}</li>`;
   details += `<li>Intelligence: ${attributes.intelligence}</li>`;
@@ -734,6 +741,151 @@ function allowEdit(race, characterClass, attributes, actions, spellSlots) {
   if (characterClass.toLowerCase() === 'fighter') {
    attributes.spellsaveDC = 0;
   }
+
+  const imageSources = {
+    human: {
+      warlock: 'img/human_warlock.jpg',
+      wizard: 'img/human_wizard.jpg',
+      barbarian: 'img/human_barbarian.jpg',
+      bard: 'img/human_bard.jpg',
+      cleric: 'img/human_cleric.jpg',
+      rogue: 'img/human_rogue.jpg',
+      paladin: 'img/human_paladin.jpg',
+      monk: 'img/human_monk.jpg',
+      druid: 'img/human_druid.jpg',
+      sorcerer: 'img/human_sorcerer.jpg',
+      ranger: 'img/human_ranger.jpg',
+      fighter: 'img/human_fighter.png',
+    },
+    elf: {
+      warlock: 'img/elf_warlock.jpg',
+      wizard: 'img/elf_wizard.jpg',
+      barbarian: 'img/elf_barbarian.jpg',
+      bard: 'img/elf_bard.jpg',
+      cleric: 'img/elf_cleric.jpg',
+      rogue: 'img/elf_rogue.jpg',
+      paladin: 'img/elf_paladin.jpg',
+      monk: 'img/elf_monk.jpg',
+      druid: 'img/elf_druid.jpg',
+      sorcerer: 'img/elf_sorcerer.jpg',
+      ranger: 'img/elf_ranger.jpg',
+      fighter: 'img/elf_fighter.jpg',
+    },
+    dragonborn:{
+      warlock: 'img/dragonborn_warlock.jpg',
+      wizard: 'img/dragonborn_wizard.jpg',
+      barbarian: 'img/dragonborn_barbarian.jpg',
+      bard: 'img/dragonborn_bard.jpg',
+      cleric: 'img/dragonborn_cleric.webp',
+      rogue: 'img/dragonborn_rogue.jpg',
+      paladin: 'img/dragonborn_paladin.jpg',
+      monk: 'img/dragonborn_monk.jpg',
+      druid: 'img/dragonborn_druid.jpg',
+      sorcerer: 'img/dragonborn_sorcerer.jpg',
+      ranger: 'img/dragonborn_ranger.jpg',
+      fighter: 'img/dragonborn_fighter.jpg',
+    },
+    dwarf:{
+      warlock: 'img/dwarf_warlock.jpg',
+      wizard: 'img/dwarf_wizard.jpg',
+      barbarian: 'img/dwarf_barbarian.jpg',
+      bard: 'img/dwarf_bard.jpg',
+      cleric: 'img/dwarf_cleric.jpg',
+      rogue: 'img/dwarf_rogue.jpg',
+      paladin: 'img/dwarf_paladin.jpg',
+      monk: 'img/dwarf_monk.jpg',
+      druid: 'img/dwarf_druid.jpg',
+      sorcerer: 'img/dwarf_sorcerer.jpg',
+      ranger: 'img/dwarf_ranger.jpg',
+      fighter: 'img/dwarf_fighter.jpg',
+    },
+    tiefling:{
+      warlock: 'img/tiefling_warlock.jpg',
+      wizard: 'img/tiefling_wizard.jpg',
+      barbarian: 'img/tiefling_barbarian.jpg',
+      bard: 'img/tiefling_bard.jpg',
+      cleric: 'img/tiefling_cleric.jpg',
+      rogue: 'img/tiefling_rogue.jpg',
+      paladin: 'img/tiefling_paladin.jpg',
+      monk: 'img/tiefling_monk.jpg',
+      druid: 'img/tiefling_druid.jpg',
+      sorcerer: 'img/tiefling_sorcerer.jpg',
+      ranger: 'img/tiefling_ranger.jpg',
+      fighter: 'img/tiefling_fighter.jpg',
+    },
+   half_elf:{
+    warlock: 'img/half_elf_warlock.jpg',
+    wizard: 'img/half_elf_wizard.jpg',
+    barbarian: 'img/half_elf_barbarian.jpg',
+    bard: 'img/half_elf_bard.jpg',
+    cleric: 'img/half_elf_cleric.jpg',
+    rogue: 'img/half_elf_rogue.jpg',
+    paladin: 'img/half_elf_paladin.jpg',
+    monk: 'img/half_elf_monk.jpg',
+    druid: 'img/half_elf_druid.jpg',
+    sorcerer: 'img/half_elf_sorcerer.jpg',
+    ranger: 'img/half_elf_ranger.jpg',
+    fighter: 'img/half_elf_fighter.jpg',
+   },
+   gnome:{
+    warlock: 'img/gnome_warlock.jpg',
+    wizard: 'img/gnome_wizard.jpg',
+    barbarian: 'img/gnome_barbarian.jpg',
+    bard: 'img/gnome_bard.jpg',
+    cleric: 'img/gnome_cleric.jpg',
+    rogue: 'img/gnome_rogue.jpg',
+    paladin: 'img/gnome_paladin.jpg',
+    monk: 'img/gnome_monk.jpg',
+    druid: 'img/gnome_druid.jpg',
+    sorcerer: 'img/gnome_sorcerer.jpg',
+    ranger: 'img/gnome_ranger.jpg',
+    fighter: 'img/gnome_fighter.jpg',
+   },
+   halfling:{
+    warlock: 'img/halfling_warlock.jpg',
+    wizard: 'img/halfling_wizard.jpg',
+    barbarian: 'img/halfling_barbarian.jpg',
+    bard: 'img/halfling_bard.jpg',
+    cleric: 'img/halfling_cleric.jpg',
+    rogue: 'img/halfling_rogue.jpg',
+    paladin: 'img/halfling_paladin.jpg',
+    monk: 'img/halfling_monk.jpg',
+    druid: 'img/halfling_druid.jpg',
+    sorcerer: 'img/halfling_sorcerer.jpg',
+    ranger: 'img/halfling_ranger.jpg',
+    fighter: 'img/halfling_fighter.jpg',
+   },
+   half_orc:{
+    warlock: 'img/half_orc_warlock.jpg',
+    wizard: 'img/half_orc_wizard.jpg',
+    barbarian: 'img/half_orc_barbarian.jpg',
+    bard: 'img/half_orc_bard.jpg',
+    cleric: 'img/half_orc_cleric.jpg',
+    rogue: 'img/half_orc_rogue.jpg',
+    paladin: 'img/half_orc_paladin.jpg',
+    monk: 'img/half_orc_monk.jpg',
+    druid: 'img/half_orc_druid.jpg',
+    sorcerer: 'img/half_orc_sorcerer.jpg',
+    ranger: 'img/half_orc_ranger.jpg',
+    fighter: 'img/half_orc_fighter.jpg',
+   },
+  };
+
+
+
+
+
+  if (imageSources[race] && imageSources[race][characterClass]) {
+    const imageElement = document.getElementById('characterImage');
+    if (imageElement) {
+      const imagePath = imageSources[race][characterClass];
+      imageElement.src = imagePath;
+      imageElement.classList.add('larger-image');
+    }
+  }
+
+
+
 
   details += `<div class="columns">`;
   details += `<div class="column">`;
@@ -930,5 +1082,8 @@ for (i = 0; i < coll.length; i++) {
 }
 
 
-
+function toggleImage() {
+  const largerImage = document.querySelector('.larger-image');
+  largerImage.classList.toggle('enlarged');
+}
 
