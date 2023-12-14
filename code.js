@@ -1082,8 +1082,65 @@ for (i = 0; i < coll.length; i++) {
 }
 
 
-function toggleImage() {
-  const largerImage = document.querySelector('.larger-image');
-  largerImage.classList.toggle('enlarged');
+let characterImage = document.getElementById('characterImage');
+let largerImageContainer = document.querySelector('.larger-image-container');
+let isEnlarged = false;
+
+// Function to set up image after it's loaded
+function setupImage() {
+  characterImage = document.getElementById('characterImage');
+  largerImageContainer = document.querySelector('.larger-image-container');
+  if (characterImage) {
+    characterImage.addEventListener('load', function() {
+      // Perform operations when the image is loaded
+      characterImage.style.transition = 'transform 0.3s ease';
+    });
+  }
+
+  document.body.addEventListener('click', function(event) {
+    // Check if the image is enlarged and if the click is outside the larger image container
+    if (isEnlarged && event.target !== largerImageContainer && !largerImageContainer.contains(event.target)) {
+      toggleImageSize(); // Shrink the image back to its original size
+    }
+  });
 }
 
+
+
+// Function to toggle image size and container scaling
+function toggleImageSize() {
+  if (characterImage && largerImageContainer) {
+    if (!isEnlarged) {
+      document.body.style.overflow = 'hidden'; // Hide vertical scrollbar when image is enlarged
+      document.body.style.height = '100vh'; // Set body to full viewport height
+
+      if (characterImage.naturalWidth < characterImage.naturalHeight) {
+        characterImage.style.transform = 'scale(3)'; // If vertical, scale by 3
+      } else {
+        characterImage.style.transform = 'scale(2.3)'; // If horizontal, scale by 2.5
+        
+      }
+
+      
+      characterImage.style.position = 'fixed';
+      characterImage.style.top = '5%';
+      characterImage.style.left = '50%';
+      characterImage.style.transformOrigin = 'top center';
+      characterImage.style.transition = 'transform 0.3s ease';
+      characterImage.style.marginLeft = `-${characterImage.width / 2}px`; // Center horizontally
+      
+      isEnlarged = true;
+    } else {
+      document.body.style.overflow = 'auto'; // Restore vertical scrollbar
+      characterImage.style.transform = 'scale(1)';
+      characterImage.style.position = 'static';
+      characterImage.style.top = 'auto';
+      characterImage.style.left = 'auto';
+      characterImage.style.marginLeft = '0'; // Reset margin
+      isEnlarged = false;
+    }
+  }
+}
+
+// Call setupImage when the document is ready
+document.addEventListener('DOMContentLoaded', setupImage);

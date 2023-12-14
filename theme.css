@@ -277,7 +277,7 @@ body {
 
   #character-details button {
     border: none;
-    background-color: #f00000;
+    background-color: #000000;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -286,7 +286,7 @@ body {
    top: 18%;
     padding: 1%;
    right: 5%;
-   
+   font-weight: 200;
   }
   
   .tabs{
@@ -532,7 +532,7 @@ color: #ffffff;
   align-items: center;
   border-radius: 10px; 
   overflow: hidden;
-  filter: grayscale(20%);
+  filter: grayscale(0%);
   
 }
 .larger-image {
@@ -558,10 +558,6 @@ color: #ffffff;
     overflow: hidden;
   }
   
-}
-.larger-image-container:hover {
-  transform: scale(2.5); 
-  transition: transform 0.3s ease; 
 }
 
 
