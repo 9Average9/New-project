@@ -1115,9 +1115,9 @@ function toggleImageSize() {
       document.body.style.height = '100vh'; // Set body to full viewport height
 
       if (characterImage.naturalWidth < characterImage.naturalHeight) {
-        characterImage.style.transform = 'scale(3)'; // If vertical, scale by 3
+        characterImage.style.transform = 'scale(2.8)'; // If vertical, scale by 3
       } else {
-        characterImage.style.transform = 'scale(2.3)'; // If horizontal, scale by 2.3
+        characterImage.style.transform = 'scale(2)'; // If horizontal, scale by 2.3
         
       }
       
