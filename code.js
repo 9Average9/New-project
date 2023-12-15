@@ -349,12 +349,6 @@ function calculateSpellSlots(characterClass, level, ) {
   return 'None'; 
 }
 
-
-
-
-
-
-
 function generateAttributes(characterClass, race, level) {
   let attributes = {
     AC: Math.floor(Math.random() * 5 + 13),
@@ -408,12 +402,9 @@ function generateAttributes(characterClass, race, level) {
   };
 
 
-
-
   const weapons = [`Greatsword +3`, 'Glaive', 'Halberd','Greatsword +1','Greatsword +2','Greataxe +1','Greataxe +2','Greataxe +3','Heavy Crossbow','Lance','Stormcaller Bow','Astral Lance','Echoing Hammer'];
 
   if (characterClass === 'fighter' || characterClass === 'ranger' || characterClass === 'barbarian' || characterClass === 'paladin' || characterClass === 'rogue') {
-    attributes.strength = Math.floor(Math.random() * 10) + 10;
     attributes.weapon = weapons[Math.floor(Math.random() * weapons.length)];
   }  else {
     attributes.weapon = 'Dagger';
@@ -421,20 +412,27 @@ function generateAttributes(characterClass, race, level) {
 
 //AC
 if (characterClass === 'fighter' || characterClass === 'ranger' || characterClass === 'barbarian' || characterClass === 'paladin') {
-  attributes.strength = Math.floor(Math.random() * 10) + 10;
+  attributes.strength = Math.floor(Math.random() * 3) + 18;
   attributes.AC = Math.floor(Math.random() * 5 + 16)
 }
 
-
-
+//highest attributes
+if(characterClass === 'sorcerer' ||  characterClass === 'bard' || characterClass === 'warlock' ){
+  attributes.charisma = Math.floor(Math.random() * 3) + 18;
+}
+if(characterClass === 'rogue' || characterClass === 'monk'){
+  attributes.dexterity = Math.floor(Math.random() * 3) + 18;
+}if(characterClass === 'wizard'){
+  attributes.intelligence = Math.floor(Math.random() * 3) + 18;
+}if(characterClass === 'druid' || characterClass === 'cleric'){
+  attributes.wisdom = Math.floor(Math.random() * 3) + 18;
+}
 
 
 //spell hit and DC code
   if (characterClass === 'warlock' || characterClass === 'wizard' || characterClass === 'sorcerer' ||characterClass === 'druid' || characterClass === 'cleric' || characterClass === 'bard') {
-    attributes.charisma =  Math.floor(Math.random() * 10) + 10;
     attributes.spellhit = 7 + Math.floor((level - 10) * 0.5); 
     attributes.spellsaveDC = 13 + Math.floor((level - 10) * 0.25);
-    
   }else if(characterClass === 'ranger' || characterClass === 'paladin'){
     attributes.spellhit = 3 + Math.floor((level - 10) * 0.5); 
     attributes.spellsaveDC = 7 + Math.floor((level - 10) * 0.25);
@@ -684,8 +682,23 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
   details += `<div class="columns">`;
   details += `<div class="column">`;
   details += `<ul>`;
+  
+  
+  details += `<li>Strength: ${attributes.strength}</li>`;
+  details += `<li>Dexterity: ${attributes.dexterity}</li>`;
+  details += `<li>Intelligence: ${attributes.intelligence}</li>`;
+  details += `<li>Constitution: ${attributes.constitution}</li>`;
+  details += `<li>Wisdom: ${attributes.wisdom}</li>`;
+  details += `<li>Charisma: ${attributes.charisma}</li>`;
+  details += `<li>Health: <input id="HEALTH" placeholder="${attributes.health}"></li>`
+  details += `</ul>`;
+  details += `</div>`;
+  //next column
+  details += `<div class="column">`;
+  details += `<ul>`;
   details += `<li>Armor Class: ${attributes.AC}</li>`;
   details += `<li>Weapon: ${attributes.weapon}</li>`;
+  details += `<li>Actions: `;
   details += `<li>Actions: `;
   details += `<select id="actionsSelect">`;
   actions.forEach((action) => {
@@ -694,19 +707,7 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
   details += `</select></li>`;
   details += `<li>Spell hit bonus: ${attributes.spellhit}</li>`;
   details += `<li>Spell save DC: ${attributes.spellsaveDC}</li>`;
-  details += `<li>${spellSlotsLabel}: ${spellSlots}</li>`; 
-  details += `</ul>`;
-  details += `</div>`;
-  
-  details += `<div class="column">`;
-  details += `<ul>`;
-  details += `<li>Strength: ${attributes.strength}</li>`;
-  details += `<li>Dexterity: ${attributes.dexterity}</li>`;
-  details += `<li>Intelligence: ${attributes.intelligence}</li>`;
-  details += `<li>Constitution: ${attributes.constitution}</li>`;
-  details += `<li>Wisdom: ${attributes.wisdom}</li>`;
-  details += `<li>Charisma: ${attributes.charisma}</li>`;
-  details += `<li>Health: <input id="HEALTH" placeholder="${attributes.health}"></li>`
+  details += `<li>${spellSlotsLabel}: ${spellSlots}</li>`;
   
   details += `</ul>`;
   details += `</div>`;
@@ -890,8 +891,6 @@ function allowEdit(race, characterClass, attributes, actions, spellSlots) {
   details += `<div class="columns">`;
   details += `<div class="column">`;
   details += `<ul>`;
-  details += `<li>Race: ${race}</li>`;
-  details += `<li>Class: ${characterClass}</li>`;
  
   details += `<li>Weapon: <select id="selectAction">
   <option >Greatsword +1</option>
@@ -995,23 +994,40 @@ function allowEdit(race, characterClass, attributes, actions, spellSlots) {
   characterDetails.innerHTML = details;
 }
 
-let counter = 1;
 
-function addAction(textToAdd) {
-  const newDiv = document.createElement('div');
-  newDiv.textContent = textToAdd;
-  newDiv.id = `newAction_${counter++}`; 
-  newDiv.classList.add('added-div'); 
-  document.body.appendChild(newDiv);
 
-  const addedActionsContainer = document.getElementById('addedActions');
-  if (addedActionsContainer) {
-    addedActionsContainer.appendChild(newDiv);
+function addActionToSelect(action) {
+  const actionsSelect = document.getElementById('actionsSelect');
+  if (actionsSelect) {
+    const optionElement = document.createElement('option');
+    optionElement.value = action;
+    optionElement.textContent = action;
+    actionsSelect.appendChild(optionElement);
   } else {
-    console.error('Container not found');
+    console.error('Actions Select not found');
   }
-
 }
+
+
+
+function addAction(actionToAdd) {
+  handleAddAction(actionToAdd);
+}
+
+// Function to handle user input and add actions
+function handleAddAction(actionToAdd) {
+  const actionsSelect = document.getElementById('actionsSelect');
+  if (actionsSelect) {
+    const optionElement = document.createElement('option');
+    optionElement.value = actionToAdd;
+    optionElement.textContent = actionToAdd;
+    actionsSelect.appendChild(optionElement);
+  } else {
+    console.error('Actions Select not found');
+  }
+}
+
+
 
 function toggleMenu() {
   var menu = document.getElementById("menu");

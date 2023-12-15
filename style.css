@@ -356,11 +356,11 @@ p {
 }
 
 button  {
-  background: #ce5df0;
+  background: #ffffff;
   border-radius: 999px;
-  box-shadow: #ce5df0 0 10px 20px -10px;
+ 
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ff0000;
   cursor: pointer;
   font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
   font-size: 16px;
@@ -374,7 +374,7 @@ button  {
   touch-action: manipulation;
   width: fit-content;
   word-break: break-word;
-  border: 0;
+  border: 2px solid red;
 }
 
 
@@ -434,7 +434,7 @@ ul li {
   max-width: 600px;
   overflow-y: auto;
   max-height: 150px;
-  opacity: 0;
+  opacity: 1;
 }
 
 #addedActions::-webkit-scrollbar {
