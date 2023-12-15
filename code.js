@@ -1117,11 +1117,11 @@ function toggleImageSize() {
       if (characterImage.naturalWidth < characterImage.naturalHeight) {
         characterImage.style.transform = 'scale(3)'; // If vertical, scale by 3
       } else {
-        characterImage.style.transform = 'scale(2.3)'; // If horizontal, scale by 2.3
+        characterImage.style.transform = 'scale(2.3)'; // If horizontal, scale by 2.5
         
       }
+
       
-      characterImage.style.opacity = '1';
       characterImage.style.position = 'fixed';
       characterImage.style.top = '5%';
       characterImage.style.left = '50%';
@@ -1134,10 +1134,9 @@ function toggleImageSize() {
       document.body.style.overflow = 'auto'; // Restore vertical scrollbar
       characterImage.style.transform = 'scale(1)';
       characterImage.style.position = 'static';
-      characterImage.style.bottom = 'auto';
+      characterImage.style.top = 'auto';
       characterImage.style.left = 'auto';
       characterImage.style.marginLeft = '0'; // Reset margin
-      characterImage.style.opacity = '0';
       isEnlarged = false;
     }
   }

@@ -544,12 +544,10 @@ color: #ffffff;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
  margin: 0%;
-  border: 2px solid #ffffff; 
+  border: 2px solid #3b3434; 
 }
 
-.larger-image-container:hover {
-  transform: scale(2); /* Scale up to 1.2 times on hover */
-}
+
 @media only screen and (max-width: 390px){
   .larger-image {
     max-width: 150px; 
