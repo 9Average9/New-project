@@ -486,8 +486,6 @@ ul li {
   position: absolute;
   top: 56%;
 }
-
-
 }
 
 #content2{
@@ -527,21 +525,18 @@ color: #000000;
 
 
 
-/* Your original CSS for larger-image-container and larger-image */
 .larger-image-container {
-  display: none;
+  bottom: 0%;
+  right: 0%;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 10px;
+  border-radius: 10px; 
   overflow: hidden;
+  margin: 0%;
 }
-
 .larger-image {
-
-  max-width: 350px; 
-  max-height: 700px;
+ opacity: 0;
+  max-width: 180px; 
+  max-height: 180px;
   border-radius: 10px; 
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -550,6 +545,17 @@ color: #000000;
 }
 
 
+@media only screen and (max-width: 390px){
+  .larger-image {
+    max-width: 150px; 
+    max-height: 150px; 
+    width: auto; 
+    height: auto; 
+    border-radius: 10px; 
+    overflow: hidden;
+  }
+  
+}
 
 
 
