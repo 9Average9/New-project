@@ -1096,4 +1096,3 @@ function setImageSource(imageSource) {
   var characterImage = document.getElementById('characterImage');
   characterImage.src = imageSource;
 }
-
