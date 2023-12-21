@@ -699,7 +699,6 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
   details += `<li>Armor Class: ${attributes.AC}</li>`;
   details += `<li>Weapon: ${attributes.weapon}</li>`;
   details += `<li>Actions: `;
-  details += `<li>Actions: `;
   details += `<select id="actionsSelect">`;
   actions.forEach((action) => {
     details += `<option value="${action}">${action}</option>`;
