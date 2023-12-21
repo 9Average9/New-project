@@ -57,27 +57,25 @@ body {
   text-align: center;
 }
 
-#character-details h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
 #character-details button {
   border: none;
-  background-color: #f00000;
+  background-color: #f0000000;
   color: #fff;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: small;
   margin: -5%;
-  margin-top: 8%;
+  margin-top: -2%;
   font-weight: bold;
+  border-radius: 50%;
+  width: 35px;
+  height: 33px;
+  position: absolute;
+  right: 6%;
 }
 
 
 
 #character-details button:hover {
-  background-color: #650000;
+ color: #000000;
 }
 
 #character-details ul {
@@ -94,42 +92,21 @@ body {
 
 
 
-.container12 {
+
+#menuIMG{
   position: absolute;
   bottom: 2%;
   cursor: pointer;
   left: 12%;
-  background-color: red;
-  padding: 15px;
+  padding: 0px;
   border-radius: 50%;
   transform: translateX(-50%);
+  width: 15%;
 }
 
-
-.bar1, .bar2, .bar3 {
-  width: 30px;
-  height: 5px;
-  background-color: #ffffff;
-  margin: 6px 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  margin-left: 3px;
-  margin-right: 3px;
+.hidden{
+  display: none;
 }
-
-.container12 .bar1.change {
-  transform: translateY(8px) rotate(-45deg);
-  background-color: rgb(255, 0, 0);
-}
-
-.container12 .bar2.change {
-  opacity: 0;
-}
-
-.container12 .bar3.change {
-  transform: translateY(-13px) rotate(45deg);
-  background-color: rgb(255, 0, 0);
-}
-
 
 
 .menu {
@@ -278,14 +255,15 @@ body {
   }
 
   #character-details button {
+  
     border: none;
-    background-color: #f00000;
+    background-color: #f0000000;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-size: small;
    position: absolute;
-   top: 18%;
+   top: 50%;
     padding: 1%;
    right: 5%;
    font-weight: 200;

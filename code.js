@@ -926,49 +926,7 @@ function allowEdit(race, characterClass, attributes, actions, spellSlots) {
   <option >change</option>
   <option >wings</option>
   <option>beast speech</option>
-</select>
-<select id="selectAction">
-  <option >Action Surge</option>
-  <option >Second Wind</option>
-  <option >Extra Attack</option>
-  <option >Precision Attack</option>
-  <option >Menacing Attack</option>
-  <option >Indomitable</option>
-  <option >Rally </option>
-  <option >Fireball</option>
-  <option >Blight</option>
-  <option >Vampiric Touch</option>
-  <option >Mage Armor</option>
-  <option >Shield</option>
-  <option >Magic Missile</option>
-  <option >Counterspell</option>
-  <option >camo</option>
-  <option >elemental arrow</option>
-  <option >change</option>
-  <option >wings</option>
-  <option>beast speech</option>
-</select><select id="selectAction">
-<option >Action Surge</option>
-<option >Second Wind</option>
-<option >Extra Attack</option>
-<option >Precision Attack</option>
-<option >Menacing Attack</option>
-<option >Indomitable</option>
-<option >Rally </option>
-<option >Fireball</option>
-<option >Blight</option>
-<option >Vampiric Touch</option>
-<option >Mage Armor</option>
-<option >Shield</option>
-<option >Magic Missile</option>
-<option >Counterspell</option>
-<option >camo</option>
-<option >elemental arrow</option>
-<option >change</option>
-<option >wings</option>
-<option>beast speech</option>
-</select>
-</li>`;
+</select>`;
   details += `<li>Spell hit bonus: <input id="HEALTH" placeholder="0"></li>`;
   details += `<li>Spell save DC: <input id="HEALTH" placeholder="0"></li>`;
   details += `<li>${spellSlotsLabel}: ${spellSlots}</li>`; 
@@ -1030,35 +988,41 @@ function handleAddAction(actionToAdd) {
 
 function toggleMenu() {
   var menu = document.getElementById("menu");
-  var containers = document.querySelectorAll('.container12');
-  var bars = document.querySelectorAll('.container12 div');
-  var menuBar = document.getElementById("menuBar");
+  var ndMenuIMG = document.getElementById("ndmenuIMG");
+  var menuIMG = document.getElementById("menuIMG");
 
-  
   menu.style.display = (menu.style.display === "block") ? "none" : "block";
 
-  
-  bars.forEach(function(bar) {
-    bar.classList.toggle('change');
-  });
-
- 
   if (menu.style.display === "block") {
-    containers.forEach(function(container) {
-      container.style.backgroundColor = 'white';
-      container.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)'; 
-    });
-  } else {
-    containers.forEach(function(container) {
-      container.style.backgroundColor = '';
-      container.style.boxShadow = 'none'; 
-    });
-  }
-  
+    // Apply specific styles only to menuIMG
+    menuIMG.style.position = 'absolute';
+    menuIMG.style.bottom = '2%';
+    menuIMG.style.left = '12%';
+    menuIMG.style.padding = '0px';
+    menuIMG.style.borderRadius = '50%';
+    menuIMG.style.transform = 'translateX(-50%)';
+    menuIMG.style.width = '15%';
 
-  
-  menuBar.style.display = (menu.style.display === "block") ? "block" : "none";
+    // Show ndmenuIMG and set its position similar to menuIMG without rotation
+    ndMenuIMG.style.position = 'absolute';
+    ndMenuIMG.style.bottom = '2%';
+    ndMenuIMG.style.left = '12%';
+    ndMenuIMG.style.padding = '0px';
+    ndMenuIMG.style.borderRadius = '50%';
+    ndMenuIMG.style.transform = 'translateX(-50%)';
+    ndMenuIMG.style.width = '15%';
+
+    ndMenuIMG.classList.remove('hidden'); // Show ndmenuIMG when menu is displayed
+  } else {
+    // Reset styles for both images when menu is hidden
+    menuIMG.style = '';
+    ndMenuIMG.style = '';
+    ndMenuIMG.classList.add('hidden'); // Hide ndmenuIMG when menu is hidden
+  }
 }
+
+
+
 
 
 function showContent(tabNumber) {
