@@ -996,7 +996,7 @@ function toggleMenu() {
   if (menu.style.display === "block") {
     // Apply specific styles only to menuIMG
     menuIMG.style.position = 'absolute';
-    menuIMG.style.bottom = '2%';
+    menuIMG.style.bottom = '3%';
     menuIMG.style.left = '12%';
     menuIMG.style.padding = '0px';
     menuIMG.style.borderRadius = '50%';
@@ -1005,12 +1005,13 @@ function toggleMenu() {
 
     // Show ndmenuIMG and set its position similar to menuIMG without rotation
     ndMenuIMG.style.position = 'absolute';
-    ndMenuIMG.style.bottom = '2%';
+    ndMenuIMG.style.bottom = '3%';
     ndMenuIMG.style.left = '12%';
     ndMenuIMG.style.padding = '0px';
     ndMenuIMG.style.borderRadius = '50%';
     ndMenuIMG.style.transform = 'translateX(-50%)';
     ndMenuIMG.style.width = '15%';
+    ndMenuIMG.style.width = '65px'; // Update width to 65px
 
     ndMenuIMG.classList.remove('hidden'); // Show ndmenuIMG when menu is displayed
   } else {

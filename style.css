@@ -95,13 +95,13 @@ body {
 
 #menuIMG{
   position: absolute;
-  bottom: 2%;
+  bottom: 3%;
   cursor: pointer;
   left: 12%;
   padding: 0px;
   border-radius: 50%;
   transform: translateX(-50%);
-  width: 15%;
+  width: 70px;
 }
 
 .hidden{
