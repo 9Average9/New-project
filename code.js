@@ -713,7 +713,11 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
   details += `</div>`;
 
   characterDetails.innerHTML = details;
+
+
 }
+
+
 
 
 //editable attributes
@@ -1011,7 +1015,7 @@ function toggleMenu() {
     ndMenuIMG.style.borderRadius = '50%';
     ndMenuIMG.style.transform = 'translateX(-50%)';
     ndMenuIMG.style.width = '15%';
-    ndMenuIMG.style.width = '65px'; // Update width to 65px
+    ndMenuIMG.style.width = '75px'; // Update width to 65px
 
     ndMenuIMG.classList.remove('hidden'); // Show ndmenuIMG when menu is displayed
   } else {
@@ -1125,3 +1129,7 @@ function toggleImageSize() {
 
 // Call setupImage when the document is ready
 document.addEventListener('DOMContentLoaded', setupImage);
+
+
+
+

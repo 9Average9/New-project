@@ -101,7 +101,7 @@ body {
   padding: 0px;
   border-radius: 50%;
   transform: translateX(-50%);
-  width: 70px;
+  width: 75px;
 }
 
 .hidden{
@@ -355,6 +355,12 @@ button  {
   width: fit-content;
   word-break: break-word;
   border: 2px solid red;
+}
+
+button:hover{
+background-color: red;
+color: white;
+ border-color: white;
 }
 
 
