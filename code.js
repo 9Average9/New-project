@@ -1001,21 +1001,21 @@ function toggleMenu() {
     // Apply specific styles only to menuIMG
     menuIMG.style.position = 'absolute';
     menuIMG.style.bottom = '3%';
-    menuIMG.style.left = '12%';
+    menuIMG.style.left = '50px';
     menuIMG.style.padding = '0px';
     menuIMG.style.borderRadius = '50%';
     menuIMG.style.transform = 'translateX(-50%)';
-    menuIMG.style.width = '15%';
+    menuIMG.style.width = '75px';
 
     // Show ndmenuIMG and set its position similar to menuIMG without rotation
     ndMenuIMG.style.position = 'absolute';
     ndMenuIMG.style.bottom = '3%';
-    ndMenuIMG.style.left = '12%';
+    ndMenuIMG.style.left = '50px';
     ndMenuIMG.style.padding = '0px';
     ndMenuIMG.style.borderRadius = '50%';
     ndMenuIMG.style.transform = 'translateX(-50%)';
     ndMenuIMG.style.width = '15%';
-    ndMenuIMG.style.width = '75px'; // Update width to 65px
+    ndMenuIMG.style.width = '75px'; 
 
     ndMenuIMG.classList.remove('hidden'); // Show ndmenuIMG when menu is displayed
   } else {

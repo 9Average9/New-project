@@ -10,6 +10,8 @@ body {
   
 }
 
+
+
 .custom-dropdown {
   position: relative;
   margin-bottom: 20px auto;
@@ -63,13 +65,14 @@ body {
   color: #fff;
   cursor: pointer;
   margin: -5%;
-  margin-top: -2%;
+  margin-top: -5%;
   font-weight: bold;
   border-radius: 50%;
   width: 35px;
   height: 33px;
   position: absolute;
-  right: 6%;
+  right: 8%;
+  font-size: xx-large;
 }
 
 
@@ -94,10 +97,10 @@ body {
 
 
 #menuIMG{
-  position: absolute;
+  position: fixed;
   bottom: 3%;
   cursor: pointer;
-  left: 12%;
+  left: 50px;
   padding: 0px;
   border-radius: 50%;
   transform: translateX(-50%);
@@ -261,7 +264,7 @@ body {
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    font-size: small;
+    font-size: x-large;
    position: absolute;
    top: 50%;
     padding: 1%;
@@ -307,26 +310,27 @@ body {
 
 
 
-
-
 .info {
   padding: 0 20px;
   display: none;
   overflow: hidden;
-  background-color: #444;
+  background-color: #252525;
   border-radius: 15px;
   color: #ffffff;
+  font-size: large;
 }
+
+
 
 #content1 {
   font-size: 24px;
   font-weight: bold;
-  color: #ffffff;
+  color: #000000;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 p {
-  color: #ddd;
+  color: #ffffff;
 }
 
 .character-actions {
@@ -465,6 +469,7 @@ ul li {
   padding: 0%;
   top: 70%;
   margin-top: 5px;
+  font-size: large;
 }
 
 @media only screen and (min-width: 426px) {
@@ -575,3 +580,4 @@ color: #000000;
   max-width: 100%;
   max-height: 100%;
 }
+

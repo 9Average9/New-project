@@ -24,58 +24,58 @@
      
       <div class="content" id="content1">
         <div class="menuButtons">
-        Fighter: <button type="button" class="collapsible" id="actionsInDepth">Superiority Dice</button><div class="info">
-          <p>You have four superiority dice, which are d8s. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest. You gain another superiority die at 7th level and one more at 15th level.
-          </p>
+        Fighter: <button type="button" class="collapsible" id="actionsInDepth">Superiority Dice</button><div class="info" id="fixedInfo">
+          <p id="test">You have four superiority dice, which are d8s. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest. You gain another superiority die at 7th level and one more at 15th level.
+         </p>
         </div> 
 
-        <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info">
-          <p>Take an additional action on your turn.
+        <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info" id="fixedInfo">
+          <p id="test">Take an additional action on your turn.
             <button onclick="addAction('Action Surge')">Add Action Surge</button>
           </p>
         </div> 
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info">
-          <p>Heal yourself by using a bonus action.
+        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info" id="fixedInfo">
+          <p id="test">Heal yourself by using a bonus action.
             <button onclick="addAction('Second Wind')">Add Second wind</button>
           </p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info">
-          <p>Make additional attacks during your Attack action.
+        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info" id="fixedInfo">
+          <p id="test">Make additional attacks during your Attack action.
             <button onclick="addAction('Extra Attack')">Add Extra Attack</button>
           </p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack </button><div class="info">
-          <p> Add superiority dice to your attack rolls.
+        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack </button><div class="info" id="fixedInfo">
+          <p id="test"> Add superiority dice to your attack rolls.
             <button onclick="addAction('Precision Attack')">Add Precision Attack</button>
           </p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Rally </button><div class="info">
-          <p>On your turn, you can use a bonus action and expend one superiority die to bolster the resolve of one of your companions. When you do so, choose a friendly creature who can see or hear you. That creature gains temporary hit points equal to the superiority die roll + your Charisma modifier.
+        <button type="button" class="collapsible"  id="actionsInDepth">Rally </button><div class="info" id="fixedInfo">
+          <p id="test">On your turn, you can use a bonus action and expend one superiority die to bolster the resolve of one of your companions. When you do so, choose a friendly creature who can see or hear you. That creature gains temporary hit points equal to the superiority die roll + your Charisma modifier.
             <button onclick="addAction('Rally')">Add Rally</button>
           </p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack </button><div class="info">
-          <p>When you hit a creature with a weapon attack, you can expend one superiority die to attempt to frighten the target. You add the superiority die to the attack's damage roll, and the target must make a Wisdom saving throw. On a failed save, it is frightened of you until the end of your next turn.
+        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack </button><div class="info" id="fixedInfo">
+          <p id="test">When you hit a creature with a weapon attack, you can expend one superiority die to attempt to frighten the target. You add the superiority die to the attack's damage roll, and the target must make a Wisdom saving throw. On a failed save, it is frightened of you until the end of your next turn.
             <button onclick="addAction('Menacing Attack')">Add Menacing Attack</button>
           </p>
         </div>
 
 
-        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info">
-          <p>Reroll a failed saving throw.
+        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info" id="fixedInfo">
+          <p id="test">Reroll a failed saving throw.
             <button onclick="addAction('Indomitable')">Add Indomitable</button>
           </p>
         </div> 
         <br><br><br>
         </div>
         <div class="menuButtons">
-        Wizard: <button type="button" class="collapsible" id="actionsInDepth">Fireball</button><div class="info">
-          <p>A bright streak flashes from your pointing finger to a point you choose within range and then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much damage on a successful one. The fire spreads around corners. It ignites flammable objects in the area that aren’t being worn or carried.
+        Wizard: <button type="button" class="collapsible" id="actionsInDepth">Fireball</button><div class="info" id="fixedInfo">
+          <p id="test">A bright streak flashes from your pointing finger to a point you choose within range and then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much damage on a successful one. The fire spreads around corners. It ignites flammable objects in the area that aren’t being worn or carried.
             At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.
 
             <button id="addAction" onclick="addAction('Fireball')">Add Fireball</button>
@@ -83,29 +83,29 @@
           </p>
         </div> 
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Mage Armor</button><div class="info">
-          <p>You touch a willing creature who isn’t wearing armor, and a protective magical force surrounds it until the spell ends. The target’s base AC becomes 13 + its Dexterity modifier. The spell ends if the target dons armor or if you dismiss the spell as an action.
+        <button type="button" class="collapsible"  id="actionsInDepth">Mage Armor</button><div class="info" id="fixedInfo">
+          <p id="test">You touch a willing creature who isn’t wearing armor, and a protective magical force surrounds it until the spell ends. The target’s base AC becomes 13 + its Dexterity modifier. The spell ends if the target dons armor or if you dismiss the spell as an action.
             <button onclick="addAction('Mage Armor')">Add Mage Armor</button>
           </p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Shield</button><div class="info">
-          <p>An invisible barrier of magical force appears and protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from magic missile.<button onclick="addAction('Shield')">Add Shield</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Shield</button><div class="info" id="fixedInfo">
+          <p id="test">An invisible barrier of magical force appears and protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from magic missile.<button onclick="addAction('Shield')">Add Shield</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Magic Missile</button><div class="info">
-          <p> You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4 + 1 force damage to its target. The darts all strike simultaneously, and you can direct them to hit one creature or several.
+        <button type="button" class="collapsible"  id="actionsInDepth">Magic Missile</button><div class="info" id="fixedInfo">
+          <p id="test"> You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4 + 1 force damage to its target. The darts all strike simultaneously, and you can direct them to hit one creature or several.
             At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart for each slot above 1st.<button onclick="addAction('Magic Missile')">Add Magic Missile</button></p>
         </div>
         
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Counterspell</button><div class="info">
-          <p>You attempt to interrupt a creature in the process of casting a spell. If the creature is casting a spell of 3rd level or lower, its spell fails and has no effect. If it is casting a spell of 4th level or higher, make an ability check using your spellcasting ability. The DC equals 10 + the spell’s level. On a success, the creature’s spell fails and has no effect.
+        <button type="button" class="collapsible"  id="actionsInDepth">Counterspell</button><div class="info" id="fixedInfo">
+          <p id="test">You attempt to interrupt a creature in the process of casting a spell. If the creature is casting a spell of 3rd level or lower, its spell fails and has no effect. If it is casting a spell of 4th level or higher, make an ability check using your spellcasting ability. The DC equals 10 + the spell’s level. On a success, the creature’s spell fails and has no effect.
             At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, the interrupted spell has no effect if its level is less than or equal to the level of the spell slot you used.<button onclick="addAction('Counter Spell')">Add Counter Spell</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Blight</button><div class="info">
-          <p>Necromantic energy washes over a creature of your choice that you can see within range, draining moisture and vitality from it. The target must make a Constitution saving throw. The target takes 8d8 necrotic damage on a failed save, or half as much damage on a successful one. This spell has no effect on undead or constructs.
+        <button type="button" class="collapsible"  id="actionsInDepth">Blight</button><div class="info" id="fixedInfo">
+          <p id="test">Necromantic energy washes over a creature of your choice that you can see within range, draining moisture and vitality from it. The target must make a Constitution saving throw. The target takes 8d8 necrotic damage on a failed save, or half as much damage on a successful one. This spell has no effect on undead or constructs.
 
             If you target a plant creature or a magical plant, it makes the saving throw with disadvantage, and the spell deals maximum damage to it. If you target a nonmagical plant that isn’t a creature, such as a tree or shrub, it doesn’t make a saving throw; it simply withers and dies.
             
@@ -113,8 +113,8 @@
         </div>
 
 
-        <button type="button" class="collapsible"  id="actionsInDepth">Vampiric Touch</button><div class="info">
-          <p>The touch of your shadow-wreathed hand can siphon force from others to heal your wounds. Make a melee spell attack against a creature within your reach. On a hit, the target takes 3d6 necrotic damage, and you regain hit points equal to half the amount of necrotic damage dealt. Until the spell ends, you can make the attack again on each of your turns as an action.
+        <button type="button" class="collapsible"  id="actionsInDepth">Vampiric Touch</button><div class="info" id="fixedInfo">
+          <p id="test">The touch of your shadow-wreathed hand can siphon force from others to heal your wounds. Make a melee spell attack against a creature within your reach. On a hit, the target takes 3d6 necrotic damage, and you regain hit points equal to half the amount of necrotic damage dealt. Until the spell ends, you can make the attack again on each of your turns as an action.
 
             At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.<button onclick="addAction('Vampiric Touch')">Add Vampiric Touch</button></p>
         </div> 
@@ -122,250 +122,250 @@
       </div>
 
       <div class="menuButtons">
-        Druid: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info">
-          <p>Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        Druid: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info" id="fixedInfo">
+          <p id="test">Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div> 
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info">
-          <p>Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info" id="fixedInfo">
+          <p id="test">Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info">
-          <p>Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info" id="fixedInfo">
+          <p id="test">Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info">
-          <p> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info" id="fixedInfo">
+          <p id="test"> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info">
-          <p>Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info" id="fixedInfo">
+          <p id="test">Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info">
-          <p>Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info" id="fixedInfo">
+          <p id="test">Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
 
 
-        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info">
-          <p>Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div> 
-        <br><br><br>
-      </div>
-        <div class="menuButtons">
-        Cleric: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info">
-          <p>Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div> 
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info">
-          <p>Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info">
-          <p>Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info">
-          <p> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info">
-          <p>Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info">
-          <p>Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-
-
-        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info">
-          <p>Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info" id="fixedInfo">
+          <p id="test">Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div> 
         <br><br><br>
       </div>
         <div class="menuButtons">
-        Barbarian: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info">
-          <p>Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        Cleric: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info" id="fixedInfo">
+          <p id="test">Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div> 
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info">
-          <p>Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info" id="fixedInfo">
+          <p id="test">Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info">
-          <p>Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info" id="fixedInfo">
+          <p id="test">Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info">
-          <p> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info" id="fixedInfo">
+          <p id="test"> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info">
-          <p>Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info" id="fixedInfo">
+          <p id="test">Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info">
-          <p>Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info" id="fixedInfo">
+          <p id="test">Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
 
 
-        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info">
-          <p>Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info" id="fixedInfo">
+          <p id="test">Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        </div> 
+        <br><br><br>
+      </div>
+        <div class="menuButtons">
+        Barbarian: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info" id="fixedInfo">
+          <p id="test">Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        </div> 
+        
+        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info" id="fixedInfo">
+          <p id="test">Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        </div>
+        
+        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info" id="fixedInfo">
+          <p id="test">Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        </div>
+        
+        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info" id="fixedInfo">
+          <p id="test"> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        </div>
+        
+        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info" id="fixedInfo">
+          <p id="test">Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        </div>
+        
+        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info" id="fixedInfo">
+          <p id="test">Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        </div>
+
+
+        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info" id="fixedInfo">
+          <p id="test">Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div> 
         <br><br><br>
         </div>
       <div class="menuButtons">
-        Paladin: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info">
-          <p>Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        Paladin: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info" id="fixedInfo">
+          <p id="test">Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div> 
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info">
-          <p>Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info" id="fixedInfo">
+          <p id="test">Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info">
-          <p>Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info" id="fixedInfo">
+          <p id="test">Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info">
-          <p> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info" id="fixedInfo">
+          <p id="test"> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info">
-          <p>Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info" id="fixedInfo">
+          <p id="test">Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info">
-          <p>Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info" id="fixedInfo">
+          <p id="test">Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
 
 
-        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info">
-          <p>Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info" id="fixedInfo">
+          <p id="test">Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div> 
         <br><br><br>
       </div>
       <div class="menuButtons">
-        Rogue: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info">
-          <p>Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        Rogue: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info" id="fixedInfo">
+          <p id="test">Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div> 
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info">
-          <p>Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info" id="fixedInfo">
+          <p id="test">Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info">
-          <p>Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info" id="fixedInfo">
+          <p id="test">Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info">
-          <p> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info" id="fixedInfo">
+          <p id="test"> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info">
-          <p>Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info" id="fixedInfo">
+          <p id="test">Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info">
-          <p>Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info" id="fixedInfo">
+          <p id="test">Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
 
 
-        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info">
-          <p>Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div> 
-        <br><br><br>
-        </div>
-        <div class="menuButtons">
-        Ranger: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info">
-          <p>Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div> 
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info">
-          <p>Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info">
-          <p>Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info">
-          <p> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info">
-          <p>Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info">
-          <p>Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-
-
-        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info">
-          <p>Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info" id="fixedInfo">
+          <p id="test">Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div> 
         <br><br><br>
         </div>
         <div class="menuButtons">
-        Sorcerer: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info">
-          <p>Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        Ranger: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info" id="fixedInfo">
+          <p id="test">Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div> 
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info">
-          <p>Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info" id="fixedInfo">
+          <p id="test">Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info">
-          <p>Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info" id="fixedInfo">
+          <p id="test">Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info">
-          <p> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info" id="fixedInfo">
+          <p id="test"> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info">
-          <p>Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info" id="fixedInfo">
+          <p id="test">Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info">
-          <p>Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info" id="fixedInfo">
+          <p id="test">Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
 
 
-        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info">
-          <p>Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info" id="fixedInfo">
+          <p id="test">Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div> 
         <br><br><br>
         </div>
         <div class="menuButtons">
-        Warlock: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info">
-          <p>Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        Sorcerer: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info" id="fixedInfo">
+          <p id="test">Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div> 
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info">
-          <p>Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info" id="fixedInfo">
+          <p id="test">Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info">
-          <p>Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info" id="fixedInfo">
+          <p id="test">Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info">
-          <p> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info" id="fixedInfo">
+          <p id="test"> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info">
-          <p>Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info" id="fixedInfo">
+          <p id="test">Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info">
-          <p>Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info" id="fixedInfo">
+          <p id="test">Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div>
 
 
-        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info">
-          <p>Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info" id="fixedInfo">
+          <p id="test">Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        </div> 
+        <br><br><br>
+        </div>
+        <div class="menuButtons">
+        Warlock: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info" id="fixedInfo">
+          <p id="test">Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        </div> 
+        
+        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info" id="fixedInfo">
+          <p id="test">Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        </div>
+        
+        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info" id="fixedInfo">
+          <p id="test">Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        </div>
+        
+        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info" id="fixedInfo">
+          <p id="test"> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        </div>
+        
+        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info" id="fixedInfo">
+          <p id="test">Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        </div>
+        
+        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info" id="fixedInfo">
+          <p id="test">Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        </div>
+
+
+        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info" id="fixedInfo">
+          <p id="test">Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
         </div> 
         <br><br><br>
        </div>
