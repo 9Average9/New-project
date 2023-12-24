@@ -36,7 +36,7 @@
         </div> 
         
         <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info" id="fixedInfo">
-          <p id="test">Heal yourself by using a bonus action.
+          <p id="test">Heal yourself by using a bonus action. (2-d4s)
             <button onclick="addAction('Second Wind')">Add Second wind</button>
           </p>
         </div>
@@ -69,6 +69,26 @@
         <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info" id="fixedInfo">
           <p id="test">Reroll a failed saving throw.
             <button onclick="addAction('Indomitable')">Add Indomitable</button>
+          </p>
+        </div> 
+        <button type="button" class="collapsible"  id="actionsInDepth">Eldritch Knight</button><div class="info" id="fixedInfo">
+          <p id="test">Eldritch Knights, a Fighter archetype, can cast spells from the wizard spell list. These can range from offensive spells like Fireball to utility spells like Mage Armor.
+            <button onclick="addAction('Eldritch Knight Spellcasting')">Add Eldritch Spellcasting</button>
+          </p>
+        </div> 
+        <button type="button" class="collapsible"  id="actionsInDepth">Disarming Attack</button><div class="info" id="fixedInfo">
+          <p id="test">A Fighter can use this maneuver to attempt to disarm an opponent, forcing them to make a Strength saving throw or drop an item they're holding.
+            <button onclick="addAction('Disarming Attack')">Add Disarming Attack</button>
+          </p>
+        </div> 
+        <button type="button" class="collapsible"  id="actionsInDepth">Riposte</button><div class="info" id="fixedInfo">
+          <p id="test">When a creature misses you with a melee attack, you can use your reaction and a superiority die to make a melee weapon attack against that creature if it's within your reach.
+            <button onclick="addAction('Riposte')">Add Riposte</button>
+          </p>
+        </div> 
+        <button type="button" class="collapsible"  id="actionsInDepth">Defensive Duelist</button><div class="info" id="fixedInfo">
+          <p id="test">Fighters can use their reaction to add their proficiency bonus to their AC when they're hit by an attack, potentially turning a hit into a miss.
+            <button onclick="addAction('Defensive Duelist')">Add Defensive Duelist</button>
           </p>
         </div> 
         <br><br><br>
@@ -118,257 +138,460 @@
 
             At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.<button onclick="addAction('Vampiric Touch')">Add Vampiric Touch</button></p>
         </div> 
+
+        <button type="button" class="collapsible"  id="actionsInDepth">Cloudkill</button><div class="info" id="fixedInfo">
+          <p id="test">You create a 20-foot-radius sphere of poisonous, yellow-green fog centered on a point you choose within range. The fog spreads around corners and lasts for the duration. It deals poison damage to creatures inside.<button onclick="addAction('Cloudkill')">Add Cloudkill</button></p>
+        </div>
+        <button type="button" class="collapsible"  id="actionsInDepth">Cone of Cold</button><div class="info" id="fixedInfo">
+          <p id="test">A blast of cold air erupts from your hands. Each creature in a 60-foot cone must make a Constitution saving throw, taking 8d8 cold damage on a failed save, or half as much on a successful one. If cast using a spell slot of 6th level or higher, the damage increases by 1d8 for each slot level above 5th.<button onclick="addAction('Cone of Cold')">Add Cone of Cold</button></p>
+        </div>
+        <button type="button" class="collapsible"  id="actionsInDepth">Witch Bolt</button><div class="info" id="fixedInfo">
+          <p id="test">A beam of crackling blue energy lances out toward a creature within range, forming a sustained arc of lightning. Make a ranged spell attack, dealing 1d12 lightning damage initially. On each of your turns for the duration, you can use your action to deal 1d12 lightning damage to the target automatically. If cast using a spell slot of 2nd level or higher, the initial damage and subsequent damage increase by 1d12 for each slot level above 1st.<button onclick="addAction('Witch Bolt')">Add Witch Bolt</button></p>
+        </div>
+        <button type="button" class="collapsible"  id="actionsInDepth">Immolation</button><div class="info" id="fixedInfo">
+          <p id="test">Flames wreathe one creature you can see within range. The target must make a Dexterity saving throw, taking 8d6 fire damage on a failed save or half as much on a successful one. If cast using a spell slot of 6th level or higher, the damage increases by 1d6 for each slot level above 5th.<button onclick="addAction('Immolation')">Add Immolation</button></p>
+        </div>
+        <button type="button" class="collapsible"  id="actionsInDepth">Fire Shield</button><div class="info" id="fixedInfo">
+          <p id="test">Thin and wispy flames wreathe your body for the duration, shedding bright light in a 10-foot radius and dim light for an additional 10 feet. Creatures attacking you take 2d8 fire or cold damage (your choice) when they hit with a melee attack. If cast using a spell slot of 5th level or higher, the damage increases by 1d8 for each slot level above 4th.<button onclick="addAction('Fire Shield')">Add Fire Shield</button></p>
+        </div>
+        <button type="button" class="collapsible"  id="actionsInDepth">Ice Storm</button><div class="info" id="fixedInfo">
+          <p id="test">You create a hail of rock-hard ice that pounds to the ground in a 20-foot-radius, dealing 2d8 bludgeoning damage and 4d6 cold damage to creatures in the area.<button onclick="addAction('Ice Storm')">Add Ice Storm</button></p>
+        </div>
         <br><br><br>
       </div>
 
       <div class="menuButtons">
-        Druid: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info" id="fixedInfo">
-          <p id="test">Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        Druid: <button type="button" class="collapsible" id="actionsInDepth">Call Lightning</button><div class="info" id="fixedInfo">
+          <p id="test">A storm cloud appears in the shape of a cylinder that is 10 feet tall with a 60-foot radius. Each creature within 5 feet of the point you choose within range must make a Dexterity saving throw, taking 3d10 lightning damage on a failed save. If cast using a spell slot of 4th level or higher, the damage increases by 1d10 for each slot level above 3rd.<button id="addAction" onclick="addAction('Call Lightning')">Add Call Lightning</button></p>
         </div> 
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info" id="fixedInfo">
-          <p id="test">Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Melf's Meteors</button><div class="info" id="fixedInfo">
+          <p id="test">You create six tiny meteors within range, hurling them at creatures within 120 feet. Each creature hit takes 2d6 fire damage. If cast using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.<button id="addAction" onclick="addAction('Melfs Minute Meteors')">Add Melf's Meteors</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info" id="fixedInfo">
-          <p id="test">Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Blade Barrier</button><div class="info" id="fixedInfo">
+          <p id="test">You create a wall of spinning blades made of magical energy. Any creature that starts its turn within the wall or enters it must make a Dexterity saving throw, taking 6d10 slashing damage on a failed save. If cast using a spell slot of 5th level or higher, the damage increases by 1d10 for each slot level above 4th.<button id="addAction" onclick="addAction('Blade Barrier')">Add Blade Barrier</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info" id="fixedInfo">
-          <p id="test"> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Flame Strike</button><div class="info" id="fixedInfo">
+          <p id="test">A vertical column of divine fire roars down from the heavens in a location you specify. Each creature in a 10-foot-radius, 40-foot-high cylinder must make a Dexterity saving throw, taking 4d6 fire damage and 4d6 radiant damage on a failed save, or half as much on a successful one. If cast using a spell slot of 6th level or higher, the damage increases by 1d6 for each damage type for each slot level above 5th.<button id="addAction" onclick="addAction('Flame Strike')">Add Flame Strike</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info" id="fixedInfo">
-          <p id="test">Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Insect Plague</button><div class="info" id="fixedInfo">
+          <p id="test">Swarming, biting locusts fill a 20-foot-radius sphere centered on a point you choose within range. Each creature in the area must make a Constitution saving throw, taking 4d10 piercing damage on a failed save or half as much on a successful one. If cast using a spell slot of 6th level or higher, the damage increases by 1d10 for each slot level above 5th.<button id="addAction" onclick="addAction('Insect Plague')">Add Insect Plague</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info" id="fixedInfo">
-          <p id="test">Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Ice Storm</button><div class="info" id="fixedInfo">
+          <p id="test">You create a hail of rock-hard ice that pounds to the ground in a 20-foot-radius, dealing 2d8 bludgeoning damage and 4d6 cold damage to creatures in the area. If cast using a spell slot of 5th level or higher, the bludgeoning damage increases by 1d8 for each slot level above 4th, and the cold damage by 1d6 for each slot level above 4th.<button id="addAction" onclick="addAction('Ice Storm')">Add Ice Storm</button></p>
         </div>
 
 
-        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info" id="fixedInfo">
-          <p id="test">Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Moonbeam</button><div class="info" id="fixedInfo">
+          <p id="test">A silvery beam of pale light shines down in a 5-foot radius, 40-foot-high cylinder centered on a point within range. When a creature enters the spell’s area for the first time on a turn or starts its turn there, it takes 2d10 radiant damage. If cast using a spell slot of 3rd level or higher, the damage increases by 1d10 for each slot level above 2nd.<button id="addAction" onclick="addAction('Moonbeam')">Add Moonbeam</button></p>
+        </div> 
+        <button type="button" class="collapsible"  id="actionsInDepth">Flaming Sphere</button><div class="info" id="fixedInfo">
+          <p id="test">You create a 5-foot-diameter sphere of fire, and you can ram it into creatures within 30 feet. Each creature in its area must make a Dexterity saving throw, taking 2d6 fire damage on a failed save. If cast using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.<button id="addAction" onclick="addAction('Flaming Sphere')">Add Flaming Sphere</button></p>
+        </div> 
+        <button type="button" class="collapsible"  id="actionsInDepth">Vitriolic Sphere</button><div class="info" id="fixedInfo">
+          <p id="test">You conjure a sphere of acid energy at a point you can see within range. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw, taking 10d4 acid damage on a failed save, or half as much on a successful one. At the end of each of its turns for the duration, the acid deals an additional 5d4 acid damage to the target. If cast using a spell slot of 5th level or higher, the initial damage increases by 2d4 for each slot level above 4th, and the additional damage at the end of turns increases by 1d4 for each slot level above 4th.<button id="addAction" onclick="addAction('Vitriolic Sphere')">Add Vitriolic Sphere</button></p>
+        </div> 
+        <button type="button" class="collapsible"  id="actionsInDepth">Erupting Earth</button><div class="info" id="fixedInfo">
+          <p id="test">You cause a fountain of churned earth and stone to erupt in a 20-foot cube within range. Each creature in that area must make a Dexterity saving throw, taking 3d12 bludgeoning damage on a failed save, or half as much on a successful one. Additionally, the ground becomes difficult terrain until cleared. If cast using a spell slot of 4th level or higher, the damage increases by 1d12 for each slot level above 3rd.<button id="addAction" onclick="addAction('Erupting Earth')">Add Erupting Earth</button></p>
+        </div> 
+        <br><br><br>
+      </div>
+
+
+        <div class="menuButtons">
+        Bard: <button type="button" class="collapsible" id="actionsInDepth">Thunderclap</button><div class="info" id="fixedInfo">
+          <p id="test">You create a burst of thunderous sound that can be heard up to 100 feet away. Each creature within 5 feet of you must make a Constitution saving throw, taking 1d6 thunder damage on a failed save.<button id="addAction" onclick="addAction('Thunderclap')">Add Thunderclap</button></p>
+        </div> 
+        
+        <button type="button" class="collapsible"  id="actionsInDepth">Whispers</button><div class="info" id="fixedInfo">
+          <p id="test">You whisper a discordant melody that only one creature within range can hear, forcing it to make a Wisdom saving throw. On a failed save, it takes 3d6 psychic damage and must immediately use its reaction, moving as far as its speed allows away from you. If cast using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.<button id="addAction" onclick="addAction('Dissonant Whispers')">Add Dissonant Whispers</button></p>
+        </div>
+        
+        <button type="button" class="collapsible"  id="actionsInDepth">Thunderwave</button><div class="info" id="fixedInfo">
+          <p id="test">A wave of thunderous force sweeps out from you. Each creature in a 15-foot cube originating from you must make a Constitution saving throw, taking 2d8 thunder damage on a failed save and being pushed 10 feet away from you. If cast using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.<button id="addAction" onclick="addAction('Thunderwave')">Add Thunderwave</button></p>
+        </div>
+        
+        <button type="button" class="collapsible"  id="actionsInDepth">Shatter</button><div class="info" id="fixedInfo">
+          <p id="test">A sudden loud ringing noise, painfully intense, erupts from a point of your choice within range. Each creature in a 10-foot-radius sphere centered on that point must make a Constitution saving throw, taking 3d8 thunder damage on a failed save, or half as much on a successful one. If cast using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.<button id="addAction" onclick="addAction('Shatter')">Add Shatter</button></p>
+        </div>
+        
+        <button type="button" class="collapsible"  id="actionsInDepth">Crown of Madness</button><div class="info" id="fixedInfo">
+          <p id="test">You crown one humanoid within range with a twisting mass of thorny vines, forcing it to make a Wisdom saving throw. On a failed save, it takes 2d6 psychic damage at the start of each of its turns and must use its action before moving on each of its turns to make a melee attack against a creature other than itself that you mentally choose. If cast using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.<button id="addAction" onclick="addAction('Crown of Madness')">Add Crown of Madness</button></p>
+        </div>
+        
+        <button type="button" class="collapsible"  id="actionsInDepth">Hypnotic Pattern</button><div class="info" id="fixedInfo">
+          <p id="test">You create a twisting pattern of colors that weaves through the air inside a 30-foot cube within range, forcing creatures to make a Wisdom saving throw. On a failed save, they become charmed and incapacitated, taking no actions and having a speed of 0. If cast using a spell slot of 4th level or higher, the duration increases by 1 round for each slot level above 3rd.<button id="addAction" onclick="addAction('Hypnotic Pattern')">Add Hypnotic Pattern</button></p>
+        </div>
+
+
+        <button type="button" class="collapsible"  id="actionsInDepth">Thunder Step</button><div class="info" id="fixedInfo">
+          <p id="test">You teleport yourself to an unoccupied space you can see within range. Each creature within 10 feet of the space you left and your destination must make a Constitution saving throw, taking 3d10 thunder damage on a failed save. If cast using a spell slot of 4th level or higher, the damage increases by 1d10 for each slot level above 3rd.<button id="addAction" onclick="addAction('Thunder Step')">Add Thunder Step</button></p>
+        </div> 
+        <button type="button" class="collapsible"  id="actionsInDepth">Blight</button><div class="info" id="fixedInfo">
+          <p id="test">You target a creature that you can see within range, causing it to make a Constitution saving throw. On a failed save, it takes 8d8 necrotic damage. If cast using a spell slot of 5th level or higher, the damage increases by 1d8 for each slot level above 4th.<button id="addAction" onclick="addAction('Blight')">Add Thunder Blight</button></p>
+        </div> 
+        <button type="button" class="collapsible"  id="actionsInDepth">Evard's Tentacles</button><div class="info" id="fixedInfo">
+          <p id="test">Squirming, ebony tentacles fill a 20-foot square on the ground that you can see within range. When a creature enters the affected area for the first time on a turn or starts its turn there, it must succeed on a Dexterity saving throw or take 3d6 bludgeoning damage and be restrained. If cast using a spell slot of 5th level or higher, the damage increases by 1d6 for each slot level above 4th.<button id="addAction" onclick="addAction('Evards Black Tentacles')">Add Evard's Black Tentacles</button></p>
+        </div> 
+        <button type="button" class="collapsible"  id="actionsInDepth">Destructive Wave</button><div class="info" id="fixedInfo">
+          <p id="test">You strike the ground, creating a burst of divine energy. Each creature you choose within 30 feet must make a Constitution saving throw, taking 5d6 thunder damage and 5d6 radiant or necrotic damage (your choice) on a failed save, or half as much on a successful one. If cast using a spell slot of 6th level or higher, the damage increases by 1d6 for each damage type for each slot level above 5th.
+            <button id="addAction" onclick="addAction('Destructive Wave')">Add Destructive Wave</button></p>
+        </div> 
+        <button type="button" class="collapsible"  id="actionsInDepth">Synaptic Static</button><div class="info" id="fixedInfo">
+          <p id="test">You choose a point within range, causing psychic energy to explode there. Each creature in a 20-foot-radius sphere centered on that point must make an Intelligence saving throw, taking 8d6 psychic damage on a failed save, or half as much on a successful one. Additionally, the target has muddled thoughts for 1 minute, allowing it to roll a d6 and subtract the number rolled from all its attack rolls and ability checks, as well as Constitution saving throws to maintain concentration. If cast using a spell slot of 6th level or higher, the damage increases by 1d6 for each slot level above 5th.<button id="addAction" onclick="addAction('Synaptic Static')">Add Synaptic Static</button></p>
         </div> 
         <br><br><br>
       </div>
         <div class="menuButtons">
-        Cleric: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info" id="fixedInfo">
-          <p id="test">Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        Monk: <button type="button" class="collapsible" id="actionsInDepth">Unarmed Strike</button><div class="info" id="fixedInfo">
+          <p id="test">Monks can make an unarmed strike as part of the Attack action. At 1st level, this strike deals 1d4 damage plus the Monk's Dexterity modifier. This damage increases to 1d6 at 5th level, 1d8 at 11th level, and 1d10 at 17th level.<button id="addAction" onclick="addAction('Unarmed Strike')">Add Unarmed Strike</button></p>
         </div> 
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info" id="fixedInfo">
-          <p id="test">Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Flurry of Blows</button><div class="info" id="fixedInfo">
+          <p id="test">Spending 1 ki point, a Monk can make two additional unarmed strikes as a bonus action after taking the Attack action. The damage for each strike is based on the Monk's unarmed strike progression.<button id="addAction" onclick="addAction('Flurry of Blows')">Add Flurry of Blows</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info" id="fixedInfo">
-          <p id="test">Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Patient Defense</button><div class="info" id="fixedInfo">
+          <p id="test">For 1 ki point as a bonus action, a Monk can take the Dodge action until the start of their next turn, giving attackers disadvantage on attack rolls against the Monk.<button id="addAction" onclick="addAction('Patient Defense')">Add Patient Defense</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info" id="fixedInfo">
-          <p id="test"> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Step of the Wind</button><div class="info" id="fixedInfo">
+          <p id="test"> By spending 1 ki point, a Monk can use the Dash or Disengage action as a bonus action, along with doubling their jump distance for the turn.<button id="addAction" onclick="addAction('Step of the Wind')">Add Step of the Wind</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info" id="fixedInfo">
-          <p id="test">Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Deflect Missiles</button><div class="info" id="fixedInfo">
+          <p id="test">Monks can use their reaction and spend 1 ki point to reduce damage from a ranged weapon attack they can see by 1d10 + Dexterity modifier + Monk level. The Monk's level is also added to the damage they can throw back if they reduce the damage to 0.<button id="addAction" onclick="addAction('Deflect Missiles')">Add Deflect Missiles</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info" id="fixedInfo">
-          <p id="test">Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Stunning Strike</button><div class="info" id="fixedInfo">
+          <p id="test">When a Monk hits with a melee attack, they can spend 1 ki point to attempt to stun the target. The target must succeed on a Constitution saving throw or be stunned until the end of the Monk's next turn.<button id="addAction" onclick="addAction('Stunning Strike')">Add Stunning Strike</button></p>
         </div>
 
-
-        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info" id="fixedInfo">
-          <p id="test">Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible" id="actionsInDepth">Shadow Step</button><div class="info" id="fixedInfo">
+          <p id="test">Monks of the Way of Shadow can spend 2 ki points to cast the Pass Without Trace spell and teleport between shadows as a bonus action.<button id="addAction" onclick="addAction('Shadow Step')">Add Shadow Step</button></p>
         </div> 
-        <br><br><br>
-      </div>
-        <div class="menuButtons">
-        Barbarian: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info" id="fixedInfo">
-          <p id="test">Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible" id="actionsInDepth">Step of the Wind</button><div class="info" id="fixedInfo">
+          <p id="test">Monks of the Way of the Open Hand can use 1 ki point to Disengage or Dash as a bonus action, doubling their jump distance for the turn.<button id="addAction" onclick="addAction('Step of the Wind')">Add Step of the Wind</button></p>
         </div> 
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info" id="fixedInfo">
-          <p id="test">Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info" id="fixedInfo">
-          <p id="test">Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info" id="fixedInfo">
-          <p id="test"> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info" id="fixedInfo">
-          <p id="test">Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info" id="fixedInfo">
-          <p id="test">Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
+        <button type="button" class="collapsible" id="actionsInDepth">Empty Body</button><div class="info" id="fixedInfo">
+          <p id="test">At 18th level, a Monk can spend 4 ki points to become invisible for 1 minute, gaining resistance to all damage except force and becoming immune to all conditions.<button id="addAction" onclick="addAction('Empty Body')">Add Empty Body</button></p>
+        </div> 
+        <button type="button" class="collapsible" id="actionsInDepth">Wholeness of Body</button><div class="info" id="fixedInfo">
+          <p id="test">By spending 2 ki points, a Monk can heal themselves for an amount equal to three times their Monk level.<button id="addAction" onclick="addAction('Wholeness of Body')">Add Wholeness of Body</button></p>
+        </div> 
 
-
-        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info" id="fixedInfo">
-          <p id="test">Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible" id="actionsInDepth">Quivering Palm</button><div class="info" id="fixedInfo">
+          <p id="test">At 17th level, Monks can spend 3 ki points and use an action to attempt to deliver an attack that could potentially kill a creature, as described previously. The damage inflicted remains constant, but the Monk's level affects their ability to attempt the lethal strike.<button id="addAction" onclick="addAction('Quivering Palm')">Add Quivering Palm</button></p>
         </div> 
         <br><br><br>
         </div>
       <div class="menuButtons">
-        Paladin: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info" id="fixedInfo">
-          <p id="test">Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        Cleric: <button type="button" class="collapsible" id="actionsInDepth">Sacred Flame</button><div class="info" id="fixedInfo">
+          <p id="test">Clerics call down radiant energy in a 60-foot range. The target must succeed on a Dexterity saving throw or take 1d8 radiant damage. This damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).<button id="addAction" onclick="addAction('Sacred Flame')">Add Sacred Flame</button></p>
         </div> 
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info" id="fixedInfo">
-          <p id="test">Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Guiding Bolt</button><div class="info" id="fixedInfo">
+          <p id="test">A cleric releases a shimmering projectile towards a target within range, making a ranged spell attack. On a hit, the target takes 4d6 radiant damage. Higher-level casting allows increased damage; for each slot level above 1st, the damage increases by 1d6.<button id="addAction" onclick="addAction('Guiding Bolt')">Add Guiding Bolt</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info" id="fixedInfo">
-          <p id="test">Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Healing Word</button><div class="info" id="fixedInfo">
+          <p id="test">A cleric can heal an ally within range for 1d4 + spellcasting ability modifier hit points. Using a spell slot of 2nd level or higher increases the healing; for each slot level above 1st, the healing increases by 1d4.<button id="addAction" onclick="addAction('Healing Word')">Add Healing Word</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info" id="fixedInfo">
-          <p id="test"> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Cure Wounds</button><div class="info" id="fixedInfo">
+          <p id="test">The cleric touches a creature, healing it for 1d8 + spellcasting ability modifier hit points. Using a spell slot of 2nd level or higher increases the healing; for each slot level above 1st, the healing increases by 1d8.<button id="addAction" onclick="addAction('Cure Wounds')">Add Cure Wounds</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info" id="fixedInfo">
-          <p id="test">Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Spiritual Weapon</button><div class="info" id="fixedInfo">
+          <p id="test">This spell creates a floating spectral weapon within 60 feet of the cleric. As a bonus action, the caster can make a melee spell attack using their spellcasting ability modifier, dealing force damage on a hit. Using a spell slot of 3rd level or higher increases the damage; for each slot level above 2nd, the damage increases by 1d8.<button id="addAction" onclick="addAction('Spiritual Weapon')">Add Spiritual Weapon</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info" id="fixedInfo">
-          <p id="test">Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Mass Healing Word</button><div class="info" id="fixedInfo">
+          <p id="test">Clerics can heal multiple allies within a 60-foot range for 1d4 + spellcasting ability modifier hit points. Using a spell slot of 4th level or higher increases the healing; for each slot level above 3rd, the healing increases by 1d4.<button id="addAction" onclick="addAction('Mass Healing Word')">Add Mass Healing Word</button></p>
         </div>
 
 
-        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info" id="fixedInfo">
-          <p id="test">Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Divine Strike</button><div class="info" id="fixedInfo">
+          <p id="test">At 8th level, some Clerics gain the ability to infuse their weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 radiant damage.<button id="addAction" onclick="addAction('Divine Strike')">Add Divine Strike</button></p>
+        </div> 
+        <button type="button" class="collapsible"  id="actionsInDepth">Preserve Life</button><div class="info" id="fixedInfo">
+          <p id="test">At 2nd level, a cleric can use Channel Divinity to heal allies. The cleric can restore up to 5 times their cleric level in hit points. Higher-level clerics can heal for more hit points as they advance in levels.<button id="addAction" onclick="addAction('Preserve Life')">Add Preserve Life</button></p>
+        </div> 
+        <button type="button" class="collapsible"  id="actionsInDepth">Shield of Faith</button><div class="info" id="fixedInfo">
+          <p id="test">A cleric can grant a creature within range a +2 bonus to AC for the duration. Using a spell slot of 2nd level or higher increases the duration; for each slot level above 1st, the duration increases by 10 minutes.<button id="addAction" onclick="addAction('Shield of Faith')">Add Shield of Faith</button></p>
+        </div> 
+        <button type="button" class="collapsible"  id="actionsInDepth">Bless</button><div class="info" id="fixedInfo">
+          <p id="test">A cleric blesses up to three creatures within range, granting them a +1d4 bonus to attack rolls and saving throws. Using a spell slot of 2nd level or higher increases the number of creatures affected; for each slot level above 1st, one additional creature can be affected.<button id="addAction" onclick="addAction('Bless')">Add Bless</button></p>
+        </div> 
+        <button type="button" class="collapsible"  id="actionsInDepth">Inflict Wounds</button><div class="info" id="fixedInfo">
+          <p id="test">Make a melee spell attack against a creature you can reach. On a hit, the target takes 3d10 necrotic damage. Using a spell slot of 2nd level or higher increases the damage; for each slot level above 1st, the damage increases by 1d10.<button id="addAction" onclick="addAction('Inflict Wounds')">Add Inflict Wounds</button></p>
         </div> 
         <br><br><br>
       </div>
       <div class="menuButtons">
-        Rogue: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info" id="fixedInfo">
-          <p id="test">Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        Barbarian: <button type="button" class="collapsible" id="actionsInDepth">Rage</button><div class="info" id="fixedInfo">
+          <p id="test">A Barbarian can enter a rage as a bonus action, granting them advantages in combat. While raging, they gain bonus damage on melee weapon attacks, resistance to certain types of damage, and advantage on Strength checks and saving throws.<button id="addAction" onclick="addAction('Rage')">Add Rage</button></p>
         </div> 
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info" id="fixedInfo">
-          <p id="test">Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Reckless Attack</button><div class="info" id="fixedInfo">
+          <p id="test">Barbarians can choose to attack recklessly, gaining advantage on melee weapon attack rolls during their turn but granting advantage to enemies attacking them until the start of their next turn.<button id="addAction" onclick="addAction('Reckless Attack')">Add Reckless Attack</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info" id="fixedInfo">
-          <p id="test">Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Melee Weapon</button><div class="info" id="fixedInfo">
+          <p id="test">Barbarians excel in close combat, making attacks with melee weapons. They add their Strength modifier to the damage dealt with melee attacks.</p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info" id="fixedInfo">
-          <p id="test"> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Frenzy</button><div class="info" id="fixedInfo">
+          <p id="test">At 3rd level, some Barbarians can choose the Path of the Berserker and gain the Frenzy ability. This allows them to make an additional attack as a bonus action on each of their turns while raging.<button id="addAction" onclick="addAction('Frenzy')">Add Frenzy</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info" id="fixedInfo">
-          <p id="test">Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack </button><div class="info" id="fixedInfo">
+          <p id="test">At 5th level, Barbarians can attack twice whenever they take the Attack action on their turn, instead of once.</p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info" id="fixedInfo">
-          <p id="test">Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Brutal Critical</button><div class="info" id="fixedInfo">
+          <p id="test">Starting at 9th level, Barbarians roll an additional damage die when scoring a critical hit with a melee weapon attack, increasing to two additional dice at 13th level and three additional dice at 17th level.</p>
         </div>
 
 
-        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info" id="fixedInfo">
-          <p id="test">Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div> 
-        <br><br><br>
-        </div>
-        <div class="menuButtons">
-        Ranger: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info" id="fixedInfo">
-          <p id="test">Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div> 
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info" id="fixedInfo">
-          <p id="test">Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info" id="fixedInfo">
-          <p id="test">Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info" id="fixedInfo">
-          <p id="test"> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info" id="fixedInfo">
-          <p id="test">Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info" id="fixedInfo">
-          <p id="test">Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-
-
-        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info" id="fixedInfo">
-          <p id="test">Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Relentless Rage</button><div class="info" id="fixedInfo">
+          <p id="test">At 11th level, if a Barbarian's rage ends early due to a drop to 0 hit points, they can make a DC 10 Constitution saving throw to retain 1 hit point and remain conscious.</p>
         </div> 
         <br><br><br>
         </div>
         <div class="menuButtons">
-        Sorcerer: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info" id="fixedInfo">
-          <p id="test">Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        Paladin: <button type="button" class="collapsible" id="actionsInDepth">Banishing Smite</button><div class="info" id="fixedInfo">
+          <p id="test">A Paladin's weapon attacks deal an extra 5d10 force damage on a hit, and if the target has 50 hit points or fewer after taking this damage, it must succeed on a Charisma saving throw or be banished. Using a spell slot of 6th level or higher increases the force damage; for each slot level above 5th, the force damage increases by 1d10.<button id="addAction" onclick="addAction('Banishing Smite')">Add Banishing Smite</button></p>
         </div> 
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info" id="fixedInfo">
-          <p id="test">Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Divine Smite</button><div class="info" id="fixedInfo">
+          <p id="test">When a Paladin hits with a melee weapon attack, they can expend a spell slot to deal radiant damage to the target in addition to the weapon's damage. The damage scales with the spell slot's level, adding 1d8 radiant damage for a 1st-level spell slot and an additional 1d8 for each higher-level slot.<button id="addAction" onclick="addAction('Divine Smite')">Add Divine Smite</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info" id="fixedInfo">
-          <p id="test">Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Lay on Hands</button><div class="info" id="fixedInfo">
+          <p id="test">Paladins can heal wounds by touching a creature and spending points from their pool. At 10th level, they can heal up to 50 hit points per long rest using this feature.<button id="addAction" onclick="addAction('Lay on Hands')">Add Lay on Hands</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info" id="fixedInfo">
-          <p id="test"> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Bless</button><div class="info" id="fixedInfo">
+          <p id="test">Paladins can bless up to three creatures within range, granting them a +1d4 bonus to attack rolls and saving throws. Using a spell slot of 2nd level or higher increases the number of creatures affected; for each slot level above 1st, one additional creature can be affected.<button id="addAction" onclick="addAction('Bless')">Add Bless</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info" id="fixedInfo">
-          <p id="test">Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Wrathful Smite</button><div class="info" id="fixedInfo">
+          <p id="test">A Paladin's weapon attacks deal extra psychic damage on a hit and force the target to make a Wisdom saving throw or become frightened. Using a spell slot of 2nd level or higher increases the damage; for each slot level above 1st, the damage increases by 1d6.<button id="addAction" onclick="addAction('Wrathful Smite')">Add Wrathful Smite</button></p>
         </div>
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info" id="fixedInfo">
-          <p id="test">Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Shield of Faith</button><div class="info" id="fixedInfo">
+          <p id="test">A Paladin can grant a creature within range a +2 bonus to AC for the duration. Using a spell slot of 2nd level or higher increases the duration; for each slot level above 1st, the duration increases by 10 minutes.<button id="addAction" onclick="addAction('Shield of Faith')">Add Shield of Faith</button></p>
         </div>
 
 
-        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info" id="fixedInfo">
-          <p id="test">Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible"  id="actionsInDepth">Divine Favor</button><div class="info" id="fixedInfo">
+          <p id="test">Paladins can imbue their weapon with radiant energy, granting them additional damage on their weapon attacks. Using a spell slot of 2nd level or higher increases the damage; for each slot level above 1st, the damage increases by 1d4.<button id="addAction" onclick="addAction('Divine Favor')">Add Divine Favor</button></p>
         </div> 
+
+        <button type="button" class="collapsible" id="actionsInDepth">Thunderous Smite</button><div class="info" id="fixedInfo">
+          <p id="test">A Paladin's weapon attacks deal extra thunder damage on a hit, and the target must succeed on a Strength saving throw or be pushed 10 feet away and knocked prone. Using a spell slot of 2nd level or higher increases the damage; for each slot level above 1st, the damage increases by 2d6.<button id="addAction" onclick="addAction('Thunderous Smite')">Add Thunderous Smite</button></p>
+        </div> 
+        
+        <button type="button" class="collapsible"  id="actionsInDepth">Blade Warding</button><div class="info" id="fixedInfo">
+          <p id="test">At 7th level, a Paladin can use their Channel Divinity to gain resistance to bludgeoning, piercing, and slashing damage from weapon attacks for 1 minute.<button id="addAction" onclick="addAction('Blade Warding')">Add Blade Warding</button></p>
+        </div>
+        
+        <button type="button" class="collapsible"  id="actionsInDepth">Retributive Strike</button><div class="info" id="fixedInfo">
+          <p id="test">Paladins of the Oath of Vengeance can use their reaction to make a melee weapon attack against a creature that damaged them when they are not incapacitated.<button id="addAction" onclick="addAction('Retributive Strike')">Add Retributive Strike</button></p>
+        </div>
+        
+        <button type="button" class="collapsible"  id="actionsInDepth">Vow of Enmity</button><div class="info" id="fixedInfo">
+          <p id="test">Paladins of the Oath of Vengeance can use a bonus action to choose a creature within 10 feet and gain advantage on attack rolls against that creature for 1 minute or until it drops to 0 hit points or falls unconscious.<button id="addAction" onclick="addAction('Vow of Enmity')">Add Vow of Enmity</button></p>
+        </div>
         <br><br><br>
         </div>
         <div class="menuButtons">
-        Warlock: <button type="button" class="collapsible" id="actionsInDepth">Action Surge</button><div class="info" id="fixedInfo">
-          <p id="test">Take an additional action on your turn.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        Rogue: <button type="button" class="collapsible" id="actionsInDepth">Sneak Attack</button><div class="info" id="fixedInfo">
+          <p id="test">A Rogue can deal extra damage when they have advantage on an attack roll or when an ally is within 5 feet of the target. The damage increases with Rogue levels, starting at 5d6 at level 10 and increasing to 6d6 at level 13, 7d6 at level 16, and 8d6 at level 19.</p>
         </div> 
+       
         
-        <button type="button" class="collapsible"  id="actionsInDepth">Second Wind</button><div class="info" id="fixedInfo">
-          <p id="test">Heal yourself by using a bonus action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Extra Attack</button><div class="info" id="fixedInfo">
-          <p id="test">Make additional attacks during your Attack action.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Precision Attack</button><div class="info" id="fixedInfo">
-          <p id="test"> Add superiority dice to your attack rolls.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Rally</button><div class="info" id="fixedInfo">
-          <p id="test">Use a bonus action to grant temporary hit points to an ally.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-        
-        <button type="button" class="collapsible"  id="actionsInDepth">Menacing Attack</button><div class="info" id="fixedInfo">
-          <p id="test">Inflict fear on a target with a successful attack.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
-        </div>
-
-
-        <button type="button" class="collapsible"  id="actionsInDepth">Indomitable</button><div class="info" id="fixedInfo">
-          <p id="test">Reroll a failed saving throw.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+        <button type="button" class="collapsible" id="actionsInDepth">Two-Weapon Fighting</button><div class="info" id="fixedInfo">
+          <p id="test">Rogues can make an additional attack as a bonus action using a light melee weapon held in their off hand.</p>
         </div> 
+        <button type="button" class="collapsible" id="actionsInDepth">Cunning Action</button><div class="info" id="fixedInfo">
+          <p id="test">Rogues can take a bonus action to Dash, Disengage, or Hide in combat, enhancing their mobility and positioning for attacks.</p>
+        </div> 
+        <button type="button" class="collapsible" id="actionsInDepth">Evasion</button><div class="info" id="fixedInfo">
+          <p id="test">At level 7, Rogues gain the ability to evade the brunt of area effects, taking half damage on a failed Dexterity saving throw and no damage on a successful save.</p>
+        </div> 
+        <button type="button" class="collapsible" id="actionsInDepth">Uncanny Dodge</button><div class="info" id="fixedInfo">
+          <p id="test">Starting at level 5, when an attacker the Rogue can see hits them with an attack, they can use their reaction to halve the attack's damage.</p>
+        </div> 
+        <button type="button" class="collapsible" id="actionsInDepth">Assassinate</button><div class="info" id="fixedInfo">
+          <p id="test">At level 17, Rogues gain the ability to take advantage on attack rolls against creatures that haven't taken a turn in combat and any hit they score against a surprised creature is a critical hit.<button id="addAction" onclick="addAction('Assassinate')">Add Assassinate</button></p>
+        </div> 
+        <button type="button" class="collapsible" id="actionsInDepth">Shadow Step</button><div class="info" id="fixedInfo">
+          <p id="test">Rogues of the Shadow subclass gain the ability to teleport from one shadow to another, gaining advantage on their next attack if they attack immediately afterward.</p>
+        </div> 
+        <button type="button" class="collapsible" id="actionsInDepth">Stroke of Luck</button><div class="info" id="fixedInfo">
+          <p id="test">At level 20, Rogues can turn any miss into a hit once per turn or turn any failed ability check into a success, allowing for precise and successful attacks even on missed rolls.</p>
+        </div> 
+        <button type="button" class="collapsible" id="actionsInDepth">Death Strike</button><div class="info" id="fixedInfo">
+          <p id="test">At level 17, when a Rogue hits a creature that is surprised and is within 5 feet, they can maximize the damage of their Sneak Attack against that creature.</p>
+        </div>  <button type="button" class="collapsible" id="actionsInDepth">Melee Weapon Attack</button><div class="info" id="fixedInfo">
+          <p id="test">Rogues are proficient in making melee attacks with finesse weapons, adding their Dexterity modifier to the attack and damage rolls.</p>
+        </div>  <button type="button" class="collapsible" id="actionsInDepth">Ranged Weapon Attack</button><div class="info" id="fixedInfo">
+          <p id="test">Rogues can use ranged weapons like a shortbow or crossbow to make precise attacks from a distance.</p>
+        </div> 
+
+        </div>
         <br><br><br>
-       </div>
+        
+        <div class="menuButtons">
+        Ranger: <button type="button" class="collapsible" id="actionsInDepth">Ranged Weapon Attack</button><div class="info" id="fixedInfo">
+          <p id="test">Rangers are skilled in making ranged attacks with weapons like bows or crossbows, utilizing their Dexterity modifier for attack and damage rolls.</p>
+        </div> 
+        
+        <button type="button" class="collapsible" id="actionsInDepth">Two-Weapon Fighting</button><div class="info" id="fixedInfo">
+          <p id="test">Rangers can make an additional attack as a bonus action using a light melee weapon held in their off hand.</p>
+        </div> 
+        
+        <button type="button" class="collapsible" id="actionsInDepth">Hunter's Mark</button><div class="info" id="fixedInfo">
+          <p id="test">Rangers can mark a target as their quarry, dealing an extra 1d6 damage whenever they hit it with a weapon attack. Casting this spell at higher levels increases the damage; for each spell slot level above 1st, the extra damage increases by 1d6.</p>
+        </div> 
+        
+        <button type="button" class="collapsible" id="actionsInDepth">Colossus Slayer</button><div class="info" id="fixedInfo">
+          <p id="test">Hunters gain the ability to deal extra damage to wounded targets. Once on each of their turns, when they hit a creature with a weapon attack, they can deal an extra 1d8 damage if it's below its hit point maximum.</p>
+        </div> 
+        
+        <button type="button" class="collapsible" id="actionsInDepth">Escape the Horde</button><div class="info" id="fixedInfo">
+          <p id="test">At level 15, Rangers gain the ability to make opportunity attacks when creatures leave their reach without using their reaction, giving them additional attacking opportunities.</p>
+        </div> 
+        
+        <button type="button" class="collapsible" id="actionsInDepth">Whirlwind Attack</button><div class="info" id="fixedInfo">
+          <p id="test">Hunters at level 11 gain the ability to make a melee attack against any number of creatures within 5 feet of them, provided they have taken the Attack action on their turn.</p>
+        </div> 
+
+
+        <button type="button" class="collapsible" id="actionsInDepth">Ambuscade</button><div class="info" id="fixedInfo">
+          <p id="test">Rangers of the Gloom Stalker subclass gain the ability to add their Wisdom modifier to their initiative rolls and make an additional attack on the first turn of combat.</p>
+        </div> 
+        <button type="button" class="collapsible" id="actionsInDepth">Multiattack</button><div class="info" id="fixedInfo">
+          <p id="test">Rangers with companions like the Beast Master's animal companion can command their companion to make attacks, providing an additional source of damage in combat.</p>
+        </div> 
+        <button type="button" class="collapsible" id="actionsInDepth">Evasion</button><div class="info" id="fixedInfo">
+          <p id="test">At level 7, Rangers gain the ability to evade the brunt of area effects, taking half damage on a failed Dexterity saving throw and no damage on a successful save.</p>
+        </div> 
+        <button type="button" class="collapsible" id="actionsInDepth">Foe Slayer</button><div class="info" id="fixedInfo">
+          <p id="test">At level 20, Rangers gain the ability to add their Wisdom modifier to the attack and damage rolls against their favored enemies.</p>
+        </div> 
+        <button type="button" class="collapsible" id="actionsInDepth">Volley </button><div class="info" id="fixedInfo">
+          <p id="test">Hunters at level 11 can make a ranged attack against any number of creatures within 10 feet of a point they can see, adding their Dexterity modifier to the attack roll.</p>
+        </div> 
+        <button type="button" class="collapsible" id="actionsInDepth">Hide in Plain Sight</button><div class="info" id="fixedInfo">
+          <p id="test">At level 10, Rangers can spend a minute creating camouflage to effectively hide even when observed if they remain stationary.</p>
+        </div> 
+       
+      </div>
+        <br><br><br>
+        <div class="menuButtons">
+          Sorcerer: <button type="button" class="collapsible" id="actionsInDepth">Magic Missile</button><div class="info" id="fixedInfo">
+            <p id="test">You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4 + 1 force damage to its target. The darts all strike simultaneously and you can direct them to hit one creature or several. When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart for each slot level above 1st<button id="addAction" onclick="addAction('Magic Missile')">Add Magic Missile</button></p>
+          </div> 
+          
+          <button type="button" class="collapsible" id="actionsInDepth">Chaos Bolt</button><div class="info" id="fixedInfo">
+            <p id="test">You hurl an undulating, warbling mass of chaotic energy at a creature you can see within range. Make a ranged spell attack against the target. On a hit, the target takes 2d8 damage. Choose one of the d8s. The number rolled on that die determines the type of damage dealt. When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.<button id="addAction" onclick="addAction('Chaos Bolt')">Add Chaos Bolt</button></p>
+          </div> 
+          
+          <button type="button" class="collapsible" id="actionsInDepth">Scorching Ray</button><div class="info" id="fixedInfo">
+            <p id="test">You create three rays of fire and hurl them at targets within range. You can hurl them at one target or several. Make a ranged spell attack for each ray. On a hit, the target takes 2d6 fire damage. When you cast this spell using a spell slot of 3rd level or higher, you create one additional ray for each slot level above 2nd<button id="addAction" onclick="addAction('Scorching Ray')">Add Scorching Ray</button></p>
+          </div> 
+          
+          <button type="button" class="collapsible" id="actionsInDepth">Fireball</button><div class="info" id="fixedInfo">
+            <p id="test">A bright streak flashes from your pointing finger to a point you choose within range and then blossoms into an explosion of flame. Each creature in a 20-foot radius sphere centered on that point must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much damage on a successful one. When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.<button id="addAction" onclick="addAction('Fireball')">Add Fireball</button></p>
+          </div> 
+          
+          <button type="button" class="collapsible" id="actionsInDepth">Blight</button><div class="info" id="fixedInfo">
+            <p id="test">Necromantic energy washes over a creature of your choice that you can see within range, draining moisture and vitality from it. The target takes 8d8 necrotic damage. When you cast this spell using a spell slot of 5th level or higher, the damage increases by 1d8 for each slot level above 4th.<button id="addAction" onclick="addAction('Blight')">Add Blight</button></p>
+          </div> 
+          
+          <button type="button" class="collapsible" id="actionsInDepth">Lightning Bolt</button><div class="info" id="fixedInfo">
+            <p id="test">A stroke of lightning blasts from your hand in a line 100 feet long and 5 feet wide. Each creature in the line must make a Dexterity saving throw. A creature takes 8d6 lightning damage on a failed save, or half as much damage on a successful one. When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.<button id="addAction" onclick="addAction('Lightning Bolt')">Add Lightning Bolt</button></p>
+          </div> 
+  
+  
+          <button type="button" class="collapsible" id="actionsInDepth">Haste</button><div class="info" id="fixedInfo">
+            <p id="test">Choose a willing creature that you can see within range. Until the spell ends, the target’s speed is doubled, it gains a +2 bonus to AC, it has advantage on Dexterity saving throws, and it gains an additional action on each of its turns. When you cast this spell using a spell slot of 4th level or higher, you can target one additional creature for each slot level above 3rd.<button id="addAction" onclick="addAction('Haste')">Add Haste</button></p>
+          </div> 
+          <button type="button" class="collapsible" id="actionsInDepth">Sleet Storm</button><div class="info" id="fixedInfo">
+            <p id="test">Until the spell ends, freezing rain and sleet fall in a 20-foot-tall cylinder with a 40-foot radius centered on a point you choose within range. The area is heavily obscured, and exposed flames are extinguished. When you cast this spell using a spell slot of 4th level or higher, the area increases by 20 feet in radius for each slot level above 3rd.<button id="addAction" onclick="addAction('Sleet Storm')">Add Sleet Storm</button></p>
+          </div> 
+          <button type="button" class="collapsible" id="actionsInDepth">Wall of Fire</button><div class="info" id="fixedInfo">
+            <p id="test">You create a wall of fire on a solid surface within range. The wall is up to 60 feet long, 20 feet high, and 1 foot thick. Any creature within the wall's area must make a Dexterity saving throw. A creature takes 5d8 fire damage on a failed save, or half as much damage on a successful one. When you cast this spell using a spell slot of 5th level or higher, the damage increases by 1d8 for each slot level above 4th.<button id="addAction" onclick="addAction('Wall of Fire')">Add Wall of Fire</button></p>
+          </div> 
+          <button type="button" class="collapsible" id="actionsInDepth">Healing Word</button><div class="info" id="fixedInfo">
+            <p id="test">A creature of your choice that you can see within range regains hit points equal to 1d4 + your spellcasting ability modifier. When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d4 for each slot level above 2nd.<button id="addAction" onclick="addAction('Healing Word')">Add Healing Word</button></p>
+          </div> 
+          <button type="button" class="collapsible" id="actionsInDepth">Cure Wounds</button><div class="info" id="fixedInfo">
+            <p id="test">A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st.<button id="addAction" onclick="addAction('Cure Wounds')">Add Cure Wounds</button></p>
+          </div> 
+        
+         
+        </div>
+       <br><br><br>
+        <div class="menuButtons">
+          Warlock: <button type="button" class="collapsible" id="actionsInDepth">Eldritch Blast</button><div class="info" id="fixedInfo">
+            <p id="test">A beam of crackling energy streaks toward a creature within range. Make a ranged spell attack. On a hit, the target takes 1d10 force damage. The spell creates more than one beam when you reach higher levels: two beams at 5th level, three beams at 11th level, and four beams at 17th level. You can direct the beams at the same target or different ones.<button id="addAction" onclick="addAction('Eldritch Blast')">Add Eldritch Blast</button></p>
+          </div> 
+          
+          <button type="button" class="collapsible" id="actionsInDepth">Hex</button><div class="info" id="fixedInfo">
+            <p id="test">You place a curse on a creature that you can see within range, dealing an extra 1d6 necrotic damage to the target whenever you hit it with an attack. When you cast this spell using a spell slot of 2nd level or higher, the spell lasts for a longer duration. If you use a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 1st.<button id="addAction" onclick="addAction('Hex')">Add Hex</button></p>
+          </div> 
+          
+          <button type="button" class="collapsible" id="actionsInDepth">Hunger of Hadar</button><div class="info" id="fixedInfo">
+            <p id="test">You open a gateway to the dark between the stars, a region infested with unknown horrors. The void creates a warp in the fabric of space, and the area is heavily obscured. Any creature that starts its turn in the area takes 2d6 cold damage. When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.<button id="addAction" onclick="addAction('Hunger of Hadar')">Add Hunger of Hadar</button></p>
+          </div> 
+          
+          <button type="button" class="collapsible" id="actionsInDepth">Blight</button><div class="info" id="fixedInfo">
+            <p id="test">Necromantic energy washes over a creature of your choice that you can see within range, draining moisture and vitality from it. The target takes 8d8 necrotic damage. When you cast this spell using a spell slot of 5th level or higher, the damage increases by 1d8 for each slot level above 4th.<button id="addAction" onclick="addAction('Blight')">Add Blight</button></p>
+          </div> 
+          
+          <button type="button" class="collapsible" id="actionsInDepth">Shadow of Moil</button><div class="info" id="fixedInfo">
+            <p id="test">Flames wreathe you until the spell ends, providing you with a dim light and causing you to become heavily obscured to others. The spell ends if you cast it again or if you dispel the magic. Any creature that hits you with a melee attack while within 5 feet of you takes 2d8 fire damage. When you cast this spell using a spell slot of 5th level or higher, the fire damage increases by 1d8 for each slot level above 4th.<button id="addAction" onclick="addAction('Shadow of Moil')">Add Shadow of Moil</button></p>
+          </div> 
+          
+          <button type="button" class="collapsible" id="actionsInDepth">Hurl Through Hell</button><div class="info" id="fixedInfo">
+            <p id="test">You banish a creature you can see within 60 feet to the depths of the Nine Hells. The target takes 10d10 psychic damage. At the end of your next turn, the target returns to the space it previously occupied, or the nearest unoccupied space. When you cast this spell using a spell slot of 7th level or higher, the damage increases by 1d10 for each slot level above 6th. <button id="addAction" onclick="addAction('Hurl Through Hell')">Add Hurl Through Hell</button></p>
+          </div> 
+  
+  
+          <button type="button" class="collapsible" id="actionsInDepth">Investiture of Flame</button><div class="info" id="fixedInfo">
+            <p id="test">Flames race across your body, shedding bright light in a 30-foot radius and dim light for an additional 30 feet. The flames don’t harm you, and they shed bright light for 30 feet. Any creature takes 1d10 fire damage if it touches or hits you with a melee attack. When you cast this spell using a spell slot of 7th level or higher, the fire damage increases by 1d10 for each slot above 7th.<button id="addAction" onclick="addAction('Investiture of Flame')">Investiture of Flame</button></p>
+          </div> 
+          <button type="button" class="collapsible" id="actionsInDepth">Multiattack</button><div class="info" id="fixedInfo">
+            <p id="test">Rangers with companions like the Beast Master's animal companion can command their companion to make attacks, providing an additional source of damage in combat.<button id="addAction" onclick="addAction('Empty Body')">Add Empty Body</button></p>
+          </div> 
+          <button type="button" class="collapsible" id="actionsInDepth">Healing Elixir</button><div class="info" id="fixedInfo">
+            <p id="test">You create a healing elixir in a flask that shimmers with a silver glow. As an action, a creature can drink it to regain 2d4 + 2 hit points. When you cast this spell using a spell slot of 3rd level or higher, the healing increases by 1d4 for each slot level above 2nd.<button id="addAction" onclick="addAction('Healing Elixir')">Add Healing Elixir</button></p>
+          </div> 
+          <button type="button" class="collapsible" id="actionsInDepth">Life Transference</button><div class="info" id="fixedInfo">
+            <p id="test">You sacrifice some of your health to mend another creature’s injuries. You take 4d8 necrotic damage, and a creature you touch regains a number of hit points equal to twice the necrotic damage you took. When you cast this spell using a spell slot of 4th level or higher, the damage you take increases by 1d8 for each slot level above 3rd.<button id="addAction" onclick="addAction('Life Transference')">Add Life Transference</button></p>
+          </div> 
+          <button type="button" class="collapsible" id="actionsInDepth">Volley </button><div class="info" id="fixedInfo">
+            <p id="test">Hunters at level 11 can make a ranged attack against any number of creatures within 10 feet of a point they can see, adding their Dexterity modifier to the attack roll.<button id="addAction" onclick="addAction('Empty Body')">Add Empty Body</button></p>
+          </div> 
+          <button type="button" class="collapsible" id="actionsInDepth">Hide in Plain Sight</button><div class="info" id="fixedInfo">
+            <p id="test">At level 10, Rangers can spend a minute creating camouflage to effectively hide even when observed if they remain stationary.<button id="addAction" onclick="addAction('Empty Body')">Add Empty Body</button></p>
+          </div> 
+         
+        </div>
+
+
+
+
+
+
       </div>
       
       <div class="content" id="content2" style="display: none;">

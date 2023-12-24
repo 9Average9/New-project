@@ -1,18 +1,16 @@
-
-
 const classAction = {
-  fighter: ['Action Surge', 'Second Wind', 'Extra Attack', 'Precision Attack', 'Rally ', 'Menacing Attack ', 'Indomitable'],
-  wizard: ['Fireball', 'Mage Armor', 'Shield', 'Magic Missile', 'Counterspell', 'Blight', 'Vampiric Touch'],
-  druid: ['beast speech', 'camo', 'elemental arrow', 'change', 'wings'],
-  bard: ['stuff1','stuff2','stuff3','stuff4','stuff5'],
-  monk: ['stuff1','stuff2','stuff3','stuff4','stuff5'],
-  cleric: ['stuff1','stuff2','stuff3','stuff4','stuff5'],
-  barbarian: ['stuff1','stuff2','stuff3','stuff4','stuff5'],
-  paladin: ['stuff1','stuff2','stuff3','stuff4','stuff5'],
-  rogue: ['stuff1','stuff2','stuff3','stuff4','stuff5'],
-  ranger: ['stuff1','stuff2','stuff3','stuff4','stuff5'],
-  sorcerer: ['stuff1','stuff2','stuff3','stuff4','stuff5'],
-  warlock: ['stuff1','stuff2','stuff3','stuff4','stuff5'],
+  fighter: ['Action Surge', 'Second Wind', 'Extra Attack', 'Precision Attack', 'Rally ', 'Menacing Attack ', 'Indomitable',/*added actions*/'Eldritch Knight Spellcasting', 'Defensive Duelist','Riposte','Disarming Attack',],
+  wizard: ['Fireball', 'Mage Armor', 'Shield', 'Magic Missile', 'Counterspell', 'Blight', 'Vampiric Touch'/*added actions*/,'Cloudkill','Cone of Cold','Witch Bolt','Immolation','Fire Shield','Ice Storm'],
+  druid: [/*added actions*/'Call Lightning', "Melf's Minute Meteors", 'Blade Barrier', 'Flame Strike', 'Insect Plague','Ice Storm','Moonbeam','Flaming Sphere','Vitriolic Sphere','Erupting Earth'],
+  bard: [/*added actions*/'Thunderclap','Dissonant Whispers','Thunderwave','Shatter','Crown of Madness','Hypnotic Pattern','Thunder Step','Blight',"Evard's Black Tentacles",'Destructive Wave','Synaptic Static'],
+  monk: [/*added actions*/'Unarmed Strike','Flurry of Blows','Patient Defense','Step of the Wind','Deflect Missiles','Stunning Strike','Shadow Step','Step of the Wind','Empty Body','Wholeness of Body','Quivering Palm'],
+  cleric: ['Sacred Flame','Guiding Bolt','Healing Word','Cure Wounds','Spiritual Weapon','Mass Healing Word','Divine Strike','Preserve Life','Shield of Faith','Bless','Inflict Wounds'],
+  barbarian: [/*added actions*/'Rage','Reckless Attack',],
+  paladin: [/*added actions*/'Divine Smite','Lay on Hands','Bless','Wrathful Smite','Shield of Faith','Divine Favor','Thunderous Smite','Banishing Smite','Blade Warding','Retributive Strike','Vow of Enmity'],
+  rogue: [/*added actions*/'See List'],
+  ranger: [/*added actions*/'See List'],
+  sorcerer: [/*added actions*/'Magic Missile','Chaos Bolt','Scorching Ray','Fireball','Blight','Lightning Bolt','Haste','Sleet Storm','Wall of Fire','Healing Word','Cure Wounds'],
+  warlock: [/*added actions*/'Eldritch Blast','Hex','Hunger of Hadar','Blight','Shadow of Moil','Hurl Through Hell','Investiture of Flame','Healing Elixir','Life Transference',],
 };
 
 function generateCharacter() {
@@ -344,7 +342,30 @@ function calculateSpellSlots(characterClass, level, ) {
     return `10d6`;  
   } 
   }
-
+  else if(characterClass === 'fighter'){if (level === 10) {
+    return `5 (d8)`; 
+  } else if (level === 11) {
+    return `5 (d8)`; ; 
+  } else if (level === 12) {
+    return `5 (d8)`; ; 
+  } else if (level === 13) {
+    return `5 (d8)`; ; 
+  } else if (level === 14) {
+    return `5 (d8)`; ; 
+  } else if (level === 15) {
+    return `6 (d8)`; ; 
+  } else if (level === 16) {
+    return `6 (d8)`; ; 
+  } else if (level === 17) {
+    return `6 (d8)`; ; 
+  } else if (level === 18) {
+    return `6 (d8)`; ; 
+  } else if (level === 19) {
+    return `6 (d8)`; ; 
+  } else if (level === 20) {
+    return `6 (d8)`; ; 
+  } 
+  }
 
   return 'None'; 
 }
@@ -532,8 +553,11 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
   }
 
   if (characterClass.toLowerCase() === 'fighter') {
+    spellSlotsLabel = 'Superiority Dice';
    attributes.spellsaveDC = 0;
   }
+
+  
 
   const imageSources = {
     human: {
