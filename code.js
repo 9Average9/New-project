@@ -5,7 +5,7 @@ const classAction = {
   bard: [/*added actions*/'Thunderclap','Dissonant Whispers','Thunderwave','Shatter','Crown of Madness','Hypnotic Pattern','Thunder Step','Blight',"Evard's Black Tentacles",'Destructive Wave','Synaptic Static'],
   monk: [/*added actions*/'Unarmed Strike','Flurry of Blows','Patient Defense','Step of the Wind','Deflect Missiles','Stunning Strike','Shadow Step','Step of the Wind','Empty Body','Wholeness of Body','Quivering Palm'],
   cleric: ['Sacred Flame','Guiding Bolt','Healing Word','Cure Wounds','Spiritual Weapon','Mass Healing Word','Divine Strike','Preserve Life','Shield of Faith','Bless','Inflict Wounds'],
-  barbarian: [/*added actions*/'Rage','Reckless Attack',],
+  barbarian: [/*added actions*/'Rage','Reckless Attack'],
   paladin: [/*added actions*/'Divine Smite','Lay on Hands','Bless','Wrathful Smite','Shield of Faith','Divine Favor','Thunderous Smite','Banishing Smite','Blade Warding','Retributive Strike','Vow of Enmity'],
   rogue: [/*added actions*/'See List'],
   ranger: [/*added actions*/'See List'],
@@ -385,6 +385,40 @@ function generateAttributes(characterClass, race, level) {
     health: '',
   };
 
+
+  const preferredAttributes = {
+    sorcerer: 'charisma',
+    bard: 'charisma',
+    warlock: 'charisma',
+    rogue: 'dexterity',
+    monk: 'dexterity',
+    wizard: 'intelligence',
+    druid: 'wisdom',
+    cleric: 'wisdom',
+    fighter: 'strength',
+    ranger: 'strength',
+    barbarian: 'strength',
+    paladin: 'strength',
+  };
+
+  // Assign the highest modifier to the preferred attribute
+  if (preferredAttributes[characterClass]) {
+    const preferredAttr = preferredAttributes[characterClass];
+    attributes[preferredAttr] = Math.floor(Math.random() * 3) + 16;
+  }
+
+  // Calculate modifiers
+  const calculateModifier = (value) => Math.floor((value - 10) / 2);
+
+  // Assign modifiers to attributes
+  Object.keys(attributes).forEach((key) => {
+    if (key !== 'AC' && key !== 'weapon' && key !== 'spellsaveDC' && key !== 'spellhit' && key !== 'health') {
+      attributes[`${key}Mod`] = calculateModifier(attributes[key]);
+      attributes[key] = attributes[`${key}Mod`];
+    }
+  });
+
+
   if(race === 'dragonborn'){
     attributes.strength += 2;
     attributes.charisma += 1;
@@ -433,21 +467,11 @@ function generateAttributes(characterClass, race, level) {
 
 //AC
 if (characterClass === 'fighter' || characterClass === 'ranger' || characterClass === 'barbarian' || characterClass === 'paladin') {
-  attributes.strength = Math.floor(Math.random() * 3) + 18;
+  
   attributes.AC = Math.floor(Math.random() * 5 + 16)
 }
 
-//highest attributes
-if(characterClass === 'sorcerer' ||  characterClass === 'bard' || characterClass === 'warlock' ){
-  attributes.charisma = Math.floor(Math.random() * 3) + 18;
-}
-if(characterClass === 'rogue' || characterClass === 'monk'){
-  attributes.dexterity = Math.floor(Math.random() * 3) + 18;
-}if(characterClass === 'wizard'){
-  attributes.intelligence = Math.floor(Math.random() * 3) + 18;
-}if(characterClass === 'druid' || characterClass === 'cleric'){
-  attributes.wisdom = Math.floor(Math.random() * 3) + 18;
-}
+
 
 
 //spell hit and DC code
@@ -466,7 +490,7 @@ if(characterClass === 'rogue' || characterClass === 'monk'){
 
 
 
-  const levelModifier = Math.floor((level - 10) * 0.5);  
+  const levelModifier = Math.floor((level - 10) * 0.2);  
 
   for (const attribute in attributes) {
     if (attributes.hasOwnProperty(attribute) && attribute !== 'weapon' && attribute !== 'spellhit') {
@@ -511,7 +535,14 @@ if(characterClass === 'rogue' || characterClass === 'monk'){
 
 function generateActions(characterClass) {
   const actionsPool = classAction[characterClass];
-  const numActionsToSelect = 4; // Number of actions to randomly select for each character
+  let numActionsToSelect = 4; // Default number of actions to select
+
+  // Special handling for Ranger, Rogue, and Barbarian classes
+  if (['ranger', 'rogue', 'barbarian'].includes(characterClass.toLowerCase())) {
+    numActionsToSelect = Math.min(actionsPool.length, numActionsToSelect);
+    // Limit the number of actions to the available actions for these classes
+  }
+
   const selectedActions = [];
 
   while (selectedActions.length < numActionsToSelect) {
@@ -529,14 +560,23 @@ function generateActions(characterClass) {
 
 
 
+
 function displayCharacter(race, characterClass, attributes, actions, spellSlots) {
   const characterDetails = document.getElementById('character-info');
   let details = '';
 
   let spellSlotsLabel = 'Spell Slots';
 
+  const usesSpellSlots = ['wizard', 'sorcerer', 'warlock', 'bard', 'cleric', 'druid','paladin'].includes(characterClass.toLowerCase());
 
-
+  if (usesSpellSlots) {
+    // Show the "Use Spell Slot" button
+    document.getElementById('useSpellSlotBtn').style.display = 'block';
+  } else {
+    // Hide the "Use Spell Slot" button
+    document.getElementById('useSpellSlotBtn').style.display = 'none';
+  }
+  
   if (characterClass.toLowerCase() === 'barbarian') {
     spellSlotsLabel = 'Rages';
     attributes.spellsaveDC = 0;
@@ -708,12 +748,12 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
   details += `<ul>`;
   
   
-  details += `<li>Strength: ${attributes.strength}</li>`;
-  details += `<li>Dexterity: ${attributes.dexterity}</li>`;
-  details += `<li>Intelligence: ${attributes.intelligence}</li>`;
-  details += `<li>Constitution: ${attributes.constitution}</li>`;
-  details += `<li>Wisdom: ${attributes.wisdom}</li>`;
-  details += `<li>Charisma: ${attributes.charisma}</li>`;
+  details += `<li>Strength: +${attributes.strength}</li>`;
+  details += `<li>Dexterity: +${attributes.dexterity}</li>`;
+  details += `<li>Intelligence: +${attributes.intelligence}</li>`;
+  details += `<li>Constitution: +${attributes.constitution}</li>`;
+  details += `<li>Wisdom: +${attributes.wisdom}</li>`;
+  details += `<li>Charisma: +${attributes.charisma}</li>`;
   details += `<li>Health: <input id="HEALTH" placeholder="${attributes.health}"></li>`
   details += `</ul>`;
   details += `</div>`;
@@ -1157,3 +1197,43 @@ document.addEventListener('DOMContentLoaded', setupImage);
 
 
 
+function useSpellSlot() {
+  
+  let selectedLevel = 1; // Replace this with the user's selected level
+  let spellSlots = document.getElementById('spellSLOTS').getElementsByTagName('option');
+
+  for (let i = 0; i < spellSlots.length; i++) {
+    let parts = spellSlots[i].textContent.split(':');
+    let level = parseInt(parts[1].trim().split(' ')[1]);
+
+    if (level === selectedLevel) {
+      let count = parseInt(parts[0]);
+      if (count > 0) {
+        parts[0] = count - 1; // Deduct one spell slot
+        spellSlots[i].textContent = parts.join(':');
+        break;
+      } else {
+        alert('No more available spell slots for this level!');
+        break;
+      }
+    }
+  }
+}
+function openSpellSlotModal() {
+  document.getElementById('spellSlotModal').style.display = 'block';
+}
+
+function closeSpellSlotModal() {
+  document.getElementById('spellSlotModal').style.display = 'none';
+}
+
+function useSpellSlot(level) {
+  let spellSlotElement = document.querySelector(`#spellSLOTS option:nth-child(${level})`);
+  let count = parseInt(spellSlotElement.textContent.split(':')[0]);
+
+  if (count > 0) {
+    spellSlotElement.textContent = `${count - 1}: level ${level}`;
+  } else {
+    alert(`No more available spell slots for level ${level}!`);
+  }
+}

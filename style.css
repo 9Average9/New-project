@@ -582,3 +582,35 @@ color: #000000;
   max-height: 100%;
 }
 
+
+#useSpellSlotBtn{
+  width: 170px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+#spellSlotModal {
+  position: absolute;
+  top: 25%; 
+  background-color: #e8e8e8;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 2%;
+  border: 2px solid red;
+}
+
+.modal-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.modal-content button {
+
+  padding: 10px 20px;
+ 
+}
