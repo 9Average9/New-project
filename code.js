@@ -188,25 +188,25 @@ function calculateSpellSlots(characterClass, level, ) {
   }else if(characterClass === 'barbarian'){
     
     if (level === 10) {
-      return `4 Damage:+3`; 
+      return `<input id="kiPoints" placeholder="4">, Damage:+3`; 
     } else if (level === 11) {
-      return ` 4 Damage:+3`; 
+      return `<input id="kiPoints" placeholder="4">, Damage:+3`; 
     } else if (level === 12) {
-      return ` 5 Damage:+3`; 
+      return `<input id="kiPoints" placeholder="5">, Damage:+3`; 
     } else if (level === 13) {
-      return ` 5 Damage:+3`; 
+      return `<input id="kiPoints" placeholder="5">, Damage:+3`; 
     } else if (level === 14) {
-      return ` 5 Damage:+3`; 
+      return `<input id="kiPoints" placeholder="5">,Damage:+3`; 
     } else if (level === 15) {
-      return `5 Damage:+3`; 
+      return `<input id="kiPoints" placeholder="5">,Damage:+3`; 
     } else if (level === 16) {
-      return `5 Damage:+4`; 
+      return `<input id="kiPoints" placeholder="5">, Damage:+4`; 
     } else if (level === 17) {
-      return ` 6 Damage:+4`; 
+      return `<input id="kiPoints" placeholder="6">, Damage:+4`; 
     } else if (level === 18) {
-      return `6 Damage:+4`; 
+      return `<input id="kiPoints" placeholder="6">, Damage:+4`; 
     } else if (level === 19) {
-      return `6 Damage:+4`; 
+      return `<input id="kiPoints" placeholder="6">, Damage:+4`; 
     } else if (level === 20) {
       return `Unlimited Damage:+4`; 
     } 
@@ -296,27 +296,27 @@ function calculateSpellSlots(characterClass, level, ) {
   } 
 
   } else if(characterClass === 'monk'){if (level === 10) {
-    return `10, Martial arts 1d6`; 
+    return `<input id="kiPoints" placeholder="10">, Martial arts 1d6`; 
   } else if (level === 11) {
-    return `11, Martial arts 1d8`; ; 
+    return `<input id="kiPoints" placeholder="11">, Martial arts 1d8`; ; 
   } else if (level === 12) {
-    return `12, Martial arts 1d8`; ; 
+    return `<input id="kiPoints" placeholder="12">, Martial arts 1d8`; ; 
   } else if (level === 13) {
-    return `13, Martial arts 1d8`; ; 
+    return `<input id="kiPoints" placeholder="13">, Martial arts 1d8`; ; 
   } else if (level === 14) {
-    return `14, Martial arts 1d8`; ; 
+    return `<input id="kiPoints" placeholder="14">, Martial arts 1d8`; ; 
   } else if (level === 15) {
-    return `15, Martial arts 1d8`; ; 
+    return `<input id="kiPoints" placeholder="15">, Martial arts 1d8`; ; 
   } else if (level === 16) {
-    return `16, Martial arts 1d8`; ; 
+    return `<input id="kiPoints" placeholder="16">, Martial arts 1d8`; ; 
   } else if (level === 17) {
-    return `17, Martial arts 1d10`; ; 
+    return `<input id="kiPoints" placeholder="17">, Martial arts 1d10`; ; 
   } else if (level === 18) {
-    return `18, Martial arts 1d10`; ; 
+    return `<input id="kiPoints" placeholder="18">, Martial arts 1d10`; ; 
   } else if (level === 19) {
-    return `19, Martial arts 1d10`; ; 
+    return `<input id="kiPoints" placeholder="19">, Martial arts 1d10`; ; 
   } else if (level === 20) {
-    return `20, Martial arts 1d10`; ; 
+    return `<input id="kiPoints" placeholder="20">, Martial arts 1d10`; ; 
   } 
   }else if(characterClass === 'rogue'){if (level === 10) {
     return `5d6`; 
@@ -343,27 +343,27 @@ function calculateSpellSlots(characterClass, level, ) {
   } 
   }
   else if(characterClass === 'fighter'){if (level === 10) {
-    return `5 (d8)`; 
+    return `<span contenteditable="true">5</span> (d8)`; 
   } else if (level === 11) {
-    return `5 (d8)`; ; 
+    return `<span contenteditable="true">5</span> (d8)`; ; 
   } else if (level === 12) {
-    return `5 (d8)`; ; 
+    return `<span contenteditable="true">5</span> (d8)`; ; 
   } else if (level === 13) {
-    return `5 (d8)`; ; 
+    return `<span contenteditable="true">5</span> (d8)`; ; 
   } else if (level === 14) {
-    return `5 (d8)`; ; 
+    return `<span contenteditable="true">5</span> (d8)`; ; 
   } else if (level === 15) {
-    return `6 (d8)`; ; 
+    return `<span contenteditable="true">6</span> (d8)`; ; 
   } else if (level === 16) {
-    return `6 (d8)`; ; 
+    return `<span contenteditable="true">6</span> (d8)`; ; 
   } else if (level === 17) {
-    return `6 (d8)`; ; 
+    return `<span contenteditable="true">6</span> (d8)`; ; 
   } else if (level === 18) {
-    return `6 (d8)`; ; 
+    return `<span contenteditable="true">6</span> (d8)`; ; 
   } else if (level === 19) {
-    return `6 (d8)`; ; 
+    return `<span contenteditable="true">6</span> (d8)`; ; 
   } else if (level === 20) {
-    return `6 (d8)`; ; 
+    return `<span contenteditable="true">6</span> (d8)`; ; 
   } 
   }
 
@@ -468,7 +468,7 @@ function generateAttributes(characterClass, race, level) {
 //AC
 if (characterClass === 'fighter' || characterClass === 'ranger' || characterClass === 'barbarian' || characterClass === 'paladin') {
   
-  attributes.AC = Math.floor(Math.random() * 5 + 16)
+  attributes.AC = Math.floor(Math.random() * 5 + 18)
 }
 
 
@@ -754,7 +754,8 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
   details += `<li>Constitution: +${attributes.constitution}</li>`;
   details += `<li>Wisdom: +${attributes.wisdom}</li>`;
   details += `<li>Charisma: +${attributes.charisma}</li>`;
-  details += `<li>Health: <input id="HEALTH" placeholder="${attributes.health}"></li>`
+  details += `<li>Max Health: ${attributes.health}</li>`;
+  details += `<li>Temporary Health: <input type="text" id='editHealth' placeholder="${attributes.health}"></li>`;
   details += `</ul>`;
   details += `</div>`;
   //next column
