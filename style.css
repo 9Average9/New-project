@@ -275,6 +275,10 @@ body {
   .tabs{
     top: 0%;
   }
+
+
+
+  
 }
 
 #actionsInDepth.active {
@@ -590,7 +594,11 @@ color: #000000;
   left: 50%;
   transform: translateX(-50%);
 }
-
+#close{
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  
+}
 
 #spellSlotModal {
   position: absolute;
@@ -634,16 +642,17 @@ color: #000000;
   font-size: large;
   font-weight: bold;
   text-align: center;
-  margin-left: -8px;
-  margin-right: -8px;
+  margin-left: -4px;
+  margin-right: -4px;
 }
 #kiPoints::placeholder{
 color: rgb(0, 0, 0);
 }
 
 .close-icon {
-  font-size: 30px;
+  font-size: 40px;
   color: red;
-  padding-left: 5px;
-
+  padding-left: 6px;
+  margin-top: -20px;
 }
+
