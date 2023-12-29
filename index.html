@@ -717,6 +717,10 @@
 </div>
 
 
+<button id="minusHealth" class="health-button" onclick="updateTemporaryHealth('subtract')" style="display: none;"><i class="fas fa-heart-broken"></i></button>
+<button id="addHealth" class="health-button" onclick="updateTemporaryHealth('add')" style="display: none;"><i class="fas fa-heart"></i></button>
+
+
 <div tabindex="1" class="container12" onclick="toggleMenu()">
   <img id="menuIMG" src="img/menusword.jpg">
   <img id="ndmenuIMG" src="img/menuCROSSED.jpg" class="hidden">
@@ -734,6 +738,7 @@
 
 
 
+
 <button id="useSpellSlotBtn" onclick="openSpellSlotModal()" style="display: none;">Use Spell Slot</button>
 <div id="spellSlotModal" class="modal"  style="display: none;">
   <div class="modal-content">
@@ -746,7 +751,7 @@
     <button onclick="useSpellSlot(7)">Level 7</button>
     <button onclick="useSpellSlot(8)">Level 8</button>
     <button onclick="useSpellSlot(9)">Level 9</button>
-    <button id="close" onclick="closeSpellSlotModal()"> <i class="fas fa-times close-icon"></i></button>
+    <button id="close" onclick="closeSpellSlotModal()"> <i class="fas fa-times close-icon" style="color: black;"></i></button>
   </div>
 </div>
 

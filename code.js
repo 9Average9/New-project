@@ -567,7 +567,7 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
 
   let spellSlotsLabel = 'Spell Slots';
 
-  const usesSpellSlots = ['wizard', 'sorcerer', 'warlock', 'bard', 'cleric', 'druid','paladin'].includes(characterClass.toLowerCase());
+  const usesSpellSlots = ['wizard', 'sorcerer', 'warlock', 'bard', 'cleric', 'druid','paladin','ranger'].includes(characterClass.toLowerCase());
 
   if (usesSpellSlots) {
     // Show the "Use Spell Slot" button
@@ -755,7 +755,8 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
   details += `<li>Wisdom: +${attributes.wisdom}</li>`;
   details += `<li>Charisma: +${attributes.charisma}</li>`;
   details += `<li>Max Health: ${attributes.health}</li>`;
-  details += `<li>Temporary Health: <input type="text" id='editHealth' placeholder="${attributes.health}"></li>`;
+  details += `<li>Temporary Health: <span id="editHealth">${attributes.health}</span></li>`;
+
   details += `</ul>`;
   details += `</div>`;
   //next column
@@ -779,7 +780,12 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
 
   characterDetails.innerHTML = details;
 
+  let addHealthButton = document.getElementById('addHealth');
+  let minusHealthButton = document.getElementById('minusHealth');
 
+  // Change display style to block
+  addHealthButton.style.display = 'block';
+  minusHealthButton.style.display = 'block';
 }
 
 
@@ -1236,5 +1242,32 @@ function useSpellSlot(level) {
     spellSlotElement.textContent = `${count - 1}: level ${level}`;
   } else {
     alert(`No more available spell slots for level ${level}!`);
+  }
+}
+function updateTemporaryHealth(action) {
+  let tempHealthSpan = document.getElementById('editHealth');
+
+  if (action === 'subtract') {
+    let healthLost = prompt('Enter the amount of health lost:', '0');
+
+    if (healthLost !== null && !isNaN(healthLost) && healthLost !== '') {
+      healthLost = parseInt(healthLost);
+
+      let currentHealth = parseInt(tempHealthSpan.textContent);
+      let remainingHealth = currentHealth - healthLost;
+
+      tempHealthSpan.textContent = remainingHealth;
+    }
+  } else if (action === 'add') {
+    let healthToAdd = prompt('Enter the amount of health to add:', '0');
+
+    if (healthToAdd !== null && !isNaN(healthToAdd) && healthToAdd !== '') {
+      healthToAdd = parseInt(healthToAdd);
+
+      let currentHealth = parseInt(tempHealthSpan.textContent);
+      let updatedHealth = currentHealth + healthToAdd;
+
+      tempHealthSpan.textContent = updatedHealth;
+    }
   }
 }
