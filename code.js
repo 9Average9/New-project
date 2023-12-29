@@ -1248,7 +1248,7 @@ function updateTemporaryHealth(action) {
   let tempHealthSpan = document.getElementById('editHealth');
 
   if (action === 'subtract') {
-    let healthLost = prompt('Enter the amount of health lost:', '0');
+    let healthLost = prompt('Enter the amount of health lost:', '');
 
     if (healthLost !== null && !isNaN(healthLost) && healthLost !== '') {
       healthLost = parseInt(healthLost);
@@ -1259,7 +1259,7 @@ function updateTemporaryHealth(action) {
       tempHealthSpan.textContent = remainingHealth;
     }
   } else if (action === 'add') {
-    let healthToAdd = prompt('Enter the amount of health to add:', '0');
+    let healthToAdd = prompt('Enter the amount of health to add:', '');
 
     if (healthToAdd !== null && !isNaN(healthToAdd) && healthToAdd !== '') {
       healthToAdd = parseInt(healthToAdd);
