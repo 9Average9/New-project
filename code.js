@@ -65,7 +65,7 @@ function toggleEdit() {
 
 function calculateSpellSlots(characterClass, level, ) {
 
-  if (characterClass === 'wizard' || characterClass === 'sorcerer' || characterClass === 'warlock' ||  characterClass === 'bard' || characterClass === 'cleric' || characterClass === 'druid') {
+  if (characterClass === 'wizard' || characterClass === 'sorcerer' || characterClass === 'bard' || characterClass === 'cleric' || characterClass === 'druid') {
     if (level === 10) {
     
       return ` <select id="spellSLOTS">
@@ -366,6 +366,103 @@ function calculateSpellSlots(characterClass, level, ) {
     return `<span contenteditable="true">6</span> (d8)`; ; 
   } 
   }
+else if(characterClass === 'warlock'){
+if(level === 10){
+  return  `<select id="spellSLOTS">
+  <option>Spell Slots:</option>
+  <option style="display: none;"></option>
+  <option style="display: none;"></option>
+  <option style="display: none;"></option>
+  <option >2: level 5</option>
+</select>`;
+}
+else if(level === 11){
+  return  `<select id="spellSLOTS">
+  <option>Spell Slots:</option>
+  <option style="display: none;"></option>
+  <option style="display: none;"></option>
+  <option style="display: none;"></option>
+  <option >3: level 5</option>
+</select>`;
+}else if(level === 12){
+  return  `<select id="spellSLOTS">
+  <option>Spell Slots:</option>
+  <option style="display: none;"></option>
+  <option style="display: none;"></option>
+  <option style="display: none;"></option>
+  <option >3: level 5</option>
+</select>`;
+}else if(level === 13){
+  return  `<select id="spellSLOTS">
+  <option>Spell Slots:</option>
+  <option style="display: none;"></option>
+  <option style="display: none;"></option>
+  <option style="display: none;"></option>
+  <option >3: level 5</option>
+</select>`;
+}else if(level === 14){
+  return  `<select id="spellSLOTS">
+  <option>Spell Slots:</option>
+  <option style="display: none;"></option>
+  <option style="display: none;"></option>
+  <option style="display: none;"></option>
+  <option >3: level 5</option>
+</select>`;
+}else if(level === 15){
+  return  `<select id="spellSLOTS">
+  <option>Spell Slots:</option>
+  <option style="display: none;"></option>
+  <option style="display: none;"></option>
+  <option style="display: none;"></option>
+  <option >3: level 5</option>
+</select>`;
+}else if(level === 16){
+  return  `<select id="spellSLOTS">
+  <option>Spell Slots:</option>
+  <option style="display: none;"></option>
+  <option style="display: none;"></option>
+  <option style="display: none;"></option>
+  <option >3: level 5</option>
+</select>`;
+}else if(level === 17){
+  return  `<select id="spellSLOTS">
+  <option>Spell Slots:</option>
+  <option style="display: none;"></option>
+  <option style="display: none;"></option>
+  <option style="display: none;"></option>
+  <option >4: level 5</option>
+</select>`;
+}else if(level === 18){
+  return  `<select id="spellSLOTS">
+  <option>Spell Slots:</option>
+  <option style="display: none;"></option>
+  <option style="display: none;"></option>
+  <option style="display: none;"></option>
+  <option >4: level 5</option>
+</select>`;
+}else if(level === 19){
+  return  `<select id="spellSLOTS">
+  <option>Spell Slots:</option>
+  <option style="display: none;"></option>
+  <option style="display: none;"></option>
+  <option style="display: none;"></option>
+  <option >4: level 5</option>
+</select>`;
+}else if(level === 20){
+  return  `<select id="spellSLOTS">
+  <option>Spell Slots:</option>
+  <option style="display: none;"></option>
+  <option style="display: none;"></option>
+  <option style="display: none;"></option>
+  <option >4: level 5</option>
+</select>`;
+}
+}
+
+
+
+
+
 
   return 'None'; 
 }
@@ -596,7 +693,10 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
     spellSlotsLabel = 'Superiority Dice';
    attributes.spellsaveDC = 0;
   }
+  if (characterClass.toLowerCase() === 'warlock') {
+    spellSlotsLabel = ``;
 
+  }
   
 
   const imageSources = {
@@ -772,7 +872,7 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
   details += `</select></li>`;
   details += `<li>Spell hit bonus: ${attributes.spellhit}</li>`;
   details += `<li>Spell save DC: ${attributes.spellsaveDC}</li>`;
-  details += `<li>${spellSlotsLabel}: ${spellSlots}</li>`;
+  details += `<li>${spellSlotsLabel} ${spellSlots}</li>`;
   
   details += `</ul>`;
   details += `</div>`;
