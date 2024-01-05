@@ -480,6 +480,7 @@ function generateAttributes(characterClass, race, level) {
     spellsaveDC: '',
     spellhit: '',
     health: '',
+    proficiencyBonus: '',
   };
 
 
@@ -568,17 +569,33 @@ if (characterClass === 'fighter' || characterClass === 'ranger' || characterClas
   attributes.AC = Math.floor(Math.random() * 5 + 18)
 }
 
-
+if(level >= 10 && level <=12  ){
+  proficiencyBonus = 4;
+ }else if(level >= 13 && level <=16 ){
+  proficiencyBonus = 5;
+ }else if(level >= 17 && level <=20 ){
+  proficiencyBonus = 6;
+ }
 
 
 //spell hit and DC code
-  if (characterClass === 'warlock' || characterClass === 'wizard' || characterClass === 'sorcerer' ||characterClass === 'druid' || characterClass === 'cleric' || characterClass === 'bard') {
-    attributes.spellhit = 7 + Math.floor((level - 10) * 0.5); 
-    attributes.spellsaveDC = 13 + Math.floor((level - 10) * 0.25);
-  }else if(characterClass === 'ranger' || characterClass === 'paladin'){
-    attributes.spellhit = 3 + Math.floor((level - 10) * 0.5); 
-    attributes.spellsaveDC = 7 + Math.floor((level - 10) * 0.25);
-  } 
+  if (characterClass === 'warlock' || characterClass === 'sorcerer' || characterClass === 'bard') {
+    attributes.spellhit = proficiencyBonus + attributes.charisma; 
+    attributes.spellsaveDC = proficiencyBonus + 8 + attributes.charisma;
+  }else if(characterClass === 'paladin'){
+    attributes.spellhit = proficiencyBonus + attributes.charisma; 
+    attributes.spellsaveDC = proficiencyBonus + 8 + attributes.charisma;
+  } else if(characterClass === 'ranger'){
+    attributes.spellhit = proficiencyBonus + attributes.wisdom; 
+    attributes.spellsaveDC = proficiencyBonus + 8 + attributes.wisdom;
+  }else if(characterClass === 'cleric' || characterClass === 'druid'){
+    attributes.spellhit = proficiencyBonus + attributes.wisdom; 
+    attributes.spellsaveDC = proficiencyBonus + 8 + attributes.wisdom;
+  }else if(characterClass ==='wizard'){
+    attributes.spellhit = proficiencyBonus + attributes.intelligence; 
+    attributes.spellsaveDC = proficiencyBonus + 8 + attributes.intelligence;
+  }
+
   
   else {
     attributes.spellhit = 0;
@@ -622,6 +639,8 @@ if (characterClass === 'fighter' || characterClass === 'ranger' || characterClas
       attributes.health = 120 +(level - 10)*6;
    }
    }
+
+   
 
 
 
@@ -829,9 +848,6 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
   };
 
 
-
-
-
   if (imageSources[race] && imageSources[race][characterClass]) {
     const imageElement = document.getElementById('characterImage');
     if (imageElement) {
@@ -841,7 +857,7 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
     }
   }
 
-
+if(characterClass === 'barbarian' || characterClass === 'fighter'|| characterClass === 'monk' || characterClass === 'rogue'){
   details += `<h2 style="text-align: center;">Your Character</h2>`
   details += `<div class="columns">`;
   details += `<div class="column">`;
@@ -862,6 +878,43 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
   //next column
   details += `<div class="column">`;
   details += `<ul>`;
+  details += `<li>Proficiency Bonus:+${proficiencyBonus}`
+  details += `<li>Armor Class: ${attributes.AC}</li>`;
+  details += `<li>Weapon: ${attributes.weapon}</li>`;
+  details += `<li>Actions: `;
+  details += `<select id="actionsSelect">`;
+  actions.forEach((action) => {
+    details += `<option value="${action}">${action}</option>`;
+  });
+  details += `</select></li>`;
+  details += `<li>${spellSlotsLabel} ${spellSlots}</li>`;
+  
+  details += `</ul>`;
+  details += `</div>`;
+  details += `</div>`;
+}
+else{
+  details += `<h2 style="text-align: center;">Your Character</h2>`
+  details += `<div class="columns">`;
+  details += `<div class="column">`;
+  details += `<ul>`;
+  
+  
+  details += `<li>Strength: +${attributes.strength}</li>`;
+  details += `<li>Dexterity: +${attributes.dexterity}</li>`;
+  details += `<li>Intelligence: +${attributes.intelligence}</li>`;
+  details += `<li>Constitution: +${attributes.constitution}</li>`;
+  details += `<li>Wisdom: +${attributes.wisdom}</li>`;
+  details += `<li>Charisma: +${attributes.charisma}</li>`;
+  details += `<li>Max Health: ${attributes.health}</li>`;
+  details += `<li>Temporary Health: <span id="editHealth">${attributes.health}</span></li>`;
+
+  details += `</ul>`;
+  details += `</div>`;
+  //next column
+  details += `<div class="column">`;
+  details += `<ul>`;
+  details += `<li>Proficiency Bonus:+${proficiencyBonus}`
   details += `<li>Armor Class: ${attributes.AC}</li>`;
   details += `<li>Weapon: ${attributes.weapon}</li>`;
   details += `<li>Actions: `;
@@ -877,7 +930,7 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
   details += `</ul>`;
   details += `</div>`;
   details += `</div>`;
-
+}
   characterDetails.innerHTML = details;
 
   let addHealthButton = document.getElementById('addHealth');
