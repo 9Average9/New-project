@@ -64,14 +64,13 @@ body {
   background-color: #f0000000;
   color: #fff;
   cursor: pointer;
-  margin: -5%;
-  margin-top: -5%;
+  top: 25px;
   font-weight: bold;
   border-radius: 50%;
   width: 35px;
   height: 33px;
   position: absolute;
-  right: 8%;
+  right: 15px;
   font-size: xx-large;
 }
 
@@ -259,18 +258,18 @@ body {
   }
 
   #character-details button {
-  
     border: none;
     background-color: #f0000000;
-    color: #fff;
+    color: #ffffff;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: x-large;
-   position: absolute;
-   top: 50%;
-    padding: 1%;
-   right: 5%;
-   font-weight: 200;
+    top: 25px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 35px;
+    height: 33px;
+    position: absolute;
+    right: 15px;
+    font-size: xx-large;
   }
   
   .tabs{
