@@ -272,14 +272,10 @@ body {
     font-size: xx-large;
   }
   
-  
+
   .tabs{
     top: 0%;
   }
-
-
-
-  
 }
 
 #actionsInDepth.active {
@@ -483,6 +479,8 @@ ul li {
   position: absolute;
   top: 56%;
 }
+
+
 }
 
 #content2{
@@ -682,4 +680,31 @@ color: rgb(0, 0, 0);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+#rages{
+  font-size: large;
+}
+
+#rageToggle{
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+ 
+}
+#rage-container{
+  position: absolute;
+  top: 52%;
+  right: 45px;
+  display: none;
+}
+@media screen and (max-width: 400px) {
+  #rage-container{
+    position: absolute;
+    top: 63%;
+    right: 32px;
+  }
+}
+
+#actionsSelect{
+font-size: small;
 }

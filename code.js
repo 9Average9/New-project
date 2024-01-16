@@ -188,25 +188,25 @@ function calculateSpellSlots(characterClass, level, ) {
   }else if(characterClass === 'barbarian'){
     
     if (level === 10) {
-      return `<input id="kiPoints" placeholder="4">, Damage:+3`; 
+      return `<h1 id="rages"><span id="rageNumber">4</span>, Damage:+3</h1>`; 
     } else if (level === 11) {
-      return `<input id="kiPoints" placeholder="4">, Damage:+3`; 
+      return `<h1 id="rages"><span id="rageNumber">4</span>, Damage:+3</h1>`; 
     } else if (level === 12) {
-      return `<input id="kiPoints" placeholder="5">, Damage:+3`; 
+      return `<h1 id="rages"><span id="rageNumber">5</span>, Damage:+3</h1>`; 
     } else if (level === 13) {
-      return `<input id="kiPoints" placeholder="5">, Damage:+3`; 
+      return `<h1 id="rages"><span id="rageNumber">5</span>, Damage:+3</h1>`; 
     } else if (level === 14) {
-      return `<input id="kiPoints" placeholder="5">,Damage:+3`; 
+      return `<h1 id="rages"><span id="rageNumber">5</span>, Damage:+3</h1>`; 
     } else if (level === 15) {
-      return `<input id="kiPoints" placeholder="5">,Damage:+3`; 
+      return `<h1 id="rages"><span id="rageNumber">5</span>, Damage:+3</h1>`; 
     } else if (level === 16) {
-      return `<input id="kiPoints" placeholder="5">, Damage:+4`; 
+      return `<h1 id="rages"><span id="rageNumber">5</span>, Damage:+3</h1>`; 
     } else if (level === 17) {
-      return `<input id="kiPoints" placeholder="6">, Damage:+4`; 
+      return `<h1 id="rages"><span id="rageNumber">6</span>, Damage:+3</h1>`; 
     } else if (level === 18) {
-      return `<input id="kiPoints" placeholder="6">, Damage:+4`; 
+      return `<h1 id="rages"><span id="rageNumber">6</span>, Damage:+3</h1>`; 
     } else if (level === 19) {
-      return `<input id="kiPoints" placeholder="6">, Damage:+4`; 
+      return`<h1 id="rages"><span id="rageNumber">6</span>, Damage:+3</h1>`; 
     } else if (level === 20) {
       return `Unlimited Damage:+4`; 
     } 
@@ -296,27 +296,27 @@ function calculateSpellSlots(characterClass, level, ) {
   } 
 
   } else if(characterClass === 'monk'){if (level === 10) {
-    return `<input id="kiPoints" placeholder="10">, Martial arts 1d6`; 
+    return `<h1 id="rages"><span id="rageNumber">10</span></h1> Martial arts 1d6`; 
   } else if (level === 11) {
-    return `<input id="kiPoints" placeholder="11">, Martial arts 1d8`; ; 
+    return `<h1 id="rages"><span id="rageNumber">11</span></h1> Martial arts 1d8`; 
   } else if (level === 12) {
-    return `<input id="kiPoints" placeholder="12">, Martial arts 1d8`; ; 
+    return  `<h1 id="rages"><span id="rageNumber">12</span></h1> Martial arts 1d8`; 
   } else if (level === 13) {
-    return `<input id="kiPoints" placeholder="13">, Martial arts 1d8`; ; 
+    return  `<h1 id="rages"><span id="rageNumber">13</span></h1> Martial arts 1d8`;  
   } else if (level === 14) {
-    return `<input id="kiPoints" placeholder="14">, Martial arts 1d8`; ; 
+    return `<h1 id="rages"><span id="rageNumber">14</span></h1> Martial arts 1d8`; 
   } else if (level === 15) {
-    return `<input id="kiPoints" placeholder="15">, Martial arts 1d8`; ; 
+    return  `<h1 id="rages"><span id="rageNumber">15</span></h1> Martial arts 1d8`; 
   } else if (level === 16) {
-    return `<input id="kiPoints" placeholder="16">, Martial arts 1d8`; ; 
+    return  `<h1 id="rages"><span id="rageNumber">16</span></h1> Martial arts 1d8`; 
   } else if (level === 17) {
-    return `<input id="kiPoints" placeholder="17">, Martial arts 1d10`; ; 
+    return  `<h1 id="rages"><span id="rageNumber">17</span></h1> Martial arts 1d10`;  
   } else if (level === 18) {
-    return `<input id="kiPoints" placeholder="18">, Martial arts 1d10`; ; 
+    return `<h1 id="rages"><span id="rageNumber">18</span></h1> Martial arts 1d10`;  
   } else if (level === 19) {
-    return `<input id="kiPoints" placeholder="19">, Martial arts 1d10`; ; 
+    return `<h1 id="rages"><span id="rageNumber">19</span></h1> Martial arts 1d10`;  
   } else if (level === 20) {
-    return `<input id="kiPoints" placeholder="20">, Martial arts 1d10`; ; 
+    return`<h1 id="rages"><span id="rageNumber">20</span></h1> Martial arts 1d10`;  
   } 
   }else if(characterClass === 'rogue'){if (level === 10) {
     return `5d6`; 
@@ -343,119 +343,75 @@ function calculateSpellSlots(characterClass, level, ) {
   } 
   }
   else if(characterClass === 'fighter'){if (level === 10) {
-    return `<span contenteditable="true">5</span> (d8)`; 
+    return `<h1 id="rages"><span id="rageNumber">5</span> (d8)</h1>`; 
   } else if (level === 11) {
-    return `<span contenteditable="true">5</span> (d8)`; ; 
+    return `<h1 id="rages"><span id="rageNumber">5</span> (d8)</h1>`; 
   } else if (level === 12) {
-    return `<span contenteditable="true">5</span> (d8)`; ; 
+    return `<h1 id="rages"><span id="rageNumber">5</span> (d8)</h1>`; 
   } else if (level === 13) {
-    return `<span contenteditable="true">5</span> (d8)`; ; 
+    return `<h1 id="rages"><span id="rageNumber">5</span> (d8)</h1>`; 
   } else if (level === 14) {
-    return `<span contenteditable="true">5</span> (d8)`; ; 
+    return `<h1 id="rages"><span id="rageNumber">5</span> (d8)</h1>`; 
   } else if (level === 15) {
-    return `<span contenteditable="true">6</span> (d8)`; ; 
+    return `<h1 id="rages"><span id="rageNumber">5</span> (d8)</h1>`; 
   } else if (level === 16) {
-    return `<span contenteditable="true">6</span> (d8)`; ; 
+    return `<h1 id="rages"><span id="rageNumber">6</span> (d8)</h1>`; 
   } else if (level === 17) {
-    return `<span contenteditable="true">6</span> (d8)`; ; 
+    return `<h1 id="rages"><span id="rageNumber">6</span> (d8)</h1>`; 
   } else if (level === 18) {
-    return `<span contenteditable="true">6</span> (d8)`; ; 
+    return `<h1 id="rages"><span id="rageNumber">6</span> (d8)</h1>`; 
   } else if (level === 19) {
-    return `<span contenteditable="true">6</span> (d8)`; ; 
+    return `<h1 id="rages"><span id="rageNumber">6</span> (d8)</h1>`; 
   } else if (level === 20) {
-    return `<span contenteditable="true">6</span> (d8)`; ; 
+    return `<h1 id="rages"><span id="rageNumber">6</span> (d8)</h1>`; 
   } 
   }
 else if(characterClass === 'warlock'){
 if(level === 10){
-  return  `<select id="spellSLOTS">
-  <option>Spell Slots:</option>
-  <option style="display: none;"></option>
-  <option style="display: none;"></option>
-  <option style="display: none;"></option>
-  <option >2: level 5</option>
-</select>`;
+  return  `
+  <h1 id="rages">Spell Slots<br><span id="rageNumber">2</span>: level 5</h1>`
+;
 }
 else if(level === 11){
-  return  `<select id="spellSLOTS">
-  <option>Spell Slots:</option>
-  <option style="display: none;"></option>
-  <option style="display: none;"></option>
-  <option style="display: none;"></option>
-  <option >3: level 5</option>
-</select>`;
+  return  `
+  <h1 id="rages">Spell Slots<br><span id="rageNumber">3</span>: level 5</h1>`
+;
 }else if(level === 12){
-  return  `<select id="spellSLOTS">
-  <option>Spell Slots:</option>
-  <option style="display: none;"></option>
-  <option style="display: none;"></option>
-  <option style="display: none;"></option>
-  <option >3: level 5</option>
-</select>`;
+  return  `
+  <h1 id="rages">Spell Slots<br><span id="rageNumber">3</span>: level 5</h1>`
+;
 }else if(level === 13){
-  return  `<select id="spellSLOTS">
-  <option>Spell Slots:</option>
-  <option style="display: none;"></option>
-  <option style="display: none;"></option>
-  <option style="display: none;"></option>
-  <option >3: level 5</option>
-</select>`;
+  return  `
+  <h1 id="rages">Spell Slots<br><span id="rageNumber">3</span>: level 5</h1>`
+;
 }else if(level === 14){
-  return  `<select id="spellSLOTS">
-  <option>Spell Slots:</option>
-  <option style="display: none;"></option>
-  <option style="display: none;"></option>
-  <option style="display: none;"></option>
-  <option >3: level 5</option>
-</select>`;
+  return  `
+  <h1 id="rages">Spell Slots<br><span id="rageNumber">3</span>: level 5</h1>`
+;
 }else if(level === 15){
-  return  `<select id="spellSLOTS">
-  <option>Spell Slots:</option>
-  <option style="display: none;"></option>
-  <option style="display: none;"></option>
-  <option style="display: none;"></option>
-  <option >3: level 5</option>
-</select>`;
+  return `
+  <h1 id="rages">Spell Slots<br><span id="rageNumber">3</span>: level 5</h1>`
+;
 }else if(level === 16){
-  return  `<select id="spellSLOTS">
-  <option>Spell Slots:</option>
-  <option style="display: none;"></option>
-  <option style="display: none;"></option>
-  <option style="display: none;"></option>
-  <option >3: level 5</option>
-</select>`;
+  return `
+  <h1 id="rages">Spell Slots<br><span id="rageNumber">3</span>: level 5</h1>`
+;
 }else if(level === 17){
-  return  `<select id="spellSLOTS">
-  <option>Spell Slots:</option>
-  <option style="display: none;"></option>
-  <option style="display: none;"></option>
-  <option style="display: none;"></option>
-  <option >4: level 5</option>
-</select>`;
+  return `
+  <h1 id="rages">Spell Slots<br><span id="rageNumber">4</span>: level 5</h1>`
+;
 }else if(level === 18){
-  return  `<select id="spellSLOTS">
-  <option>Spell Slots:</option>
-  <option style="display: none;"></option>
-  <option style="display: none;"></option>
-  <option style="display: none;"></option>
-  <option >4: level 5</option>
-</select>`;
+  return `
+  <h1 id="rages">Spell Slots<br><span id="rageNumber">4</span>: level 5</h1>`
+;
 }else if(level === 19){
-  return  `<select id="spellSLOTS">
-  <option>Spell Slots:</option>
-  <option style="display: none;"></option>
-  <option style="display: none;"></option>
-  <option style="display: none;"></option>
-  <option >4: level 5</option>
-</select>`;
+  return `
+  <h1 id="rages">Spell Slots<br><span id="rageNumber">4</span>: level 5</h1>`
+;
 }else if(level === 20){
-  return  `<select id="spellSLOTS">
-  <option>Spell Slots:</option>
-  <option style="display: none;"></option>
-  <option style="display: none;"></option>
-  <option style="display: none;"></option>
-  <option >4: level 5</option>
-</select>`;
+  return `
+  <h1 id="rages">Spell Slots<br><span id="rageNumber">4</span>: level 5</h1>`
+;
 }
 }
 
@@ -578,30 +534,11 @@ if(level >= 10 && level <=12  ){
  }
 
 
-//spell hit and DC code
-  if (characterClass === 'warlock' || characterClass === 'sorcerer' || characterClass === 'bard') {
-    attributes.spellhit = proficiencyBonus + attributes.charisma; 
-    attributes.spellsaveDC = proficiencyBonus + 8 + attributes.charisma;
-  }else if(characterClass === 'paladin'){
-    attributes.spellhit = proficiencyBonus + attributes.charisma; 
-    attributes.spellsaveDC = proficiencyBonus + 8 + attributes.charisma;
-  } else if(characterClass === 'ranger'){
-    attributes.spellhit = proficiencyBonus + attributes.wisdom; 
-    attributes.spellsaveDC = proficiencyBonus + 8 + attributes.wisdom;
-  }else if(characterClass === 'cleric' || characterClass === 'druid'){
-    attributes.spellhit = proficiencyBonus + attributes.wisdom; 
-    attributes.spellsaveDC = proficiencyBonus + 8 + attributes.wisdom;
-  }else if(characterClass ==='wizard'){
-    attributes.spellhit = proficiencyBonus + attributes.intelligence; 
-    attributes.spellsaveDC = proficiencyBonus + 8 + attributes.intelligence;
-  }
+ 
+
 
   
-  else {
-    attributes.spellhit = 0;
-    attributes.spellsaveDC = 0;
-  }
-
+  
 
 
   const levelModifier = Math.floor((level - 10) * 0.2);  
@@ -644,6 +581,31 @@ if(level >= 10 && level <=12  ){
 
 
 
+//spell hit and DC code
+switch (characterClass) {
+  case 'warlock':
+  case 'sorcerer':
+  case 'bard':
+  case 'paladin':
+    attributes.spellhit = proficiencyBonus + attributes.charisma;
+    attributes.spellsaveDC = proficiencyBonus + 8 + attributes.charisma;
+    break;
+  case 'ranger':
+  case 'cleric':
+  case 'druid':
+    attributes.spellhit = proficiencyBonus + attributes.wisdom;
+    attributes.spellsaveDC = proficiencyBonus + 8 + attributes.wisdom;
+    break;
+  case 'wizard':
+    attributes.spellhit = proficiencyBonus + attributes.intelligence;
+    attributes.spellsaveDC = proficiencyBonus + 8 + attributes.intelligence;
+    break;
+  // Add more cases as needed
+  default:
+    attributes.spellhit = 0;
+    attributes.spellsaveDC = 0;
+    break;
+}
 
 
   return attributes;
@@ -857,7 +819,17 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
     }
   }
 
-if(characterClass === 'barbarian' || characterClass === 'fighter'|| characterClass === 'monk' || characterClass === 'rogue'){
+
+ 
+  
+
+
+
+if(characterClass === 'barbarian' || characterClass === 'fighter'|| characterClass === 'monk'){
+
+  let rageButtons = document.getElementById("rage-container");
+   rageButtons.style.display = `block`;
+
   details += `<h2 style="text-align: center;">Your Character</h2>`
   details += `<div class="columns">`;
   details += `<div class="column">`;
@@ -888,12 +860,93 @@ if(characterClass === 'barbarian' || characterClass === 'fighter'|| characterCla
   });
   details += `</select></li>`;
   details += `<li>${spellSlotsLabel} ${spellSlots}</li>`;
+  details += `</ul>`;
+  details += `</div>`;
+  details += `</div>`;
+}
+
+else if(characterClass === 'rogue'){
+  let rageButtons = document.getElementById("rage-container");
+  rageButtons.style.display = `none`;
+  details += `<h2 style="text-align: center;">Your Character</h2>`
+  details += `<div class="columns">`;
+  details += `<div class="column">`;
+  details += `<ul>`;
+  
+  
+  details += `<li>Strength: +${attributes.strength}</li>`;
+  details += `<li>Dexterity: +${attributes.dexterity}</li>`;
+  details += `<li>Intelligence: +${attributes.intelligence}</li>`;
+  details += `<li>Constitution: +${attributes.constitution}</li>`;
+  details += `<li>Wisdom: +${attributes.wisdom}</li>`;
+  details += `<li>Charisma: +${attributes.charisma}</li>`;
+  details += `<li>Max Health: ${attributes.health}</li>`;
+  details += `<li>Temporary Health: <span id="editHealth">${attributes.health}</span></li>`;
+
+  details += `</ul>`;
+  details += `</div>`;
+  //next column
+  details += `<div class="column">`;
+  details += `<ul>`;
+  details += `<li>Proficiency Bonus:+${proficiencyBonus}`
+  details += `<li>Armor Class: ${attributes.AC}</li>`;
+  details += `<li>Weapon: ${attributes.weapon}</li>`;
+  details += `<li>Actions: `;
+  details += `<select id="actionsSelect">`;
+  actions.forEach((action) => {
+    details += `<option value="${action}">${action}</option>`;
+  });
+  details += `</select></li>`;
+  details += `<li>${spellSlotsLabel} ${spellSlots}</li>`;
+  details += `</ul>`;
+  details += `</div>`;
+  details += `</div>`;
+}
+ else if( characterClass === 'warlock'){
+  let rageButtons = document.getElementById("rage-container");
+  rageButtons.style.display = `block`;
+  details += `<h2 style="text-align: center;">Your Character</h2>`
+  details += `<div class="columns">`;
+  details += `<div class="column">`;
+  details += `<ul>`;
+  
+  
+  details += `<li>Strength: +${attributes.strength}</li>`;
+  details += `<li>Dexterity: +${attributes.dexterity}</li>`;
+  details += `<li>Intelligence: +${attributes.intelligence}</li>`;
+  details += `<li>Constitution: +${attributes.constitution}</li>`;
+  details += `<li>Wisdom: +${attributes.wisdom}</li>`;
+  details += `<li>Charisma: +${attributes.charisma}</li>`;
+  details += `<li>Max Health: ${attributes.health}</li>`;
+  details += `<li>Temporary Health: <span id="editHealth">${attributes.health}</span></li>`;
+
+  details += `</ul>`;
+  details += `</div>`;
+  //next column
+  details += `<div class="column">`;
+  details += `<ul>`;
+  details += `<li>Proficiency Bonus:+${proficiencyBonus}`
+  details += `<li>Armor Class: ${attributes.AC}</li>`;
+  details += `<li>Weapon: ${attributes.weapon}</li>`;
+  details += `<li>Actions: `;
+  details += `<select id="actionsSelect">`;
+  actions.forEach((action) => {
+    details += `<option value="${action}">${action}</option>`;
+  });
+  details += `</select></li>`;
+  details += `<li>Spell hit bonus: ${attributes.spellhit}</li>`;
+  details += `<li>Spell save DC: ${attributes.spellsaveDC}</li>`;
+  details += `<li>${spellSlotsLabel} ${spellSlots}</li>`;
   
   details += `</ul>`;
   details += `</div>`;
   details += `</div>`;
 }
+
 else{
+
+  let rageButtons = document.getElementById("rage-container");
+  rageButtons.style.display = `none`;
   details += `<h2 style="text-align: center;">Your Character</h2>`
   details += `<div class="columns">`;
   details += `<div class="column">`;
@@ -1356,29 +1409,24 @@ document.addEventListener('DOMContentLoaded', setupImage);
 
 
 
-
-function useSpellSlot() {
+function minusRage(){
+  let rages = document.getElementById("rageNumber");
   
-  let selectedLevel = 1; // Replace this with the user's selected level
-  let spellSlots = document.getElementById('spellSLOTS').getElementsByTagName('option');
-
-  for (let i = 0; i < spellSlots.length; i++) {
-    let parts = spellSlots[i].textContent.split(':');
-    let level = parseInt(parts[1].trim().split(' ')[1]);
-
-    if (level === selectedLevel) {
-      let count = parseInt(parts[0]);
-      if (count > 0) {
-        parts[0] = count - 1; // Deduct one spell slot
-        spellSlots[i].textContent = parts.join(':');
-        break;
-      } else {
-        alert('No more available spell slots for this level!');
-        break;
-      }
-    }
+  if(rages.textContent >=1){
+  rages.textContent -= 1;
+  return rages.textContent;}else{
+    rages.textContent = 0;
   }
 }
+
+function plusRage(){
+  let rages = document.getElementById("rageNumber");
+  
+  rages.textContent = parseInt(rages.textContent)+ 1;
+  return rages.textContent;
+   
+}
+
 function openSpellSlotModal() {
   document.getElementById('spellSlotModal').style.display = 'block';
 }
@@ -1389,14 +1437,20 @@ function closeSpellSlotModal() {
 
 function useSpellSlot(level) {
   let spellSlotElement = document.querySelector(`#spellSLOTS option:nth-child(${level})`);
-  let count = parseInt(spellSlotElement.textContent.split(':')[0]);
 
-  if (count > 0) {
-    spellSlotElement.textContent = `${count - 1}: level ${level}`;
+  if (spellSlotElement) {
+    let count = parseInt(spellSlotElement.textContent.split(':')[0]);
+
+    if (count > 0) {
+      spellSlotElement.textContent = `${count - 1}: level ${level}`;
+    } else {
+      alert(`No more available spell slots for level ${level}!`);
+    }
   } else {
-    alert(`No more available spell slots for level ${level}!`);
+    alert(`No spell slot option found for level ${level}!`);
   }
 }
+
 function updateTemporaryHealth(action) {
   let tempHealthSpan = document.getElementById('editHealth');
 
