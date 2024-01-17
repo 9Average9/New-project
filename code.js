@@ -645,7 +645,7 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
 
   let spellSlotsLabel = 'Spell Slots';
 
-  const usesSpellSlots = ['wizard', 'sorcerer', 'warlock', 'bard', 'cleric', 'druid','paladin','ranger'].includes(characterClass.toLowerCase());
+  const usesSpellSlots = ['wizard', 'sorcerer', 'bard', 'cleric', 'druid','paladin','ranger'].includes(characterClass.toLowerCase());
 
   if (usesSpellSlots) {
     // Show the "Use Spell Slot" button
