@@ -693,15 +693,15 @@ color: rgb(0, 0, 0);
 }
 #rage-container{
   position: absolute;
-  top: 600px;
+  top: 520px;
   right: 45px;
   display: none;
 }
 @media screen and (max-width: 400px) {
   #rage-container{
     position: absolute;
-    top: 63%;
-    right: 32px;
+    top: 480px;
+    right: 45px;
   }
 }
 
