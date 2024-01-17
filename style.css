@@ -671,7 +671,7 @@ color: rgb(0, 0, 0);
   height: 40px;
   position: absolute;
   top: 480px;
-  left: 6%;
+  left: 15px;
 }
 
 
@@ -693,7 +693,7 @@ color: rgb(0, 0, 0);
 }
 #rage-container{
   position: absolute;
-  top: 52%;
+  top: 480px;
   right: 45px;
   display: none;
 }
