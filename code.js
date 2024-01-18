@@ -422,7 +422,7 @@ else if(level === 11){
 
   return 'None'; 
 }
-
+var SP;
 function generateAttributes(characterClass, race, level) {
   let attributes = {
     AC: Math.floor(Math.random() * 5 + 13),
@@ -606,10 +606,14 @@ switch (characterClass) {
     attributes.spellsaveDC = 0;
     break;
 }
-
+ if(characterClass === 'sorcerer'){
+   SP = level 
+ }
 
   return attributes;
 }
+
+
 
 function generateActions(characterClass) {
   const actionsPool = classAction[characterClass];
@@ -943,6 +947,47 @@ else if(characterClass === 'rogue'){
   details += `</div>`;
 }
 
+else if(characterClass === 'sorcerer'){
+  let rageButtons = document.getElementById("rage-container");
+  rageButtons.style.display = `block`;
+  details += `<h2 style="text-align: center;">Your Character</h2>`
+  details += `<div class="columns">`;
+  details += `<div class="column">`;
+  details += `<ul>`;
+  
+  
+  details += `<li>Strength: +${attributes.strength}</li>`;
+  details += `<li>Dexterity: +${attributes.dexterity}</li>`;
+  details += `<li>Intelligence: +${attributes.intelligence}</li>`;
+  details += `<li>Constitution: +${attributes.constitution}</li>`;
+  details += `<li>Wisdom: +${attributes.wisdom}</li>`;
+  details += `<li>Charisma: +${attributes.charisma}</li>`;
+  details += `<li>Max Health: ${attributes.health}</li>`;
+  details += `<li>Temporary Health: <span id="editHealth">${attributes.health}</span></li>`;
+
+  details += `</ul>`;
+  details += `</div>`;
+  //next column
+  details += `<div class="column">`;
+  details += `<ul>`;
+  details += `<li>Proficiency Bonus:+${proficiencyBonus}`
+  details += `<li>Armor Class: ${attributes.AC}</li>`;
+  details += `<li>Weapon: ${attributes.weapon}</li>`;
+  details += `<li>Actions: `;
+  details += `<select id="actionsSelect">`;
+  actions.forEach((action) => {
+    details += `<option value="${action}">${action}</option>`;
+  });
+  details += `</select></li>`;
+  details += `<li>Spell hit bonus: ${attributes.spellhit}</li>`;
+  details += `<li>Spell save DC: ${attributes.spellsaveDC}</li>`;
+  details += `<li>${spellSlotsLabel} ${spellSlots}</li>`;
+  details += `<li>Sorcery Points: <span id="rageNumber">${SP}</span></li>`
+  details += `</ul>`;
+  details += `</div>`;
+  details += `</div>`;
+
+}
 else{
 
   let rageButtons = document.getElementById("rage-container");

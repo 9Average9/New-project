@@ -1,7 +1,7 @@
 body {
   background-color: #e8e8e8;
   color: #ffffff;
-  font-family: 'Arial', sans-serif;
+  font-family: Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -392,7 +392,7 @@ button i {
 }
 
 ul li {
-  font-size: 18px;
+  font-size: 18px !important;
   line-height: 1.6;
 }
 
@@ -683,6 +683,7 @@ color: rgb(0, 0, 0);
 }
 
 #rages{
+  margin: 0px;
   font-size: large;
 }
 
