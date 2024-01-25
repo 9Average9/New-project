@@ -686,7 +686,7 @@
 </section>
 <div id="character-details">
  
-<button class="maker" onclick="generateCharacter()"> <span class="icon"><i class="fas fa-arrow-right"></i></span></button></div>
+<button id="maker" onclick="generateCharacter()"> <span class="icon"><i class="fas fa-arrow-right"></i></span></button></div>
 <div>
   <button id="toggle" onclick="toggleEdit()"><i class="fas fa-edit"></i></button>
 </div>
@@ -717,8 +717,7 @@
 </div>
 
 
-<button id="minusHealth" class="health-button" onclick="updateTemporaryHealth('subtract')" style="display: none;"><i class="fas fa-heart-broken"></i></button>
-<button id="addHealth" class="health-button" onclick="updateTemporaryHealth('add')" style="display: none;"><i class="fas fa-heart"></i></button>
+
 
 
 <div tabindex="1" class="container12" onclick="toggleMenu()">
@@ -732,9 +731,7 @@
 </div>
 
 
-<div id="rage-container">
-  <button onclick="minusRage()" id="rageToggle" ><i class="fas fa-minus"></i></button>
-  <button onclick="plusRage()" id="rageToggle"><i class="fas fa-plus"></i></button></div>
+
 
 
 

@@ -59,7 +59,7 @@ body {
   text-align: center;
 }
 
-#character-details button {
+#maker {
   border: none;
   background-color: #f0000000;
   color: #fff;
@@ -257,7 +257,7 @@ body {
     max-height: 70%;
   }
 
-  #character-details button {
+  #maker {
     border: none;
     background-color: #f0000000;
     color: #ffffff;
@@ -362,11 +362,7 @@ button  {
   border: 2px solid rgb(0, 0, 0);
 }
 
-button:hover{
-background-color: red;
-color: white;
- border-color: white;
-}
+
 
 
 button i {
@@ -654,33 +650,8 @@ color: rgb(0, 0, 0);
   margin-top: -20px;
 }
 
-#minusHealth{
-  position: absolute;
-  left: 35%;
-}
 
 
-
-.health-button {
-  display: none;
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: 50%; 
-  width: 40px; /* Adjust width and height to fit the icon */
-  height: 40px;
-  position: absolute;
-  top: 480px;
-  left: 15px;
-}
-
-
-.health-button i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
 #rages{
   margin: 0px;
@@ -689,23 +660,33 @@ color: rgb(0, 0, 0);
 
 #rageToggle{
   border: none;
-  background-color: rgba(0, 0, 0, 0);
- 
-}
-#rage-container{
-  position: absolute;
-  top: 485px;
-  right: 45px;
-  display: none;
-}
-@media screen and (max-width: 400px) {
-  #rage-container{
-    position: absolute;
-    top: 480px;
-    right: 45px;
-  }
+  background-color: #00000000;
 }
 
 #actionsSelect{
 font-size: small;
+}
+
+.health-buttons-container {
+  display: flex;
+  list-style-type: none; /* Remove default list styling */
+  padding: 0; /* Remove default padding */
+}
+
+.health-button {
+  width: 50px; /* Set the width of the button */
+  height: 30px; /* Set the height of the button */
+  border-radius: 50%; /* Make it a perfect circle */
+  margin-right: 10px; /* Add some spacing between buttons */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 28px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#classInfo{
+  background-color: #00000000;
+  border: none;
 }

@@ -831,8 +831,7 @@ function displayCharacter(race, characterClass, attributes, actions, spellSlots)
 
 if(characterClass === 'barbarian' || characterClass === 'fighter'|| characterClass === 'monk'){
 
-  let rageButtons = document.getElementById("rage-container");
-   rageButtons.style.display = `block`;
+ 
 
   details += `<h2 style="text-align: center;">Your Character</h2>`
   details += `<div class="columns">`;
@@ -848,7 +847,8 @@ if(characterClass === 'barbarian' || characterClass === 'fighter'|| characterCla
   details += `<li>Charisma: +${attributes.charisma}</li>`;
   details += `<li>Max Health: ${attributes.health}</li>`;
   details += `<li>Temporary Health: <span id="editHealth">${attributes.health}</span></li>`;
-
+  details += `<li><div class="health-buttons-container"><button id="minusHealth" class="health-button" onclick="updateTemporaryHealth('subtract')"><i class="fas fa-heart-broken"></i></button>
+  <button id="addHealth" class="health-button" onclick="updateTemporaryHealth('add')"><i class="fas fa-heart"></i></button></div></li>`;
   details += `</ul>`;
   details += `</div>`;
   //next column
@@ -864,20 +864,19 @@ if(characterClass === 'barbarian' || characterClass === 'fighter'|| characterCla
   });
   details += `</select></li>`;
   details += `<li>${spellSlotsLabel} ${spellSlots}</li>`;
+  details += `<li><div id="rage-container">
+  <button onclick="minusRage()" id="rageToggle" ><i class="fas fa-minus"></i></button>
+  <button onclick="plusRage()" id="rageToggle"><i class="fas fa-plus"></i></button></div></li>`;
   details += `</ul>`;
   details += `</div>`;
   details += `</div>`;
 }
 
 else if(characterClass === 'rogue'){
-  let rageButtons = document.getElementById("rage-container");
-  rageButtons.style.display = `none`;
   details += `<h2 style="text-align: center;">Your Character</h2>`
   details += `<div class="columns">`;
   details += `<div class="column">`;
   details += `<ul>`;
-  
-  
   details += `<li>Strength: +${attributes.strength}</li>`;
   details += `<li>Dexterity: +${attributes.dexterity}</li>`;
   details += `<li>Intelligence: +${attributes.intelligence}</li>`;
@@ -886,7 +885,8 @@ else if(characterClass === 'rogue'){
   details += `<li>Charisma: +${attributes.charisma}</li>`;
   details += `<li>Max Health: ${attributes.health}</li>`;
   details += `<li>Temporary Health: <span id="editHealth">${attributes.health}</span></li>`;
-
+  details += `<li><div class="health-buttons-container"><button id="minusHealth" class="health-button" onclick="updateTemporaryHealth('subtract')"><i class="fas fa-heart-broken"></i></button>
+  <button id="addHealth" class="health-button" onclick="updateTemporaryHealth('add')"><i class="fas fa-heart"></i></button></div></li>`;
   details += `</ul>`;
   details += `</div>`;
   //next column
@@ -907,8 +907,6 @@ else if(characterClass === 'rogue'){
   details += `</div>`;
 }
  else if( characterClass === 'warlock'){
-  let rageButtons = document.getElementById("rage-container");
-  rageButtons.style.display = `block`;
   details += `<h2 style="text-align: center;">Your Character</h2>`
   details += `<div class="columns">`;
   details += `<div class="column">`;
@@ -923,7 +921,8 @@ else if(characterClass === 'rogue'){
   details += `<li>Charisma: +${attributes.charisma}</li>`;
   details += `<li>Max Health: ${attributes.health}</li>`;
   details += `<li>Temporary Health: <span id="editHealth">${attributes.health}</span></li>`;
-
+  details += `<li><div class="health-buttons-container"><button id="minusHealth" class="health-button" onclick="updateTemporaryHealth('subtract')"><i class="fas fa-heart-broken"></i></button>
+  <button id="addHealth" class="health-button" onclick="updateTemporaryHealth('add')"><i class="fas fa-heart"></i></button></div></li>`;
   details += `</ul>`;
   details += `</div>`;
   //next column
@@ -941,15 +940,15 @@ else if(characterClass === 'rogue'){
   details += `<li>Spell hit bonus: ${attributes.spellhit}</li>`;
   details += `<li>Spell save DC: ${attributes.spellsaveDC}</li>`;
   details += `<li>${spellSlotsLabel} ${spellSlots}</li>`;
-  
+  details += `<li><div id="rage-container">
+  <button onclick="minusRage()" id="rageToggle" ><i class="fas fa-minus"></i></button>
+  <button onclick="plusRage()" id="rageToggle"><i class="fas fa-plus"></i></button></div></li>`;
   details += `</ul>`;
   details += `</div>`;
   details += `</div>`;
 }
 
 else if(characterClass === 'sorcerer'){
-  let rageButtons = document.getElementById("rage-container");
-  rageButtons.style.display = `block`;
   details += `<h2 style="text-align: center;">Your Character</h2>`
   details += `<div class="columns">`;
   details += `<div class="column">`;
@@ -964,7 +963,8 @@ else if(characterClass === 'sorcerer'){
   details += `<li>Charisma: +${attributes.charisma}</li>`;
   details += `<li>Max Health: ${attributes.health}</li>`;
   details += `<li>Temporary Health: <span id="editHealth">${attributes.health}</span></li>`;
-
+  details += `<li><div class="health-buttons-container"><button id="minusHealth" class="health-button" onclick="updateTemporaryHealth('subtract')"><i class="fas fa-heart-broken"></i></button>
+  <button id="addHealth" class="health-button" onclick="updateTemporaryHealth('add')"><i class="fas fa-heart"></i></button></div></li>`;
   details += `</ul>`;
   details += `</div>`;
   //next column
@@ -982,7 +982,10 @@ else if(characterClass === 'sorcerer'){
   details += `<li>Spell hit bonus: ${attributes.spellhit}</li>`;
   details += `<li>Spell save DC: ${attributes.spellsaveDC}</li>`;
   details += `<li>${spellSlotsLabel} ${spellSlots}</li>`;
-  details += `<li>Sorcery Points: <span id="rageNumber">${SP}</span></li>`
+  details += `<li>Sorcery Points: <span id="rageNumber">${SP}</span></li>`;
+  details += `<li><div id="rage-container">
+  <button onclick="minusRage()" id="rageToggle" ><i class="fas fa-minus"></i></button>
+  <button onclick="plusRage()" id="rageToggle"><i class="fas fa-plus"></i></button></div></li>`;
   details += `</ul>`;
   details += `</div>`;
   details += `</div>`;
@@ -990,8 +993,7 @@ else if(characterClass === 'sorcerer'){
 }
 else{
 
-  let rageButtons = document.getElementById("rage-container");
-  rageButtons.style.display = `none`;
+ 
   details += `<h2 style="text-align: center;">Your Character</h2>`
   details += `<div class="columns">`;
   details += `<div class="column">`;
@@ -1006,7 +1008,8 @@ else{
   details += `<li>Charisma: +${attributes.charisma}</li>`;
   details += `<li>Max Health: ${attributes.health}</li>`;
   details += `<li>Temporary Health: <span id="editHealth">${attributes.health}</span></li>`;
-
+  details += `<li><div class="health-buttons-container"><button id="minusHealth" class="health-button" onclick="updateTemporaryHealth('subtract')"><i class="fas fa-heart-broken"></i></button>
+  <button id="addHealth" class="health-button" onclick="updateTemporaryHealth('add')"><i class="fas fa-heart"></i></button></div></li>`;
   details += `</ul>`;
   details += `</div>`;
   //next column
