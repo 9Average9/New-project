@@ -690,3 +690,10 @@ font-size: small;
   background-color: #00000000;
   border: none;
 }
+
+#actionInfo{
+  background-color: #00000000;
+  border: none;
+  font-size: large;
+  margin-left: -15px;
+}

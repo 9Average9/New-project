@@ -857,7 +857,8 @@ if(characterClass === 'barbarian' || characterClass === 'fighter'|| characterCla
   details += `<li>Proficiency Bonus:+${proficiencyBonus}`
   details += `<li>Armor Class: ${attributes.AC}</li>`;
   details += `<li>Weapon: ${attributes.weapon}</li>`;
-  details += `<li>Actions: `;
+  details += `<li>Actions: <button id="actionInfo" onclick="actionDescription()"><i class="fas fa-info-circle"></i>
+  </button>`;
   details += `<select id="actionsSelect">`;
   actions.forEach((action) => {
     details += `<option value="${action}">${action}</option>`;
@@ -895,7 +896,8 @@ else if(characterClass === 'rogue'){
   details += `<li>Proficiency Bonus:+${proficiencyBonus}`
   details += `<li>Armor Class: ${attributes.AC}</li>`;
   details += `<li>Weapon: ${attributes.weapon}</li>`;
-  details += `<li>Actions: `;
+  details += `<li>Actions: <button id="actionInfo" onclick="actionDescription()"><i class="fas fa-info-circle"></i>
+  </button>`;
   details += `<select id="actionsSelect">`;
   actions.forEach((action) => {
     details += `<option value="${action}">${action}</option>`;
@@ -931,7 +933,8 @@ else if(characterClass === 'rogue'){
   details += `<li>Proficiency Bonus:+${proficiencyBonus}`
   details += `<li>Armor Class: ${attributes.AC}</li>`;
   details += `<li>Weapon: ${attributes.weapon}</li>`;
-  details += `<li>Actions: `;
+  details += `<li>Actions: <button id="actionInfo" onclick="actionDescription()"><i class="fas fa-info-circle"></i>
+  </button>`;
   details += `<select id="actionsSelect">`;
   actions.forEach((action) => {
     details += `<option value="${action}">${action}</option>`;
@@ -973,7 +976,8 @@ else if(characterClass === 'sorcerer'){
   details += `<li>Proficiency Bonus:+${proficiencyBonus}`
   details += `<li>Armor Class: ${attributes.AC}</li>`;
   details += `<li>Weapon: ${attributes.weapon}</li>`;
-  details += `<li>Actions: `;
+  details += `<li>Actions: <button id="actionInfo" onclick="actionDescription()"><i class="fas fa-info-circle"></i>
+  </button>`;
   details += `<select id="actionsSelect">`;
   actions.forEach((action) => {
     details += `<option value="${action}">${action}</option>`;
@@ -1018,7 +1022,8 @@ else{
   details += `<li>Proficiency Bonus:+${proficiencyBonus}`
   details += `<li>Armor Class: ${attributes.AC}</li>`;
   details += `<li>Weapon: ${attributes.weapon}</li>`;
-  details += `<li>Actions: `;
+  details += `<li>Actions: <button id="actionInfo" onclick="actionDescription()"><i class="fas fa-info-circle"></i>
+  </button>`;
   details += `<select id="actionsSelect">`;
   actions.forEach((action) => {
     details += `<option value="${action}">${action}</option>`;
@@ -1525,4 +1530,68 @@ function updateTemporaryHealth(action) {
       tempHealthSpan.textContent = updatedHealth;
     }
   }
+}
+
+
+function actionDescription() {
+  
+  const selectedAction = document.getElementById('actionsSelect').value;
+
+
+  const actionDescriptions = {
+    'Action Surge': 'Take an additional action on your turn.',
+    'Second Wind': 'Heal yourself by using a bonus action. (2-d4s)',
+    "Extra Attack" :"Make additional attacks during your Attack action.", 
+    "Precision Attack" :"Add superiority dice to your attack rolls.", 
+    "Rally " :"On your turn, you can use a bonus action and expend one superiority die to bolster the resolve of one of your companions. When you do so, choose a friendly creature who can see or hear you. That creature gains temporary hit points equal to the superiority die roll + your Charisma modifier.", 
+    "Menacing Attack " :"When you hit a creature with a weapon attack, you can expend one superiority die to attempt to frighten the target. You add the superiority die to the attack's damage roll, and the target must make a Wisdom saving throw. On a failed save, it is frightened of you until the end of your next turn.", 
+    "Indomitable" :"Reroll a failed saving throw.", 
+    "Eldritch Knight Spellcasting" :"Eldritch Knights, a Fighter archetype, can cast spells from the wizard spell list. These can range from offensive spells like Fireball to utility spells like Mage Armor.", 
+    "Disarming Attack" :"A Fighter can use this maneuver to attempt to disarm an opponent, forcing them to make a Strength saving throw or drop an item they're holding.", 
+    "Riposte" :"When a creature misses you with a melee attack, you can use your reaction and a superiority die to make a melee weapon attack against that creature if it's within your reach.", 
+    "Defensive Duelist" :"Fighters can use their reaction to add their proficiency bonus to their AC when they're hit by an attack, potentially turning a hit into a miss.", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+    "" :"", 
+
+  };
+  const actionDescription = actionDescriptions[selectedAction] || 'No description available.';
+
+  // Display the description in an alert box (you can customize this part)
+  alert(`Action: ${selectedAction}\nDescription: ${actionDescription}`);
 }
