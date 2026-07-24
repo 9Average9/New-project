@@ -46,7 +46,14 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;               /* no horizontal scroll, and keeps sticky working */
+  overscroll-behavior: none;      /* no rubber-band / pull-to-refresh — native feel */
+}
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 
 body {
   margin: 0;
@@ -61,7 +68,16 @@ body {
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  /* Native-app feel: no tap highlight, no double-tap zoom, no text selection on chrome */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
 }
+
+/* Re-enable selection/callout only where it makes sense */
+input, textarea { -webkit-user-select: text; user-select: text; }
 
 /* Soft warm frame — crisp, no speckle */
 .bg-layer { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
@@ -106,7 +122,7 @@ body {
 }
 .tagline { margin: 8px 0 0; color: var(--ink-soft); font-style: italic; font-size: 17px; }
 
-.header-actions { display: flex; gap: 10px; }
+.header-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
 .compendium-toggle {
   position: relative;
   display: inline-flex; align-items: center; gap: 9px;

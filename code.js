@@ -1000,3 +1000,8 @@ function closeInstallHelp() {
 window.addEventListener('load', () => {
   if (isIOS() && !isStandalone()) showInstallButton();
 });
+
+// Native feel: block pinch-to-zoom gestures (double-tap zoom is already
+// handled by touch-action: manipulation + the viewport meta tag).
+document.addEventListener('gesturestart', (e) => e.preventDefault());
+document.addEventListener('gesturechange', (e) => e.preventDefault());
