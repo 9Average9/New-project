@@ -1,5 +1,5 @@
 /* Arcanum service worker — offline app shell + runtime portrait cache. */
-const VERSION = 'arcanum-v1';
+const VERSION = 'arcanum-v2';
 const SHELL = `${VERSION}-shell`;
 const IMAGES = `${VERSION}-img`;
 
