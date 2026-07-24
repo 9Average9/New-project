@@ -410,7 +410,9 @@ const ICONS = {
   plus: '<path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>',
   minus: '<path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>',
   sword: '<path d="M14.5 3H21v6.5L10 20.5l-2.5-2.5L18.5 7V3zM4 15l3 3-2 3H2v-3l2-3z"/>',
-  scroll: '<path d="M6 4h11a2 2 0 012 2v11a3 3 0 01-3 3H7a3 3 0 01-3-3V6a2 2 0 012-2z"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="#14101f" stroke-width="1.4" stroke-linecap="round"/>',
+  scroll: '<path d="M6 4h11a2 2 0 012 2v11a3 3 0 01-3 3H7a3 3 0 01-3-3V6a2 2 0 012-2z"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="#f6ecd3" stroke-width="1.4" stroke-linecap="round"/>',
+  arrow: '<path d="M4 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>',
+  save: '<path d="M5 3h11l3 3v13a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/><path d="M8 3v5h7V3M8 21v-6h8v6" fill="none" stroke="#f6ecd3" stroke-width="1.5" stroke-linejoin="round"/>',
 };
 function icon(name, cls = '') {
   return `<svg class="ico ${cls}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[name] || ''}</svg>`;
@@ -438,11 +440,10 @@ function bonusLabel(r) {
 function renderRaceGrid() {
   const grid = document.getElementById('race-grid');
   grid.innerHTML = RACES.map(r => `
-    <button class="pick-card" data-race="${r.id}" aria-pressed="false" style="--art:url('${raceThumb(r.id)}')">
-      <span class="pick-art"></span>
-      <span class="pick-veil"></span>
+    <button class="pick-card" data-race="${r.id}" aria-pressed="false">
+      <span class="pick-art" style="--art:url('${raceThumb(r.id)}')"></span>
       <span class="pick-check">${icon('check')}</span>
-      <span class="pick-body">
+      <span class="pick-label">
         <span class="pick-name">${r.name}</span>
         <span class="pick-sub">${bonusLabel(r)}</span>
       </span>
@@ -454,11 +455,10 @@ function renderRaceGrid() {
 function renderClassGrid() {
   const grid = document.getElementById('class-grid');
   grid.innerHTML = CLASSES.map(c => `
-    <button class="pick-card" data-class="${c.id}" aria-pressed="false" style="--art:url('${classThumb(c.id)}')">
-      <span class="pick-art"></span>
-      <span class="pick-veil"></span>
+    <button class="pick-card" data-class="${c.id}" aria-pressed="false">
+      <span class="pick-art" style="--art:url('${classThumb(c.id)}')"></span>
       <span class="pick-check">${icon('check')}</span>
-      <span class="pick-body">
+      <span class="pick-label">
         <span class="pick-name">${c.name}</span>
         <span class="pick-sub">${c.role}</span>
       </span>
@@ -524,6 +524,8 @@ function forgeCharacter(keepAbilities = false) {
   const spellMod = c.save ? ability.mods[c.save] : 0;
   const character = {
     race, cls, level,
+    name: (keepAbilities && state.character) ? state.character.name : '',
+    savedId: (keepAbilities && state.character) ? state.character.savedId : null,
     ability,
     prof,
     ac: (keepAbilities && state.character) ? state.character.ac : armorClass(cls),
@@ -565,13 +567,20 @@ function renderSheet() {
           <span class="portrait-zoom">${icon('sparkles')} View</span>
         </div>
         <div class="portrait-title">
-          <h2>${r.name} ${c.name}</h2>
+          <h2>${ch.name ? escapeHtml(ch.name) : r.name + ' ' + c.name}</h2>
+          ${ch.name ? `<p class="portrait-sub">${r.name} ${c.name}</p>` : ''}
           <p class="portrait-role">Level ${ch.level} · ${c.role}</p>
         </div>
         <div class="race-traits">
           ${r.traits.map(t => `<span class="trait-chip">${t}</span>`).join('')}
         </div>
         <button class="btn-reforge" onclick="forgeCharacter()">${icon('refresh')} Reroll stats</button>
+        <div class="save-row">
+          <input id="hero-name" class="hero-name-input" type="text" maxlength="40"
+                 placeholder="Name your hero…" value="${ch.name ? escapeAttr(ch.name) : ''}"
+                 onkeydown="if(event.key==='Enter')saveHero()">
+          <button class="btn-save ${ch.savedId ? 'saved' : ''}" onclick="saveHero()">${icon('save')} Save</button>
+        </div>
       </aside>
 
       <div class="sheet-main">
@@ -784,22 +793,137 @@ function buildCompendium() {
   document.getElementById('comp-weapons').innerHTML = weapons;
 }
 
-function toggleCompendium() {
-  const c = document.getElementById('compendium');
-  const open = c.classList.toggle('open');
-  document.getElementById('scrim').classList.toggle('show', open);
-  document.body.style.overflow = open ? 'hidden' : '';
+function showScrim(on) { document.getElementById('scrim').classList.toggle('show', on); }
+
+function openDrawer(id) {
+  const el = document.getElementById(id);
+  const wasOpen = el.classList.contains('open');
+  closeAllDrawers();
+  if (!wasOpen) {
+    el.classList.add('open');
+    showScrim(true);
+    document.body.style.overflow = 'hidden';
+  }
 }
-function closeCompendium() {
+function closeAllDrawers() {
+  document.getElementById('heroes').classList.remove('open');
   document.getElementById('compendium').classList.remove('open');
-  document.getElementById('scrim').classList.remove('show');
+  showScrim(false);
   document.body.style.overflow = '';
 }
+function toggleCompendium() { openDrawer('compendium'); }
+function closeCompendium() { closeAllDrawers(); }
+function toggleHeroes() { renderHeroes(); openDrawer('heroes'); }
+function closeHeroes() { closeAllDrawers(); }
+
 function showCompTab(tab) {
   document.querySelectorAll('.comp-tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
   document.getElementById('comp-spells').classList.toggle('hidden', tab !== 'spells');
   document.getElementById('comp-weapons').classList.toggle('hidden', tab !== 'weapons');
 }
+
+/* ================================================================== */
+/*  SAVED HEROES (localStorage)                                        */
+/* ================================================================== */
+const HERO_KEY = 'arcanum:heroes';
+
+function loadHeroes() {
+  try { return JSON.parse(localStorage.getItem(HERO_KEY)) || []; }
+  catch (e) { return []; }
+}
+function persistHeroes(list) {
+  try { localStorage.setItem(HERO_KEY, JSON.stringify(list)); }
+  catch (e) { /* storage unavailable (private mode / file://) — ignore */ }
+}
+
+function saveHero() {
+  const ch = state.character;
+  if (!ch) return;
+  const input = document.getElementById('hero-name');
+  const typed = input ? input.value.trim() : '';
+  ch.name = typed || `${raceById(ch.race).name} ${classById(ch.cls).name}`;
+  if (!ch.savedId) ch.savedId = 'h' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+
+  const heroes = loadHeroes();
+  const record = Object.assign({}, ch, { id: ch.savedId, savedAt: Date.now() });
+  const idx = heroes.findIndex(h => h.id === ch.savedId);
+  if (idx >= 0) heroes[idx] = record; else heroes.unshift(record);
+  persistHeroes(heroes);
+
+  renderHeroes();
+  renderSheet();
+  toast(idx >= 0 ? 'Hero updated in your roster' : 'Hero saved to your roster');
+}
+
+function loadHero(id) {
+  const rec = loadHeroes().find(h => h.id === id);
+  if (!rec) return;
+  const ch = Object.assign({}, rec);
+  ch.savedId = rec.id;
+  state.character = ch;
+  state.race = ch.race; state.cls = ch.cls; state.level = ch.level;
+
+  selectRace(ch.race);
+  selectClass(ch.cls);
+  document.getElementById('level-value').textContent = ch.level;
+  document.getElementById('level-minus').disabled = ch.level <= LEVEL_MIN;
+  document.getElementById('level-plus').disabled = ch.level >= LEVEL_MAX;
+
+  renderSheet();
+  closeAllDrawers();
+  document.getElementById('sheet').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  toast(`Summoned ${ch.name}`);
+}
+
+function deleteHero(id) {
+  persistHeroes(loadHeroes().filter(h => h.id !== id));
+  if (state.character && state.character.savedId === id) state.character.savedId = null;
+  renderHeroes();
+}
+
+function renderHeroes() {
+  const heroes = loadHeroes();
+  const badge = document.getElementById('heroes-badge');
+  if (badge) {
+    badge.textContent = heroes.length ? heroes.length : '';
+    badge.classList.toggle('zero', heroes.length === 0);
+  }
+  const list = document.getElementById('hero-list');
+  if (!list) return;
+  if (!heroes.length) {
+    list.innerHTML = `<p class="hero-empty">No heroes saved yet.<br>Forge one and press Save.</p>`;
+    return;
+  }
+  list.innerHTML = heroes.map(h => `
+    <div class="hero-card">
+      <img class="hero-thumb" src="${h.portrait}" alt="">
+      <div class="hero-meta">
+        <strong>${escapeHtml(h.name)}</strong>
+        <span>${raceById(h.race).name} ${classById(h.cls).name} · Level ${h.level}</span>
+      </div>
+      <div class="hero-actions">
+        <button class="hero-btn load" title="Summon this hero" onclick="loadHero('${h.id}')">${icon('arrow')}</button>
+        <button class="hero-btn del" title="Delete" onclick="deleteHero('${h.id}')">${icon('close')}</button>
+      </div>
+    </div>`).join('');
+}
+
+/* ================================================================== */
+/*  SMALL HELPERS                                                      */
+/* ================================================================== */
+let toastTimer;
+function toast(msg) {
+  const t = document.getElementById('toast');
+  if (!t) return;
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+}
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+}
+function escapeAttr(s) { return escapeHtml(s); }
 
 /* ================================================================== */
 /*  INIT                                                              */
@@ -808,11 +932,19 @@ document.addEventListener('DOMContentLoaded', () => {
   renderRaceGrid();
   renderClassGrid();
   buildCompendium();
+  renderHeroes();
   document.getElementById('level-value').textContent = state.level;
   document.getElementById('level-minus').disabled = state.level <= LEVEL_MIN;
 
   // Close overlays with Escape.
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') { closeLightbox(); closeCompendium(); }
+    if (e.key === 'Escape') { closeLightbox(); closeAllDrawers(); }
   });
 });
+
+// Register the service worker for offline / installable PWA support.
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(() => { /* unsupported context (e.g. file://) */ });
+  });
+}
