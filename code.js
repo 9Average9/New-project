@@ -948,3 +948,55 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js').catch(() => { /* unsupported context (e.g. file://) */ });
   });
 }
+
+/* ================================================================== */
+/*  ADD TO HOME SCREEN (PWA install)                                   */
+/* ================================================================== */
+let deferredInstall = null;
+
+function isStandalone() {
+  return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+}
+function isIOS() {
+  return /iphone|ipad|ipod/i.test(navigator.userAgent) && !window.MSStream;
+}
+function showInstallButton() {
+  const b = document.getElementById('install-btn');
+  if (b) b.hidden = false;
+}
+function hideInstallButton() {
+  const b = document.getElementById('install-btn');
+  if (b) b.hidden = true;
+}
+
+// Android / desktop Chromium: capture the prompt and reveal our own button.
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredInstall = e;
+  if (!isStandalone()) showInstallButton();
+});
+window.addEventListener('appinstalled', () => {
+  deferredInstall = null;
+  hideInstallButton();
+  toast('Arcanum added to your home screen');
+});
+
+function installApp() {
+  if (deferredInstall) {
+    deferredInstall.prompt();
+    deferredInstall.userChoice.finally(() => { deferredInstall = null; hideInstallButton(); });
+  } else if (isIOS()) {
+    document.getElementById('install-help').classList.add('open');
+  } else {
+    toast('Use your browser menu → “Install app / Add to Home Screen”');
+  }
+}
+function closeInstallHelp() {
+  document.getElementById('install-help').classList.remove('open');
+}
+
+// iOS Safari never fires beforeinstallprompt, so show the button (with
+// instructions) whenever we are on iOS and not already installed.
+window.addEventListener('load', () => {
+  if (isIOS() && !isStandalone()) showInstallButton();
+});

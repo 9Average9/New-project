@@ -129,6 +129,33 @@ body {
 }
 .badge:empty, .badge.zero { display: none; }
 
+/* Install button — gold-accented to stand out as the primary CTA */
+.install-btn { color: #3a2506; background: var(--gold-grad); border-color: rgba(150,100,20,0.4); }
+.install-btn:hover { box-shadow: 0 10px 22px -10px rgba(184,134,44,0.7); border-color: rgba(150,100,20,0.55); }
+.install-btn[hidden] { display: none; }
+
+/* iOS "Add to Home Screen" helper */
+.install-help {
+  position: fixed; inset: 0; z-index: 65; display: none; place-items: center;
+  background: rgba(40, 28, 10, 0.5); padding: 24px; backdrop-filter: blur(2px);
+}
+.install-help.open { display: grid; animation: fade 0.22s ease; }
+.install-card {
+  max-width: 360px; width: 100%; text-align: center;
+  background: linear-gradient(180deg, #fdf7e8, #f4e9cd);
+  border: 1px solid var(--line-strong); border-radius: var(--radius);
+  padding: 26px 24px; box-shadow: var(--shadow);
+}
+.install-card h3 { font-family: var(--font-decor); font-weight: 700; font-size: 21px; color: var(--gold-deep); margin: 0 0 12px; }
+.install-card p { margin: 0 0 20px; color: var(--ink-soft); font-size: 16.5px; line-height: 1.55; }
+.install-card p .ico { width: 20px; height: 20px; color: var(--gold-deep); vertical-align: -0.25em; }
+.install-ok {
+  font-family: var(--font-display); font-weight: 600; font-size: 15px; color: #3a2506;
+  background: var(--gold-grad); border: 1px solid rgba(150,100,20,0.4);
+  border-radius: 999px; padding: 11px 30px; cursor: pointer; box-shadow: var(--shadow-sm);
+}
+.install-ok:hover { transform: translateY(-1px); }
+
 /* ================================================================= */
 /*  FORGE / STEPS                                                    */
 /* ================================================================= */

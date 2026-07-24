@@ -34,6 +34,10 @@
       <p class="tagline">Forge a legend in three heartbeats</p>
     </div>
     <div class="header-actions">
+      <button class="compendium-toggle install-btn" id="install-btn" hidden onclick="installApp()">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11M8 10l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <span>Install</span>
+      </button>
       <button class="compendium-toggle" onclick="toggleHeroes()">
         <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 8.6-8 11-4.6-2.4-8-6-8-11V5l8-3z"/></svg>
         <span>Heroes</span>
@@ -141,6 +145,17 @@
       <div id="comp-weapons" class="hidden"></div>
     </div>
   </aside>
+
+  <!-- iOS install instructions -->
+  <div id="install-help" class="install-help" onclick="if(event.target===this)closeInstallHelp()">
+    <div class="install-card">
+      <h3>Add Arcanum to your Home Screen</h3>
+      <p>In Safari, tap the <strong>Share</strong>
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M8 7l4-4 4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12v7a1 1 0 001 1h10a1 1 0 001-1v-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        button, then choose <strong>“Add to Home Screen.”</strong></p>
+      <button class="install-ok" onclick="closeInstallHelp()">Got it</button>
+    </div>
+  </div>
 
   <div id="toast" class="toast"></div>
 
